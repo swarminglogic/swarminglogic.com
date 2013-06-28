@@ -1,5 +1,6 @@
 This site uses the following frameworks:
 
-CodeIgniter -- licenses/codeigniter_license.txt
-Skeleton -- http://www.getskeleton.com/#licenseandlog
+CodeIgniter     -- licenses/codeigniter_license.txt
+Skeleton        -- http://www.getskeleton.com/#licenseandlog
 CodeHighlighter -- licenses/codehighlighter_license.txt
+MathJax         -- licenses/mathjax_license.txt
