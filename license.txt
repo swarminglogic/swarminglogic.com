@@ -1,0 +1,3 @@
+This site uses the following frameworks:
+
+CodeIgniter -- licenses/codeigniter_license.txt
