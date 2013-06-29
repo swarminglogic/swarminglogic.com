@@ -4,3 +4,7 @@ CodeIgniter       -- licenses/codeigniter_license.txt
 Skeleton          -- http://www.getskeleton.com/#licenseandlog
 SyntaxHighlighter -- licenses/codehighlighter_license.txt
 MathJax           -- licenses/mathjax_license.txt
+
+
+Credits:
+Using 'dark-fish-skin' from subtlepatterns.com
