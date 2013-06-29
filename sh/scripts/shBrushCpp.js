@@ -22,7 +22,7 @@
 	function Brush()
 	{
 		// Copyright 2006 Shin, YoungJin
-	
+
 		var datatypes =	'ATOM BOOL BOOLEAN BYTE CHAR COLORREF DWORD DWORDLONG DWORD_PTR ' +
 						'DWORD32 DWORD64 FLOAT HACCEL HALF_PTR HANDLE HBITMAP HBRUSH ' +
 						'HCOLORSPACE HCONV HCONVLIST HCURSOR HDC HDDEDATA HDESK HDROP HDWP ' +
@@ -48,16 +48,23 @@
 						'time_t __time64_t _timeb __timeb64 tm uintptr_t _utimbuf ' +
 						'va_list wchar_t wctrans_t wctype_t wint_t signed';
 
-		var keywords =	'break case catch class const __finally __exception __try ' +
+    var special = 'boost:: std:: ::';
+
+    var datatypes_ext = 'string ifstream map vector list set value_type';
+
+    var keywords_base = 'break case catch const typedef while for unsigned static inline class if';
+
+		var keywords =	'__finally __exception __try ' +
 						'const_cast continue private public protected __declspec ' +
 						'default delete deprecated dllexport dllimport do dynamic_cast ' +
-						'else enum explicit extern if for friend goto inline ' +
+						'else enum explicit extern friend goto ' +
 						'mutable naked namespace new noinline noreturn nothrow ' +
 						'register reinterpret_cast return selectany ' +
-						'sizeof static static_cast struct switch template this ' +
-						'thread throw true false try typedef typeid typename union ' +
-						'using uuid virtual void volatile whcar_t while';
-					
+						'sizeof static_cast struct switch template this ' +
+						'thread throw true false try typeid typename union ' +
+						'using uuid virtual void volatile whcar_t ' +
+						'BOOST_FOREACH';
+
 		var functions =	'assert isalnum isalpha iscntrl isdigit isgraph islower isprint' +
 						'ispunct isspace isupper isxdigit tolower toupper errno localeconv ' +
 						'setlocale acos asin atan atan2 ceil cos cosh exp fabs floor fmod ' +
@@ -75,15 +82,20 @@
 						'strncpy strpbrk strrchr strspn strstr strtok strxfrm asctime ' +
 						'clock ctime difftime gmtime localtime mktime strftime time';
 
+		var functions_ext =	'main transform getline eof fill';
 		this.regexList = [
-			{ regex: SyntaxHighlighter.regexLib.singleLineCComments,	css: 'comments' },			// one line comments
-			{ regex: SyntaxHighlighter.regexLib.multiLineCComments,		css: 'comments' },			// multiline comments
-			{ regex: SyntaxHighlighter.regexLib.doubleQuotedString,		css: 'string' },			// strings
-			{ regex: SyntaxHighlighter.regexLib.singleQuotedString,		css: 'string' },			// strings
+			{ regex: SyntaxHighlighter.regexLib.singleLineCComments,	css: 'comments' },
+			{ regex: SyntaxHighlighter.regexLib.multiLineCComments,		css: 'comments' },
+			{ regex: SyntaxHighlighter.regexLib.doubleQuotedString,		css: 'string' },
+			{ regex: SyntaxHighlighter.regexLib.singleQuotedString,		css: 'string' },
 			{ regex: /^ *#.*/gm,										css: 'preprocessor' },
-			{ regex: new RegExp(this.getKeywords(datatypes), 'gm'),		css: 'color1 bold' },
-			{ regex: new RegExp(this.getKeywords(functions), 'gm'),		css: 'functions bold' },
-			{ regex: new RegExp(this.getKeywords(keywords), 'gm'),		css: 'keyword bold' }
+			{ regex: new RegExp(this.getKeywords(special), 'gm'),		css: 'color2' },
+			{ regex: new RegExp(this.getKeywords(datatypes), 'gm'),		css: 'color1' },
+			{ regex: new RegExp(this.getKeywords(datatypes_ext), 'gm'),		css: 'color3' },
+			{ regex: new RegExp(this.getKeywords(functions), 'gm'),		css: 'functions' },
+			{ regex: new RegExp(this.getKeywords(functions_ext), 'gm'),		css: 'functions' },
+			{ regex: new RegExp(this.getKeywords(keywords), 'gm'),		css: 'keyword bold' },
+			{ regex: new RegExp(this.getKeywords(keywords_base), 'gm'),		css: 'keyword' }
 			];
 	};
 
