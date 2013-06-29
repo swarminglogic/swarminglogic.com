@@ -145,11 +145,10 @@ if ( ! function_exists('create_captcha'))
 		// -----------------------------------
 		//  Assign colors
 		// -----------------------------------
-
-		$bg_color		= imagecolorallocate ($im, 255, 255, 255);
-		$border_color	= imagecolorallocate ($im, 153, 102, 102);
-		$text_color		= imagecolorallocate ($im, 204, 153, 153);
-		$grid_color		= imagecolorallocate($im, 255, 182, 182);
+		$bg_color		= imagecolorallocate ($im, 16, 16, 16);
+		$border_color	= imagecolorallocate ($im, 37, 37, 37);
+		$text_color		= imagecolorallocate ($im, 153, 170, 153);
+		$grid_color		= imagecolorallocate($im, 103, 130, 103);
 		$shadow_color	= imagecolorallocate($im, 255, 240, 240);
 
 		// -----------------------------------
@@ -191,7 +190,7 @@ if ( ! function_exists('create_captcha'))
 		if ($use_font == FALSE)
 		{
 			$font_size = 5;
-			$x = rand(0, $img_width/($length/3));
+			$x = rand(0,$img_width - ($length * 10));
 			$y = 0;
 		}
 		else
