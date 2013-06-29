@@ -38,9 +38,13 @@
 |
 */
 
-$route['default_controller'] = "welcome";
-$route['404_override'] = '';
+$route['404_override'] = "errors/error_404";
 
+$route['default_controller'] = "pages/view/articles";
+$route['articles'] = 'pages/view/articles';
+$route['contact'] = 'pages/view/contact';
+$route['rss.xml'] = 'feed/view/feed';
+$route['articles/(:any)'] = 'articles/view/$1';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
