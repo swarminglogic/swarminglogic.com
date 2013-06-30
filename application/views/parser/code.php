@@ -13,7 +13,7 @@
    }
 ?>
 <link type="text/css" rel="Stylesheet" href="/sh/styles/shCore.css"/>
-<link type="text/css" rel="Stylesheet" href="/sh/styles/shCoreDefault.css"/>
+<link type="text/css" rel="Stylesheet" href="/sh/styles/shThemeSwarmingLogic2.css"/>
 <script type="text/javascript">SyntaxHighlighter.all();</script>
 
 <?php
