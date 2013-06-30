@@ -38,7 +38,7 @@
   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/rss.xml"/>
 
 </head>
-<body>
+<body<?php if(isset($useSpyScroll) && $useSpyScroll) { echo ' data-spy="scroll"'; } ?>>
 <div class="wrapper">
 	<div class="container">
     <!-- <div class="row"> -->
