@@ -33,6 +33,10 @@
 	================================================== -->
 	<link rel="shortcut icon" href="/favicon.ico">
 
+  <!--
+  ================================================== -->
+  <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/rss.xml"/>
+
 </head>
 <body>
 <div class="wrapper">
