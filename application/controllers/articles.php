@@ -59,8 +59,8 @@ class Articles extends CI_Controller {
     else{
       $this->load->view('header', $data);
       $this->load->view('article_date', $data);
+      $this->load->view('common_article_util', $data);
       $this->load->view('articles/'.$page, $data);
-   /*   $this->load->view('sidebars/sb_article', $data);*/
       $this->load->view('comments',$data);
       $this->load->view('footer');
     }
