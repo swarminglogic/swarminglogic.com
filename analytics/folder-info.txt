@@ -1,0 +1,4 @@
+Add piwik to this folder.
+Get it from http://piwik.org/
+
+It's not included in the git repo because it's rather large and it won't ever be modified.

@@ -1,0 +1,2 @@
+This folder needs to exist, as serves as a container for dynamically created
+captcha images.
