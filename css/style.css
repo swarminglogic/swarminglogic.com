@@ -461,8 +461,7 @@ h2 { font-size: 1.9em; }
 }
 
 .gifimage .gifplaytext {
-    position: static;
-    margin: 0 auto;
+    vertical-align: middle;
     font-size: 27px;
     text-align: center;
     padding-top: 10%;
@@ -471,9 +470,6 @@ h2 { font-size: 1.9em; }
 }
 
 .gifimage.noplay .gifplaybox {
-/*    background-color: rgba(20, 30, 40, .7);*/
-/*    background: rgba(20, 30, 40, .7);*/
-    /* background: rgba(20, 30, 40, .7); */
     background: url('/images/dark_fish_skin.png');
     background-repeat: repeat;
 }
