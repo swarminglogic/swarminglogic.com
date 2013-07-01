@@ -114,7 +114,7 @@ code.blue {
 }
 
 #toc li {
-    background-image: url(/images/arrow.png);
+    background-image: url(/images/bullet_inactive.png);
     background-repeat: no-repeat;
     background-position: 0 .5em;
     list-style: none;
@@ -122,6 +122,10 @@ code.blue {
     margin-top: 2px;
     margin-left: 8px;
     padding-left: 12px;
+}
+
+#toc li.active {
+    background-image: url(/images/bullet_active.png);
 }
 
 #toc li a {
@@ -134,7 +138,6 @@ code.blue {
 }
 
 #toc li.active a {
-    background-image: url(/images/arrow_bold.png);
     color: #684;
     font-weight: bold;
 }
