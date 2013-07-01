@@ -89,7 +89,7 @@ if ( ! function_exists('create_captcha'))
 
 		while ($filename = @readdir($current_dir))
 		{
-			if ($filename != "." and $filename != ".." and $filename != "index.html")
+			if ($filename != "." and $filename != ".." and !(strpos($filename, ".jpg") === false))
 			{
 				$name = str_replace(".jpg", "", $filename);
 
