@@ -25,7 +25,7 @@ $vals = array('word' => rand(100, 999),
               'img_url' => '/images/captcha/',
               'img_width' => 55,
               'img_height' => 25,
-              'expiration' => 7200
+              'expiration' => 1800
               );
 
 
