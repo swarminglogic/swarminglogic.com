@@ -13,7 +13,7 @@
   </div>
   <br/>
   <?php }*/?>
-
+  <p>
   <h5>Table of Contents</h5>
   <ul id="toc">
     <?php foreach($toc as $key => $value) {
@@ -35,6 +35,30 @@
     }
  ?>
   </ul>
-  <br/>
-  <?php echo $sidebar_text;?>
+  </p>
+  <?php echo $sidebar_text;
+
+  if (isset($cclicense)) {
+    $cclicense=strtolower($cclicense);
+    $licenseUrl='';
+    $isLicenseOk=true;
+    if ($cclicense == 'by'       ||
+        $cclicense == 'by-nd'    ||
+        $cclicense == 'by-sa'    ||
+        $cclicense == 'by-nc'    ||
+        $cclicense == 'by-nc-sa' ||
+        $cclicense == 'by-nc-nd') {
+      $licenseUrl='http://creativecommons.org/licenses/'.$cclicense.'/3.0';
+    } else {
+      $isLicenseOk = false;
+      trigger_error('Invalid license type: '.$cclicense);
+    }
+
+    if ($isLicenseOk) {
+      echo '<h5 class="license">License</h5>';
+      echo '<a href="'.$licenseUrl.'">';
+      echo '<img src="/images/licenses/'.$cclicense.'-flat.png"/></a>';
+    }
+  }
+?>
 </div>

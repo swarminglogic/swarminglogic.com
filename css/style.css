@@ -106,6 +106,10 @@ code.blue {
     margin-top:4px;
 }
 
+#sidebar_id h5.license {
+    color: #677;
+}
+
 #toc {
 }
 

@@ -2,6 +2,7 @@
 $languages = array("Bash", "Python", "Plain", "JScript");
 $data['lang'] = $languages;
 $this->load->view('parser/code', $data);
+$data['cclicense'] = 'by';
 ?>
 
 <div>

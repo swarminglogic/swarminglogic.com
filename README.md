@@ -31,11 +31,11 @@ analytics-footer
 ### License:
 Content not covered by third-party frameworks, and not covered by the respective licenses are subject to the following:
 
-| What                                     | License                                                  |
-| :-------------                           | :-------------                                           |
-| SwarmingLogic branding images            | Copyright &copy; 2013 SwarmingLogic.com                  |
-| Website design, images, backgrounds, etc | [CC-BY 3.0](http://creativecommons.org/licenses/by/3.0/) |
-| Articles and pertaining images           | [CC-BY 3.0](http://creativecommons.org/licenses/by/3.0/) |
+| What                                     | License                                                                                                    |
+| :-------------                           | :-------------                                                                                             |
+| SwarmingLogic branding images            | Copyright &copy; 2013 SwarmingLogic.com                                                                    |
+| Website design, images, backgrounds, etc | [CC-BY 3.0](http://creativecommons.org/licenses/by/3.0/)                                                   |
+| Articles and pertaining images           | [CC-BY 3.0](http://creativecommons.org/licenses/by/3.0/), <br/> unless otherwise specified in the article. |
 
 ### GitHub Repository:
 [https://github.com/swarminglogic/swarminglogic.com](https://github.com/swarminglogic/swarminglogic.com)
