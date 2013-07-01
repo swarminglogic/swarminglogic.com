@@ -28,7 +28,12 @@
         echo "<li><a href=\"#$value[0]\">$value[2]</a></li>
 ";
       }
-    } ?>
+    }
+    if (isset($showComments) && $showComments) {
+      echo '<hr/>';
+      echo '<li><a href="#toc-comments">Comments</a></li>';
+    }
+ ?>
   </ul>
   <br/>
   <?php echo $sidebar_text;?>

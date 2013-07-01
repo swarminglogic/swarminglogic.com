@@ -98,6 +98,14 @@ code.blue {
     margin: 0;
 }
 
+#sidebar_id hr {
+    border: 0;
+    height:1px;
+    background-color: #202520;
+    margin:0;
+    margin-top:4px;
+}
+
 #toc {
 }
 

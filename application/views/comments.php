@@ -3,7 +3,8 @@
 
 <div class="container sixteen columns">
 <hr class="comments" style="width:78%"/>
-<h3 style="position:relative; top:-12px">Comments</h3>
+
+<?php heading(3, 'Comments', '', false, 'toc-comments'); ?>
 
 <?php
 echo validation_errors();

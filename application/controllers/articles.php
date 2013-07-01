@@ -24,6 +24,7 @@ class Articles extends CI_Controller {
     $data['articles']      = $this->article_model->get_articles();;
     $data['comment_count'] = $this->article_comments->get_comment_count($page);
     $data['sidebar_text'] = $this->globals->get_default_sidebar();
+    $data['showComments'] = true;
 
     if (array_key_exists($page, $data['articles']))
       $data['title'] = $data['articles'][$page][0];
