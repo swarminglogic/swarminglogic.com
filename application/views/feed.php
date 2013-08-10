@@ -5,21 +5,11 @@ $rssBegin='<?xml version="1.0" encoding="utf-8"?>
     <title>swarminglogic</title>
     <link>http://swarminglogic.com/</link>
     <description>SwarmingLogic: A programming development diary</description>
-    <language>en</language>';
-
-
-$content='';
-
-/*
-<item><title>Balloon Internet</title><link>http://xkcd.com/1226/</link><description>&lt;img src="http://imgs.xkcd.com/comics/balloon_internet.png" title="I run a business selling rural internet access. My infrastructure consists of a bunch of Verizon wifi hotspots that I sign up for and then cancel at the end of the 14-day return period." alt="I run a business selling rural internet access. My infrastructure consists of a bunch of Verizon wifi hotspots that I sign up for and then cancel at the end of the 14-day return period." /&gt;</description><pubDate>Mon, 17 Jun 2013 04:00:00 -0000</pubDate><guid>http://xkcd.com/1226/</guid></item>
-*/
-
+    <language><?=$lan?></language>';
 
 echo $rssBegin;
-
 ?>
 <?php
-$content='';
 
 function rssItem($title, $link, $description, $pubDate) {
   $item="
@@ -43,7 +33,6 @@ foreach($articles as $key=>$value) {
   echo rssItem($title, $url, $summary, "$dateD $dateM $dateY 00:00:00 -0000");
 }
 
-echo $content;
  ?>
 <?php
 echo '
