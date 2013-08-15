@@ -62,39 +62,39 @@ find ./src ./SConstruct \
 
     <?php heading(5, '2.1 Find all relevant project files', '', false, 'find'); ?>
     <p>Using the <code>find</code>-utility, one can list all files with
-    particular extension with <br/> <code>$ find . -name "*.cpp"</code><br/>
+    particular extension with <br/> <code class="clean">$ find . -name "*.cpp"</code><br/>
     </p>
     <p>
       To find both <code>.cpp</code> and <code>.h</code> files:<br/>
-      <code>$ find . -name "*.cpp" -or -name "*.h"</code><br/>
+      <code class="clean">$ find . -name "*.cpp" -or -name "*.h"</code><br/>
     </p>
 
     <p>
       To avoid finding hidden files:<br/>
-      <code>$ find . -name "[!\.]*.cpp" -or -name "[!\.]*.h"</code><br/>
+      <code class="clean">$ find . -name "[!\.]*.cpp" -or -name "[!\.]*.h"</code><br/>
     </p>
 
     <p>
       To do the same but limit results to <code>./src</code> directory:<br/>
-      <code>$ find ./src -name "[!\.]*.cpp" -or -name "[!\.]*.h"</code><br/>
+      <code class="clean">$ find ./src -name "[!\.]*.cpp" -or -name "[!\.]*.h"</code><br/>
     </p>
 
     <p>
       <b>Putting it together:</b> Find all non-hidden files in <code>./src</code> directory with
       <code>.cpp .h .tpp</code> extensions, any <code>SConscript*</code> files, and also
       the <code>SConstruct</code> file in root directory:
-      <pre class="block soft"><code>$ find ./src ./SConstruct \
+      <pre class="block soft">$ find ./src ./SConstruct \
  -name "[!\.]*.cpp" -or \
  -name "[!\.]*.h"   -or \
  -name "[!\.]*.tpp" -or \
  -name "SConscript*" -or \
- -name "SConstruct"</code></pre>
+ -name "SConstruct"</pre>
     </p>
 
     <?php heading(5, '2.2 Determine \'last modified\'-timestamp', '', false, 'timestamp'); ?>
 
     <p>Unix command <code>stat</code> shows detailed timestamp information of a file.
-      <pre><code>$ stat SConstruct
+      <pre>$ stat SConstruct
   File: `SConstruct'
   Size: 778       	Blocks: 24         IO Block: 4096   regular file
 Device: 14h/20d	Inode: 1208177     Links: 1
@@ -102,23 +102,23 @@ Access: (0664/-rw-rw-r--)  Uid: ( 1000/   okami)   Gid: ( 1000/   okami)
 Access: 2013-06-21 09:08:13.198346996 +0200
 Modify: 2013-06-21 09:08:13.030346998 +0200
 Change: 2013-06-21 09:08:13.030346998 +0200
- Birth: -</code></pre>
+ Birth: -</pre>
     </p>
 
     <p>
       To only list modification time:<br/>
-      <code>$ stat SConstruct -c %y</code><br/>
-      <code>2013-06-21 09:08:13.030346998 +0200</code>
+      <code class="clean">$ stat SConstruct -c %y</code><br/>
+      <code class="clean">2013-06-21 09:08:13.030346998 +0200</code>
     </p>
 
     <p>
       <b>Putting it together:</b> Determine the last modified timestamp of all files found by <code>find</code>
-      <pre class="block soft"><code>$ find ./src ./SConstruct \
+      <pre class="block soft">$ find ./src ./SConstruct \
  -name "[!\.]*.cpp" -or \
  -name "[!\.]*.h"   -or \
  -name "[!\.]*.tpp" -or \
  -name "SConscript*" -or \
- -name "SConstruct" | xargs stat -c %y</code></pre>
+ -name "SConstruct" | xargs stat -c %y</pre>
     </p>
 
     <?php heading(5, '2.3 Use md5sum to simplify timestamp information', '', false, 'md5sum'); ?>
@@ -128,24 +128,24 @@ Change: 2013-06-21 09:08:13.030346998 +0200
     </p>
     <p>
       Computing the md5 hash of <code>myfile.txt:</code><br/>
-      <code>$ md5sum myfile.txt</code><br/>
-      <code>09f7e02f1290be211da707a266f153b3  myfile.txt</code><br/>
+      <code class="clean">$ md5sum myfile.txt</code><br/>
+      <code class="clean">09f7e02f1290be211da707a266f153b3  myfile.txt</code><br/>
     </p>
     <p>
       Or pipe the content to md5:<br/>
-      <code>$ cat myfile.txt | md5sum</code><br/>
-      <code>09f7e02f1290be211da707a266f153b3  -</code><br/>
+      <code class="clean">$ cat myfile.txt | md5sum</code><br/>
+      <code class="clean">09f7e02f1290be211da707a266f153b3  -</code><br/>
     </p>
     <p>
       <b>Putting it together:</b> By piping all the timestamps above, we reduce
     the information to a single value. If any timestamp changes, the value
     changes.
-      <pre class="block soft"><code>$ find ./src ./SConstruct \
+      <pre class="block soft">$ find ./src ./SConstruct \
  -name "[!\.]*.cpp" -or \
  -name "[!\.]*.h"   -or \
  -name "[!\.]*.tpp" -or \
  -name "SConscript*" -or \
- -name "SConstruct" | xargs stat -c %y | md5sum</code></pre>
+ -name "SConstruct" | xargs stat -c %y | md5sum</pre>
     </p>
 
     <?php heading(5, '2.4 Automatic Rebuild Script', '', false, 'recompile'); ?>

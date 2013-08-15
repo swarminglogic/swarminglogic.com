@@ -63,11 +63,11 @@ function heading($wght, $text, $alttoc='', $intoc=true, $altid='') {
     $tocCount = $tocCount + 1;
     $id="toc$tocCount";
     $toc[] = array($id, $wght, $alttoc);
-    echo '<a id="'.$id.'"><h'.$wght.' style="margin-top:40px;">'.$text.'</h'.$wght.'></a>
+    echo '<a id="'.$id.'"><h'.$wght.'>'.$text.'</h'.$wght.'></a>
 ';
   }
   else if ($altid !== '') {
-    echo '<a id="'.$altid.'"><h'.$wght.' style="margin-top:40px;">'.$text.'</h'.$wght.'></a>
+    echo '<a id="'.$altid.'"><h'.$wght.'>'.$text.'</h'.$wght.'></a>
 ';
   }
   else {

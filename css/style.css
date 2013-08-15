@@ -42,14 +42,37 @@ h5 {
     font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
+hr {
+    display: block; height: 2px;
+    border: 0; border-top: 2px solid #222;
+    margin: 1em 0; padding: 0;
+}
+
 code {
-    font-family : "courier new",courier,monospace;
-    color: #9AA;
+    color: #80AAAA;
+    padding: 1px 2px;
+    white-space: nowrap;
+    border-radius: 3px;
+    background-color: #151712;
+    border: 1px solid #253025;
+    padding-top: 3px;
+    white-space: nowrap;
 }
 code.blue {
+    color: #9BA;
     color: #7AA;
 }
 
+pre.clean,
+code.clean {
+    background-color: inherit;
+    border: inherit;
+}
+
+pre,
+code {
+    font-family: "Monaco", "Menlo", "Consolas", "Courier New", monospace;
+}
 
 .content-wrapper {
     padding: 0 0.75em;
@@ -313,6 +336,18 @@ li.articles .summary p {
 
 #article_page table.lines td b{
     font-family : "courier new", courier, monospace;
+}
+
+#article_page .pushup {
+    margin-top: -15px;
+}
+
+#article_page .pushup li {
+    margin-top: -5px;
+}
+
+#article_page .pushdown {
+    margin-top: 15px;
 }
 
 
@@ -663,6 +698,12 @@ input:-moz-placeholder {
 .article h5 {
     font-size: 16px;
     font-weight: bold;
+}
+
+.article h3,
+.article h4,
+.article h5 {
+    margin-top:40px;
 }
 
 .liheader {
