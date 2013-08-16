@@ -48,10 +48,11 @@ $route['articles/(:any)'] = 'pages/articles/$1';
 $route['contact']        = 'pages/contact';
 $route['contact/(:any)'] = 'pages/contact/$1';
 
-$route['shorts']        = 'pages/shorts';
-$route['shorts/(:any)'] = 'pages/shorts/$1';
+$route['jottings']        = 'pages/jottings';
+$route['jottings/(:any)'] = 'pages/jottings/$1';
 
 $route['article/(:any)'] = 'article/view/$1';
+$route['jotting/(:any)'] = 'jotting/view/$1';
 
 $route['rss.xml'] = 'feed/view/feed';
 

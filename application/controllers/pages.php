@@ -21,8 +21,10 @@ class Pages extends CI_Controller {
     // Prune list of articles if keyword set
     $data['keywordUsed'] = $key;
     $data['isKeywordFiltering'] = false;
-    $isKeywordValid = $key && array_key_exists($key, $data['keydesc']);
-    if ($isKeywordValid) {
+
+    $isKeywordSet   = $key;
+    $isKeywordValid = array_key_exists($key, $data['keydesc']);
+    if ($isKeywordSet && $isKeywordValid) {
       $data['isKeywordFiltering'] = true;
       foreach($data['articles'] as $article=>$value) {
         if (!in_array($key, $value[3])) {
@@ -32,8 +34,7 @@ class Pages extends CI_Controller {
     }
     $data['articleCount'] = sizeof($data['articles']);
 
-    $isShowAll = true; // If $key is a valid keyword
-    if ($isShowAll) {
+    if ((!$isKeywordSet || $isKeywordValid)) {
       $this->load->view('header', $data);
       $this->load->view('pages/articles', $data);
       $this->load->view('footer', $data);
@@ -44,8 +45,13 @@ class Pages extends CI_Controller {
     }
   }
 
-  public function shorts($tag)
+  public function jottings($tag='')
   {
+    $data['title'] = 'Jottings';
+    $data['navId'] = 'Jottings';
+    $data['navbar'] = $this->navbar_model->get_navbar();
+    $this->load->view('header', $data);
+    $this->load->view('footer', $data);
   }
 
   public function contact($void='')
