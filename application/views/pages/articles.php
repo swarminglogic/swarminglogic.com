@@ -14,21 +14,28 @@ $this->load->view('parser/code', $data); ?>
     $dateD  = $value[1][1];
     $dateY  = $value[1][2];
     $summary = $value[2];
-    $commentCount = $value[4];
+    $keywords = $value[3];
+    $commentCount = end($value);
     echo '
 <li class="articles">
-<a href="/articles/'.$url.'" class="articlelist">
-<h3 class="title">'.$title.'</h3>
-<div class="date">
-  <div class="dateM">'.$dateM.'</div>
-  <div class="dateD">'.$dateD.'</div>
-  <div class="dateY">'.$dateY.'</div>
-<!--  <div class="commentCount">
-    <img src="/images/comment_icon2.png"/>'.$commentCount.'
-  </div> -->
-</div>
-<div class="summary">'.$summary.'</div>
-</a>
+  <a href="/articles/'.$url.'" class="articlelist">
+    <h3 class="title">'.$title.'</h3>
+    <div class="date">
+      <div class="dateM">'.$dateM.'</div>
+      <div class="dateD">'.$dateD.'</div>
+      <div class="dateY">'.$dateY.'</div>
+    </div>
+    <div class="summary">'.$summary.'</div>
+  </a>
+  <div class="keywords">';
+    foreach($keywords as $value) {
+      echo '<a href="#" pp="'.$keydesc[$value].'" class="tooltip">
+        <span class="keyword">'.
+        $value.
+        '</span></a>';
+    }
+echo '
+  </div>
 </li>
 ';
 

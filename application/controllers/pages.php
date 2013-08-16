@@ -16,6 +16,7 @@ class Pages extends CI_Controller {
 
     $data['navbar'] = $this->navbar_model->get_navbar();
     $data['articles']=$this->article_model->get_articles();
+    $data['keydesc']=$this->article_model->get_keyword_description();
 
     $data['sidebar_text'] = $this->globals->get_default_sidebar();
 
