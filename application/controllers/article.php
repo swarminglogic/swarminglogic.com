@@ -5,6 +5,7 @@ class Article extends CI_Controller {
     parent::__construct();
     $this->load->model('navbar_model');
     $this->load->model('article_model');
+    $this->load->model('common_model');
     $this->load->model('globals');
   }
 
@@ -18,7 +19,7 @@ class Article extends CI_Controller {
     $data['hasSidebar']   = true;
     $data['navbar']       = $this->navbar_model->get_navbar();
     $data['articles']     = $this->article_model->get_articles();;
-    $data['keydesc']      = $this->article_model->get_keyword_description();
+    $data['keydesc']      = $this->common_model->get_keyword_description();
     $data['sidebar_text'] = $this->globals->get_default_sidebar();
     $data['showComments'] = false;
 
