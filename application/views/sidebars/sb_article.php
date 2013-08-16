@@ -5,14 +5,7 @@
      $article_summary = $articles[$page][2];
      $sidebar_showSummary  = $articles[$page][3];
    }
-/*
-  if($sidebar_showSummary and sizeof($article_summary) > 0) {?>
-  <div class="sidebar">
-    <h5>Summary</h5>
-    <?php echo $article_summary; ?>
-  </div>
-  <br/>
-  <?php }*/?>
+?>
   <p>
   <h5>Table of Contents</h5>
   <ul id="toc">
@@ -35,7 +28,25 @@
     }
  ?>
   </ul>
-  </p>
+
+  <br/>
+  <h5>Tags</h5>
+
+<?php
+  if (sizeof($articles[$page][3]) > 0) {
+    echo '<p>';
+    $c = 0;
+    foreach($articles[$page][3] as $v) {
+      ++$c;
+      echo '<a style="font-size: 12px;display: inline-block; padding-bottom: 10px; padding-right: 3px"
+          href="/articles/'.$v.'" pp="'.$keydesc[$v].'" class="tooltip">
+        <span style="color:#9AA;" class="keyword">'.
+        $v.
+        '</span></a>';
+    }
+    echo '</p>';
+  }
+?>
   <?php echo $sidebar_text;
 
   if (isset($cclicense)) {
