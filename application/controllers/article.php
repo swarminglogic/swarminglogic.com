@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Articles extends CI_Controller {
+class Article extends CI_Controller {
   public function __construct() {
     parent::__construct();
     $this->load->model('navbar_model');
@@ -18,11 +18,13 @@ class Articles extends CI_Controller {
     $data['hasSidebar']   = true;
     $data['navbar']       = $this->navbar_model->get_navbar();
     $data['articles']     = $this->article_model->get_articles();;
+    $data['keydesc']      = $this->article_model->get_keyword_description();
     $data['sidebar_text'] = $this->globals->get_default_sidebar();
     $data['showComments'] = false;
 
-    if (array_key_exists($page, $data['articles']))
+    if (array_key_exists($page, $data['articles'])) {
       $data['title'] = $data['articles'][$page][0];
+    }
 
     /* Show page */
     if ( ! file_exists('application/views/articles/'.$page.'.php')) {

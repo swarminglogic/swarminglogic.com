@@ -40,11 +40,20 @@
 
 $route['404_override'] = "errors/error_404";
 
-$route['default_controller'] = "pages/view/articles";
-$route['articles'] = 'pages/view/articles';
-$route['contact'] = 'pages/view/contact';
+$route['default_controller'] = "pages/articles";
+
+$route['articles']        = 'pages/articles';
+$route['articles/(:any)'] = 'pages/articles/$1';
+
+$route['contact']        = 'pages/contact';
+$route['contact/(:any)'] = 'pages/contact/$1';
+
+$route['shorts']        = 'pages/shorts';
+$route['shorts/(:any)'] = 'pages/shorts/$1';
+
+$route['article/(:any)'] = 'article/view/$1';
+
 $route['rss.xml'] = 'feed/view/feed';
-$route['articles/(:any)'] = 'articles/view/$1';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

@@ -65,8 +65,8 @@ code.blue {
 
 pre.clean,
 code.clean {
-    background-color: inherit;
-    border: inherit;
+    background-color: transparent;
+    border: none;
 }
 
 pre,
@@ -301,6 +301,23 @@ li.articles{
     list-style: none;
 }
 
+.keywordFilterNotice {
+    position:absolute;
+    top:125px;
+    left:50px;
+    width: 78%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    padding-left: 97px;
+    font-family: "Monaco", "Menlo", "Consolas", "Courier New", monospace;
+}
+
+ul.articleCollection {
+    position: relative;
+    top: 1em;
+}
+
 a.articlelist {
     display: block;
 
@@ -351,7 +368,7 @@ li.articles .keywords {
     top: -18px;
 }
 
-li.articles .keywords .keyword {
+.keyword {
     color: #80AAAA;
     padding: 2px 4px;
     white-space: nowrap;
@@ -361,8 +378,11 @@ li.articles .keywords .keyword {
     padding-top: 3px;
     white-space: nowrap;
     font-family: "Monaco", "Menlo", "Consolas", "Courier New", monospace;
-    font-size: 10px;
     margin-right: 5px;
+}
+
+li.articles .keywords .keyword {
+    font-size: 10px;
 }
 
 .articles .commentCount{

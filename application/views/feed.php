@@ -24,7 +24,7 @@ function rssItem($title, $link, $description, $pubDate) {
 }
 
 foreach($articles as $key=>$value) {
-    $url   = 'http://swarminglogic.com/articles/'.$key;
+    $url   = 'http://swarminglogic.com/article/'.$key;
     $title = $value[0];
     $dateM  = $value[1][0];
     $dateD  = $value[1][1];
