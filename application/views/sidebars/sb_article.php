@@ -29,11 +29,9 @@
  ?>
   </ul>
 
-  <br/>
-  <h5>Tags</h5>
-
 <?php
   if (sizeof($articles[$page][3]) > 0) {
+    echo '<br/><h5>Tags</h5>';
     echo '<p>';
     $c = 0;
     foreach($articles[$page][3] as $v) {
@@ -47,6 +45,33 @@
     echo '</p>';
   }
 ?>
+
+<h5>Newsletter</h5>
+<div id="mc_embed_signup">
+      <div class="mc_icon">
+        <img src="/images/mailchimp.png" title="powered by mailchimp.com" class=""/>
+      </div>
+      <form
+        action="http://swarminglogic.us7.list-manage.com/subscribe/post?u=f13ab70a2e3ac42e709661334&amp;id=cf7cf2a3e0"
+        method="post"
+        id="mc-embedded-subscribe-form"
+        name="mc-embedded-subscribe-form"
+        class="validate"
+        target="_blank" novalidate>
+
+  <div class="tooltip" pp="Sign up to the swarminglogic.com newsletter,
+and receive e-mails when new posts are published. (powered by mailchimp)">
+	<input
+      type="email" value="" name="EMAIL"
+      class="email"
+      id="mce-EMAIL"
+      placeholder="email address" required>
+  <input type="submit" value="ok"
+      name="subscribe" id="mc-embedded-subscribe" class="button">
+  </div>
+</form>
+</div>
+
   <?php echo $sidebar_text;
 
   if (isset($cclicense)) {

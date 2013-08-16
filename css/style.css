@@ -99,6 +99,7 @@ code {
     float:			right;
     font-size: 14px;
     line-height: 18px;
+    color: #9AA;
 }
 
 @media only screen and (min-width: 767px) {
@@ -164,6 +165,53 @@ code {
     color: #684;
     font-weight: bold;
 }
+
+#mc_embed_signup {
+    position: relative;
+    margin-bottom: -10px;
+}
+
+#mc_embed_signup .mc_icon {
+    position: absolute;
+    top:-27px;
+    left:110px;
+}
+
+#mc_embed_signup #mce-EMAIL {
+    font-size: 11px;
+    width: 150px;
+    display: inline;
+}
+
+#mc_embed_signup #mc-embedded-subscribe {
+    height: 25px;
+    font-size: 11px;
+    width: 46px;
+    opacity: 0.9;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    #sidebar_id .about p {
+        font-size: 12px;
+    }
+
+    #mc_embed_signup #mce-EMAIL {
+        width: 120px;
+    }
+    #mc_embed_signup #mc-embedded-subscribe {
+        width: 35px;
+    }
+}
+
+#mc_embed_signup .tooltip:hover:after {
+    left: 0%;
+    top: 30px;
+}
+
+#mc_embed_signup .tooltip:hover:before{
+    top: 25px;
+}
+
 
 .logo img {
     float: left;

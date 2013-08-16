@@ -1,5 +1,5 @@
 <?php
-$languages = array("Bash", "Latex", "Plain"); //"Latex",
+$languages = array("Bash", "Latex", "Plain");
 $data['lang'] = $languages;
 $this->load->view('parser/code', $data);
 $data['cclicense'] = 'by';
