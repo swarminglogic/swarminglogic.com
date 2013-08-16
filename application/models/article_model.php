@@ -35,8 +35,7 @@ class Article_model extends CI_Model {
              '<p>A fun project on getting data from the On-Line Encyclopedia of
 Integer Sequences (OEIS), and visualizing the results. In particular, the
 relative frequency that each integer occurs in the database.</p>',
-             array('linux','bash','curl','math', 'visualization', 'OEIS'),
-             true);
+             array('linux','bash','curl','math', 'visualization', 'OEIS'));
 
 
     $articles['2013_06_cpp_setup'] =
@@ -48,15 +47,8 @@ compile time delay.</p>
   <li>Automatic rebuilds of code and tests</li>
   <li>Global hotkey triggering of rebuilds and tests</li>
 </ul>',
-             array('linux','bash','c++','SCons'),
-             true);
+             array('linux','bash','c++','SCons'));
 
-
-    // lookup comment count
-    foreach($articles as $key=>$value) {
-      array_push($articles[$key],
-                 $this->article_comments->get_comment_count($key));
-    }
     return $articles;
   }
 }

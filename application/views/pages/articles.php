@@ -15,7 +15,6 @@ $this->load->view('parser/code', $data); ?>
     $dateY  = $value[1][2];
     $summary = $value[2];
     $keywords = $value[3];
-    $commentCount = end($value);
     echo '
 <li class="articles">
   <a href="/articles/'.$url.'" class="articlelist">
