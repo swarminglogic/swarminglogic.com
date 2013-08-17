@@ -6,6 +6,7 @@ class Pages extends CI_Controller {
     parent::__construct();
     $this->load->model('navbar_model');
     $this->load->model('article_model');
+    $this->load->model('jotting_model');
     $this->load->model('common_model');
     $this->load->model('globals');
   }
@@ -14,7 +15,6 @@ class Pages extends CI_Controller {
   {
     $data['title'] = 'Articles';
     $data['navId'] = 'Articles';
-
     $data['navbar']   = $this->navbar_model->get_navbar();
     $data['articles'] = $this->article_model->get_articles();
     $data['keydesc']  = $this->common_model->get_keyword_description();
@@ -46,13 +46,38 @@ class Pages extends CI_Controller {
     }
   }
 
-  public function jottings($tag='')
+  public function jottings($key='')
   {
     $data['title'] = 'Jottings';
     $data['navId'] = 'Jottings';
     $data['navbar'] = $this->navbar_model->get_navbar();
-    $this->load->view('header', $data);
-    $this->load->view('footer', $data);
+    $data['jottings'] = $this->jotting_model->get_jottings();
+    $data['keydesc']  = $this->common_model->get_keyword_description();
+
+    // Prune list of articles if keyword set
+    $data['keywordUsed'] = $key;
+    $data['isKeywordFiltering'] = false;
+    $isKeywordSet   = $key;
+    $isKeywordValid = array_key_exists($key, $data['keydesc']);
+    if ($isKeywordSet && $isKeywordValid) {
+      $data['isKeywordFiltering'] = true;
+      foreach($data['jottings'] as $jotting=>$value) {
+        if (!in_array($key, $value[3])) {
+          unset($data['jottings'][$jotting]);
+        }
+      }
+    }
+    $data['jottingCount'] = sizeof($data['jottings']);
+
+    if ((!$isKeywordSet || $isKeywordValid)) {
+      $this->load->view('header', $data);
+      $this->load->view('pages/jottings', $data);
+      $this->load->view('footer', $data);
+    } else {
+      $this->load->view('header', $data);
+      $this->load->view('errors/404', $data);
+      $this->load->view('footer', $data);
+    }
   }
 
   public function contact($void='')

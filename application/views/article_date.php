@@ -1,10 +1,15 @@
 <?php
 $show_date = false;
-if(array_key_exists($page, $articles)) {
+if (isset($articles) && array_key_exists($page, $articles)) {
   $show_date = true;
   $dateM = $articles[$page][1][0];
   $dateD = $articles[$page][1][1];
   $dateY = $articles[$page][1][2];
+} else if (isset($jottings) && array_key_exists($page, $jottings)) {
+  $show_date = true;
+  $dateM = $jottings[$page][1][0];
+  $dateD = $jottings[$page][1][1];
+  $dateY = $jottings[$page][1][2];
 }
 
 if($show_date) {
