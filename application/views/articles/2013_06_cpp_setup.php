@@ -21,7 +21,7 @@ tests that have been affected. A setup where I can use global hotkeys to issue a
 full rebuild, launch the main program, or run all tests.</p>
 
     <p>This is what the end result looks like.
-      <?php gifimage("cppsetup.ff.png", "cppsetup.opt.nl.gif", $page) ?>
+      <?php gifimage("cppsetup.ff.png", "cppsetup.opt.nl.gif") ?>
     </p>
     <p style="text-align: right;"><em>Note that focus never leaves the editor!</em>
     </p>
@@ -36,7 +36,7 @@ together along the way.
     file changes.</p>
 
     <p>
-      <?php gifimage("autobuild.ff.png", "autobuild.opt.gif", $page) ?>
+      <?php gifimage("autobuild.ff.png", "autobuild.opt.gif") ?>
     </p>
 
     <p>If you understand the following snippet
@@ -162,7 +162,7 @@ Change: 2013-06-21 09:08:13.030346998 +0200
     is what it looks like:</p>
 
     <p>
-      <?php gifimage("testexec2.ff.png", "testexec2.opt.gif", $page) ?>
+      <?php gifimage("testexec2.ff.png", "testexec2.opt.gif") ?>
     </p>
 
     <p>This python-script does just that. It monitors executables in a
@@ -186,7 +186,7 @@ about it, but from a practical point of view, this is all you need to know:</p>
       </ul>
     </p>
     <p>
-      <?php gifimage("tty.ff.png", "tty.opt.nl.gif", $page) ?>
+      <?php gifimage("tty.ff.png", "tty.opt.nl.gif") ?>
     </p>
 
     <?php heading(5, 'Global Hotkeys', '', false, 'redir'); ?>
@@ -247,7 +247,7 @@ tabs:
     </p>
 
     <p>In action:
-    <?php gifimage("tmuxinator2.ff.png", "tmuxinator2.opt.gif", $page) ?>
+    <?php gifimage("tmuxinator2.ff.png", "tmuxinator2.opt.gif") ?>
     </p>
 
     <?php heading(4, '6. Conclusion'); ?>

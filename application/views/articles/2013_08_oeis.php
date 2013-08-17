@@ -10,9 +10,9 @@ $data['cclicense'] = 'by';
     <?php heading(2, 'Mapping the OEIS Database','Top',true); ?>
     <p>
       <img style="width: 100%; max-width:600px;"
-           src="<?=imgsrc('oeis_frequencymap2_600crop_wm.png', $page)?>" alt="" />
+           src="<?=imgsrc('oeis_frequencymap2_600crop_wm.png')?>" alt="" />
       <img style="position:relative; top: -12px; border: 1px solid #777; width: 100%; max-width:598px;"
-           src="<?=imgsrc('color2_ramp_598.png', $page)?>" alt="" />
+           src="<?=imgsrc('color2_ramp_598.png')?>" alt="" />
     </p>
 
     <?php heading(4, '1. Overview'); ?>
@@ -89,7 +89,7 @@ $data['cclicense'] = 'by';
       </p>
     </div>
     <div class="four columns omega">
-      <p><img src="<?=imgsrc('snakepattern2_small.png', $page)?>" alt="" /></p>
+      <p><img src="<?=imgsrc('snakepattern2_small.png')?>" alt="" /></p>
     </div>
     <div class="clear"></div>
 
@@ -103,7 +103,7 @@ $data['cclicense'] = 'by';
     <p>Using this color ramp to map the values from 0 to 1:</p>
     <p class="pushup offset-by-one">
       <img style="border: 1px solid #777; width: 100%; max-width:500px;"
-           src="<?=imgsrc('color2_ramp_598.png', $page)?>" alt="" />
+           src="<?=imgsrc('color2_ramp_598.png')?>" alt="" />
     </p>
     <p>Which was created by linearly interpolating between the following HSL values:
       <pre class="pushup offset-by-one">|------+-----+-----+------|
@@ -163,7 +163,7 @@ function getnresults() {
         </p>
       </div>
       <div class="six columns omega pushup">
-        <?php gifimage("oeis.ff.png", "oeis.opt.gif", $page) ?>
+        <?php gifimage("oeis.ff.png", "oeis.opt.gif") ?>
       </div>
       <div class="clear"></div>
       <?php heading(4, '4. Creating the Image'); ?>
@@ -179,9 +179,9 @@ function getnresults() {
         with over 1.4 million values from the OEIS database.
       </p>
       <p class="pushup">
-        <a href="<?=imgsrc('oeis_frequencymap2_wm.png', $page)?>">
+        <a href="<?=imgsrc('oeis_frequencymap2_wm.png')?>">
           <img style="border: 1px solid #444; width: 100%; max-width:600px;"
-               src="<?=imgsrc('oeis_frequencymap2_600.png', $page)?>" />
+               src="<?=imgsrc('oeis_frequencymap2_600.png')?>" />
         </a>
       </p>
 
@@ -189,11 +189,11 @@ function getnresults() {
          I'm also learning <a href="http://www.blender.org/">Blender</a>, so
          here you have a 3D plot using the values as a displacement map.</p>
       <p>
-        <a href="<?=imgsrc('oeis_blender_far2_wm.png', $page)?>">
-          <img style="width: 100%; max-width:600px;" src="<?=imgsrc('oeis_blender_far2_600.png', $page)?>" />
+        <a href="<?=imgsrc('oeis_blender_far2_wm.png')?>">
+          <img style="width: 100%; max-width:600px;" src="<?=imgsrc('oeis_blender_far2_600.png')?>" />
         </a>
-        <a href="<?=imgsrc('oeis_blender_closeup_wm.png', $page)?>">
-          <img style="width: 100%; max-width:600px;" src="<?=imgsrc('oeis_blender_closeup_600.png', $page)?>" />
+        <a href="<?=imgsrc('oeis_blender_closeup_wm.png')?>">
+          <img style="width: 100%; max-width:600px;" src="<?=imgsrc('oeis_blender_closeup_600.png')?>" />
         </a>
       </p>
 
@@ -226,7 +226,7 @@ function getnresults() {
                 </p>
               </div>
               <div class="two columns omega">
-                <img src="<?=imgsrc('oeis_anom_2.png', $page)?>" class="" alt="" />
+                <img src="<?=imgsrc('oeis_anom_2.png')?>" class="" alt="" />
               </div>
             </div>
             <div class="clear"></div>

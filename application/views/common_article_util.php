@@ -1,5 +1,6 @@
 <?php
-
+$GLOBALS['page'] = $page;
+$GLOBALS['pagestyle'] = $pagestyle;
 /*
  * Use to get image source from folder structure images/articles/$page/$filename
  *
@@ -8,8 +9,10 @@
  * @param  string $prefix   Optional prefix, defaults to '/'.
  * @return string           Image source path, based on the article id.
  */
-function imgsrc($filename, $page, $prefix='/') {
-  return $prefix.'images/articles/'.$page.'/'.$filename;
+function imgsrc($filename, $prefix='/') {
+  global $page;
+  global $pagestyle;
+  return $prefix.'images/'.$pagestyle.'s/'.$page.'/'.$filename;
 }
 
 
@@ -22,10 +25,12 @@ function imgsrc($filename, $page, $prefix='/') {
  * @param  string $gifFile        Filename of gif to be played.
  * @param  string $page           Article page id
  */
-function gifimage($firstFrameFile, $gifFile, $page) {
-  $imgfolder='/images/articles/'.$page.'/';
+function gifimage($firstFrameFile, $gifFile) {
+  global $page;
+  global $pagestyle;
+  $imgfolder='/images/'.$pagestyle.'s/'.$page.'/';
 
-  $size=getimagesize(imgsrc($firstFrameFile, $page, ''));
+  $size=getimagesize(imgsrc($firstFrameFile, ''));
   $width=$size[0];
 
   echo '<div class="gifimage noplay">';
