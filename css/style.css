@@ -492,6 +492,13 @@ li.articles .keywords .keyword {
 @media only screen and (max-width: 767px) {
     h3 { }
 
+    .keywordFilterNotice {
+        top:190px;
+        left:0px;
+        padding-left: 43px;
+        width: 100%;
+    }
+
     .articlelist {
         padding-left: 15px;
         padding-right: 15px;
@@ -501,6 +508,7 @@ li.articles .keywords .keyword {
         padding-top: 3px;
         padding-left: 0px;
     }
+
     li.articles .keywords {
         padding-left: 15px;
     }
@@ -562,6 +570,17 @@ li.articles .keywords .keyword {
     font-family: 'Bree Serif', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     width: 100px;
 }
+
+@media only screen and (max-width: 479px) {
+    .keywordFilterNotice {
+        top:150px;
+        left:0px;
+        width: 100%;
+        padding-left: 30px;
+        font-size: 12px;
+    }
+}
+
 
 h2 { font-size: 1.9em; }
 
