@@ -426,6 +426,7 @@ li.articles .keywords {
 }
 
 .keyword {
+    display: inline-block;
     color: #80AAAA;
     padding: 2px 4px;
     white-space: nowrap;
@@ -439,6 +440,7 @@ li.articles .keywords {
 }
 
 li.articles .keywords .keyword {
+    margin-bottom: 10px;
     font-size: 10px;
 }
 
@@ -499,7 +501,9 @@ li.articles .keywords .keyword {
         padding-top: 3px;
         padding-left: 0px;
     }
-
+    li.articles .keywords {
+        padding-left: 15px;
+    }
     .articles .commentCount{
         float: none;
         position: static;
