@@ -184,11 +184,20 @@ code {
 }
 
 #mc_embed_signup #mc-embedded-subscribe {
-    height: 25px;
+    border-radius: 4px;
+    background-color: #DEE;
+    padding-top: 3px;
+    padding-bottom: 4px;
+    display: inline-block;
     font-size: 11px;
     width: 46px;
-    opacity: 0.9;
+    opacity: 0.5;
 }
+
+#mc_embed_signup #mc-embedded-subscribe:hover {
+    opacity: 0.6;
+}
+
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
     #sidebar_id .about p {
