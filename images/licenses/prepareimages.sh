@@ -1,7 +1,8 @@
 #!/bin/bash
 
 rm *.png
-wget http://mirrors.creativecommons.org/presskit/buttons/80x15/png/by{,-{nd,sa,nc{-sa,-nd}}}.png
+wget http://mirrors.creativecommons.org/presskit/buttons/80x15/png/{cc-zero,by{,-{nd,sa,nc{-sa,-nd}}}}.png
+mv cc-zero.png zero.png
 
 resize=50
 alpha=40
