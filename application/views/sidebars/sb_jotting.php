@@ -74,6 +74,7 @@ and receive e-mails when new posts are published. (powered by mailchimp)">
 
   <?php echo $sidebar_text;
 
+  // TODO swarminglogic, 2013-08-18: Refactor license. DRY:'sb_article.php'
   if (isset($cclicense)) {
     $cclicense=strtolower($cclicense);
     $licenseUrl='';
@@ -85,6 +86,8 @@ and receive e-mails when new posts are published. (powered by mailchimp)">
         $cclicense == 'by-nc-sa' ||
         $cclicense == 'by-nc-nd') {
       $licenseUrl='http://creativecommons.org/licenses/'.$cclicense.'/3.0';
+    } else if ($cclicense == 'zero') {
+      $licenseUrl='http://creativecommons.org/publicdomain/mark/1.0/';
     } else {
       $isLicenseOk = false;
       trigger_error('Invalid license type: '.$cclicense);
