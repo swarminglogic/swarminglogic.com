@@ -25,6 +25,7 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700|Bree+Serif'
         rel='stylesheet'
         type='text/css'>
+   <script src="//use.edgefonts.net/unkempt.js"></script>
 <!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->

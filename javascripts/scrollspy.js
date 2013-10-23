@@ -6,7 +6,7 @@
 var lastId,
     topMenu = $("#toc"),
     localLinks = $("#article_page").find("a"),
-    topMenuHeight = topMenu.outerHeight()+15,
+    topMenuHeight = 80, //topMenu.outerHeight() - 300,
     // All list items
     menuItems = topMenu.find("a"),
     // Anchors corresponding to menu items
