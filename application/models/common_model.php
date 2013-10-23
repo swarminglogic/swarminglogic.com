@@ -15,6 +15,12 @@ class Common_model extends CI_Model {
       "Topics relating to the C++ programming language";
     $keydesc['curl'] =
       "Uses unix tool 'curl' to retrieve web page sources";
+    $keydesc['devlog'] =
+      "Development log/diary. I.e. WIP on long term projects.";
+    $keydesc['gamedev'] =
+      "Game-development related.";
+    $keydesc['GLSL'] =
+      "OpenGL Shading Language";
     $keydesc['imagemagick'] =
       "Collection of command-line tools for image manipulation.";
     $keydesc['linux'] =
@@ -23,8 +29,14 @@ class Common_model extends CI_Model {
       "Uses/covers math-related topics";
     $keydesc['OEIS'] =
       "On-Line Encyclopedia of Integer Sequences";
+    $keydesc['OpenGL'] =
+      "Graphics programming using OpenGL API";
     $keydesc['SCons'] =
       "Software construction tool (think: make)";
+    $keydesc['SDL2'] =
+      "Simple Directmedia Library (version 2.0+). Cross platform
+library for handling windows, sound,
+input, etc.";
     $keydesc['visualization'] =
       "Covers some aspect of data visualization.";
     $keydesc['watermark'] =
