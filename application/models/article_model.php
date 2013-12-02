@@ -9,6 +9,16 @@ class Article_model extends CI_Model {
 
   public function get_articles()
   {
+    $articles['2013_11_skittles'] =
+       array('Image Processing - Detecting Skittles in Images',
+             array('Dec','&nbsp;&nbsp;1','2013'),
+             '<p>A quick project on detecting colored skittles on dissaturated
+ backgrounds. Skittle positions, radii and hues are estimated.
+ Skittles are then clustered by hue. The extracted data is then visualized by
+ rendering objects in a virtual scene.</p>',
+             array('image processing', 'OpenCV'));
+
+
 
     $articles['2013_08_oeis'] =
        array('Mapping the OEIS Database',

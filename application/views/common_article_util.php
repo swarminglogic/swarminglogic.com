@@ -66,7 +66,7 @@ function heading($wght, $text, $alttoc='', $intoc=true, $altid='') {
     global $toc;
     global $tocCount;
     $tocCount = $tocCount + 1;
-    $id="toc$tocCount";
+    $id= empty($altid) ? "toc$tocCount" : $altid;
     $toc[] = array($id, $wght, $alttoc);
     echo '<a id="'.$id.'"><h'.$wght.'>'.$text.'</h'.$wght.'></a>
 ';
@@ -80,4 +80,10 @@ function heading($wght, $text, $alttoc='', $intoc=true, $altid='') {
 ';
   }
 }
+
+
+function wiki($blob, $text) {
+  return '<a href="http://en.wikipedia.org/wiki/'.$blob.'">'.$text.'</a>';
+}
+
 ?>

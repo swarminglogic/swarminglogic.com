@@ -21,6 +21,8 @@ class Common_model extends CI_Model {
       "Game-development related.";
     $keydesc['GLSL'] =
       "OpenGL Shading Language";
+    $keydesc['image processing'] =
+      "Collection of command-line tools for image manipulation.";
     $keydesc['imagemagick'] =
       "Collection of command-line tools for image manipulation.";
     $keydesc['linux'] =
@@ -29,6 +31,8 @@ class Common_model extends CI_Model {
       "Uses/covers math-related topics";
     $keydesc['OEIS'] =
       "On-Line Encyclopedia of Integer Sequences";
+    $keydesc['OpenCV'] =
+      "Computer vision and image processing library";
     $keydesc['OpenGL'] =
       "Graphics programming using OpenGL API";
     $keydesc['SCons'] =
