@@ -150,7 +150,7 @@ Change: 2013-06-21 09:08:13.030346998 +0200
 
     <?php heading(5, '2.4 Automatic Rebuild Script', '', false, 'recompile'); ?>
     <p>
-      <div class="externgist" lang="bash" gist="5623057" file="autobuild.sh")">
+      <div class="externgist" lang="bash" gist="5623057" file="autobuild.sh">
       </div>
     </p>
 
@@ -168,7 +168,7 @@ Change: 2013-06-21 09:08:13.030346998 +0200
     <p>This python-script does just that. It monitors executables in a
     directory, and executes any that change.</p>
 
-    <div class="externgist" lang="python" gist="5619183" file="autodirexec.py")">
+    <div class="externgist" lang="python" gist="5619183" file="autodirexec.py">
     </div>
 
     <?php heading(4, '4. Redirecting Ouput to Specific TTY', '4. Redirecting to TTY'); ?>
