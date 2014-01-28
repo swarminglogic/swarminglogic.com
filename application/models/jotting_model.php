@@ -8,6 +8,16 @@ class Jotting_model extends CI_Model {
 
   public function get_jottings()
   {
+    $jottings['2014_01_nicekill'] =
+      array('nicekill: Killing unix processes nicely.',
+            array('&nbsp;Jan','28','2014'),
+            "
+<p>How to ask nicely for a program to terminate.<br/>
+If you usually do <ccode>pkill -9 foo</ccode>,
+then this is for you.</p>",
+            array('bash', 'unix', 'linux'));
+
+
     $jottings['2013_10_gamedev01'] =
       array('DevLog 1: Game Engine Progress, One Month In.',
             array('&nbsp;Oct','23','2013'),
@@ -17,6 +27,7 @@ made with learning <ccode>OpenGL</ccode> and <ccode>SDL</ccode>, and putting
 together the first pieces of a game engine.
 </p>",
             array('OpenGL', 'GLSL', 'SDL2', 'devlog', 'gamedev'));
+
 
 /*     $jottings['2013_08_watermark'] = */
 /*       array('Automatic Visible Watermarking of Images', */

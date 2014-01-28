@@ -41,6 +41,8 @@ class Common_model extends CI_Model {
       "Simple Directmedia Library (version 2.0+). Cross platform
 library for handling windows, sound,
 input, etc.";
+    $keydesc['unix'] =
+      "Relies only on unix tools";
     $keydesc['visualization'] =
       "Covers some aspect of data visualization.";
     $keydesc['watermark'] =
