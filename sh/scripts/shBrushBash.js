@@ -23,7 +23,7 @@
 	{
 		var keywords =
           'if fi then elif else for do done until while break continue case function return in ' +
-          ' eq ne ge le gt';
+          ' eq ne ge le gt wait';
 		var commands =
           'alias apropos awk basename bash bc bg builtin bzip2 cal cat cd cfdisk chgrp chmod chown chroot' +
 					'cksum clear cmp comm command cp cron crontab csplit cut date dc dd ddrescue declare df ' +
@@ -37,18 +37,20 @@
 					'remsync rm rmdir rsync screen scp sdiff sed select seq set sftp shift shopt shutdown ' +
 					'sleep sort source split ssh strace su sudo sum symlink sync tail tar tee test time ' +
 					'times touch top traceroute trap tr true tsort tty type ulimit umask umount unalias ' +
-					'uname unexpand uniq units unset unshar useradd usermod users uuencode uudecode v vdir ' +
-					'vi watch wc whereis which who whoami Wget xargs yes stat md5sum'
+					'uname unexpand uniq units unset unshar useradd usermod users uuencode uudecode vdir ' +
+					'vi watch wc whereis which who whoami Wget xargs yes stat md5sum ffmpeg convert'
 			;
 
 		this.regexList = [
 			{ regex: /^#!.*$/gm,											css: 'preprocessor bold' },
 			{ regex: /\/[\w-\/]+/gm,										css: 'plain' },
-			{ regex: /[^\$]#.*$/gm,		css: 'comments' },		// one line comments
+			{ regex: /[^\$"]#.*$/gm,		css: 'comments' },		// one line comments
 			{ regex: SyntaxHighlighter.regexLib.doubleQuotedString,			css: 'string' },		// double quoted strings
 			{ regex: SyntaxHighlighter.regexLib.singleQuotedString,			css: 'string' },		// single quoted strings
 			{ regex: new RegExp(this.getKeywords(keywords), 'gm'),			css: 'keyword' },		// keywords
-			{ regex: new RegExp(this.getKeywords(commands), 'gm'),			css: 'functions' }		// commands
+			{ regex: /\$(\w+|\{\w+\}|[!@#])/gm,			css: 'color1' },		// keywords
+			{ regex: new RegExp(this.getKeywords(commands), 'gm'),			css: 'functions' },		// commands
+			{ regex: /`.+`/gm,										css: 'color3' }
 			];
 	}
 

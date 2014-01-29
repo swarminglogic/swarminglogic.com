@@ -8,6 +8,16 @@ class Jotting_model extends CI_Model {
 
   public function get_jottings()
   {
+
+    $jottings['2014_01_screenrecord'] =
+      array('Picture-in-picture timelapse of two separate X displays.',
+            array('&nbsp;Jan','29','2014'),
+            "<p>How do a screen capture of two separate X displays, and overlay
+ one screen as a picture-in-picture thumbnail.
+ This is all nicely automated in a script.</p>",
+            array('bash', 'unix', 'linux'));
+
+
     $jottings['2014_01_nicekill'] =
       array('nicekill: Killing unix processes nicely.',
             array('&nbsp;Jan','28','2014'),
