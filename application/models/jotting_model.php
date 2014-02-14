@@ -8,6 +8,15 @@ class Jotting_model extends CI_Model {
 
   public function get_jottings()
   {
+    $jottings['2014_02_watchfile'] =
+      array('watchfile: Execute a command whenever something changes.',
+            array('&nbsp;Feb','13','2014'),
+            "<p>I'd like to share a script I've made, which I keep finding uses
+for all the time. In essense, it performs the task of <wccode>\"whenever
+ this changes, do this\"</wccode>. It was initially created for monitoring
+files, but later extended for arbitrary commands. This means it can be
+used to monitor websites, or what have you.</p>",
+            array('bash', 'unix', 'linux', 'automization'));
 
     $jottings['2014_01_screenrecord'] =
       array('Picture-in-picture timelapse of two separate X displays.',

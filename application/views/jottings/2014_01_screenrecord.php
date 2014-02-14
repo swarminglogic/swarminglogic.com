@@ -2,7 +2,7 @@
 $languages = array("Bash", "Plain");
 $data['lang'] = $languages;
 $this->load->view('parser/code', $data);
-$data['cclicense'] = 'zero';
+$data['cclicense'] = 'by';
 ?>
 
 <div>

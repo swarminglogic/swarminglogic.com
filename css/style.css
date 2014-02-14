@@ -70,6 +70,14 @@ code.clean {
     border: none;
 }
 
+wccode {
+    color: #80AAAA;
+    padding: 1px 2px;
+    border-radius: 3px;
+    padding-top: 3px;
+    font-family: "Monaco", "Menlo", "Consolas", "Courier New", monospace;
+}
+
 ccode {
     color: #80AAAA;
     padding: 1px 2px;
@@ -83,6 +91,7 @@ ccode {
 ccode.fullwidth {
     display: block;
     width: 100%;
+    margin-top: 4px;
 }
 
 pre,

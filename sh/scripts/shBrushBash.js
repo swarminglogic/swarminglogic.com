@@ -45,6 +45,7 @@
 			{ regex: /^#!.*$/gm,											css: 'preprocessor bold' },
 			{ regex: /\/[\w-\/]+/gm,										css: 'plain' },
 			{ regex: /[^\$"]#.*$/gm,		css: 'comments' },		// one line comments
+			{ regex: SyntaxHighlighter.regexLib.multiLineDoubleQuotedString, css: 'string' },		// multiline strings
 			{ regex: SyntaxHighlighter.regexLib.doubleQuotedString,			css: 'string' },		// double quoted strings
 			{ regex: SyntaxHighlighter.regexLib.singleQuotedString,			css: 'string' },		// single quoted strings
 			{ regex: new RegExp(this.getKeywords(keywords), 'gm'),			css: 'keyword' },		// keywords
