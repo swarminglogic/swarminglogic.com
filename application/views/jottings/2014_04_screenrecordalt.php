@@ -18,7 +18,7 @@ $data['cclicense'] = 'by';
     spanning the two montiors. </p>
     <p>
     This means that a screen dump using <ccode>xwd -root -out screenshot.xwd</ccode>
-    produces a single image with both monitors side-by-side. This also means the
+    produces a single image of both monitors side-by-side. This also means the
     script I wrote for the previous post no longer works. A rewrite was in
     order to deal with the new setup, and that's what this post is for.
     </p>

@@ -8,6 +8,9 @@ $data['cclicense'] = 'by';
 <div>
   <div id="article_page" class="twelve columns" data-target="#toc">
     <?php heading(2, 'Timelapse screen recording of separate X displays','Top',true); ?>
+    <p><b>Update 2014-04-8:</b> See <a href="2014_04_screenrecordalt">this post</a> on how to deal with
+    two monitors on a single X screen.</p>
+
     <p>This post is for those with separate X displays, who want to do timelapse screencapture.
     There are many utilities for doing this kind of timelapses, in particular, I'd recommend
       <a href="http://code.google.com/p/chronolapse/">chronolapse</a>, which does
@@ -116,7 +119,7 @@ convert -composite image-large.png thumbnail.png \
 
     <?php heading(4, '6. Executing a command every X seconds', '6. Executing every X seconds'); ?>
     <p>To execute a command every <ccode>X</ccode> seconds, you might think that <ccode>watch -n X ./foo</ccode> or perhaps
-    <ccode>while sleep X; do ./foo ; done</ccode> would do a good job. And you would be
+      <ccode>while sleep X; do ./foo ; done</ccode> would do a good job. And you would be
     right, assuming that<ccode>./foo</ccode> executes immediately.  When it's a
     command you want to execute repeatedly, at fixed intervals, you have to send the
     command to the background, using<ccode>&</ccode>.
