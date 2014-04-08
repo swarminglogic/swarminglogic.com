@@ -8,6 +8,14 @@ class Jotting_model extends CI_Model {
 
   public function get_jottings()
   {
+    $jottings['2014_04_screenrecordalt'] =
+      array('Picture-in-picture timelapse of dual monitors (single X display).',
+            array('Apr','8','2014'),
+            "<p>How do a screen capture of two monitors within a single
+X display, and overlay one screen as a picture-in-picture thumbnail.
+</p>",
+            array('bash', 'unix', 'linux'));
+
     $jottings['2014_02_watchfile'] =
       array('watchfile: Execute a command whenever something changes.',
             array('&nbsp;Feb','13','2014'),
