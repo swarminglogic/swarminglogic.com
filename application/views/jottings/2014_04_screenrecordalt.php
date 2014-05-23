@@ -59,23 +59,24 @@ do
     fi
 done
       </pre>
+    </div>
 
-      <p>A <ccode>30 fps</ccode> video, consuming <ccode>15 frames</ccode> for each second
+    <p>A <ccode>30 fps</ccode> video, consuming <ccode>15 frames</ccode> for each second
     in the output, can be made using <ccode>ffmpeg</ccode> with the following:
-      </p>
-      <div class="prettyprint">
-        <pre class="brush: bash;">
+    </p>
+    <div class="prettyprint">
+      <pre class="brush: bash;">
 ffmpeg -r 15 -i frames/%05d.png -c:v \
    libx264 -r 30 -pix_fmt yuv420p timelapsevideo.mp4
-        </pre>
-      </div>
+      </pre>
+    </div>
 
-      <p>While I wrote this post, I had the screen recording script running, and
+    <p>While I wrote this post, I had the screen recording script running, and
       this is the produced video:</p>
-      <div class="youtubevid">
-        <iframe src="//www.youtube.com/embed/BWmjgwkdgkc"
-                frameborder="0" allowfullscreen></iframe>
-      </div>
+    <div class="youtubevid">
+      <iframe src="//www.youtube.com/embed/BWmjgwkdgkc"
+              frameborder="0" allowfullscreen></iframe>
+    </div>
 
 
     <div style="height:200px;" class="clear"></div>
