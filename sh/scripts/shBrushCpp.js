@@ -6,10 +6,10 @@
  * http://alexgorbatchev.com/SyntaxHighlighter/donate.html
  *
  * @version
- * 3.0.83 (July 02 2010)
- * 
+ * 3.0.9 (Sat, 24 May 2014 14:59:03 GMT)
+ *
  * @copyright
- * Copyright (C) 2004-2010 Alex Gorbatchev.
+ * Copyright (C) 2004-2013 Alex Gorbatchev.
  *
  * @license
  * Dual licensed under the MIT and GPL licenses.
@@ -17,12 +17,12 @@
 ;(function()
 {
 	// CommonJS
-	typeof(require) != 'undefined' ? SyntaxHighlighter = require('shCore').SyntaxHighlighter : null;
+	SyntaxHighlighter = SyntaxHighlighter || (typeof require !== 'undefined'? require('shCore').SyntaxHighlighter : null);
 
 	function Brush()
 	{
 		// Copyright 2006 Shin, YoungJin
-
+	
 		var datatypes =	'ATOM BOOL BOOLEAN BYTE CHAR COLORREF DWORD DWORDLONG DWORD_PTR ' +
 						'DWORD32 DWORD64 FLOAT HACCEL HALF_PTR HANDLE HBITMAP HBRUSH ' +
 						'HCOLORSPACE HCONV HCONVLIST HCURSOR HDC HDDEDATA HDESK HDROP HDWP ' +
@@ -39,7 +39,7 @@
 						'PUSHORT PVOID PWCHAR PWORD PWSTR SC_HANDLE SC_LOCK SERVICE_STATUS_HANDLE SHORT ' +
 						'SIZE_T SSIZE_T TBYTE TCHAR UCHAR UHALF_PTR UINT UINT_PTR UINT32 UINT64 ULONG ' +
 						'ULONGLONG ULONG_PTR ULONG32 ULONG64 USHORT USN VOID WCHAR WORD WPARAM WPARAM WPARAM ' +
-						'char bool short int __int32 __int64 __int8 __int16 long float double __wchar_t ' +
+						'char char16_t char32_t bool short int __int32 __int64 __int8 __int16 long float double __wchar_t ' +
 						'clock_t _complex _dev_t _diskfree_t div_t ldiv_t _exception _EXCEPTION_POINTERS ' +
 						'FILE _finddata_t _finddatai64_t _wfinddata_t _wfinddatai64_t __finddata64_t ' +
 						'__wfinddata64_t _FPIEEE_RECORD fpos_t _HEAPINFO _HFILE lconv intptr_t ' +
@@ -48,23 +48,16 @@
 						'time_t __time64_t _timeb __timeb64 tm uintptr_t _utimbuf ' +
 						'va_list wchar_t wctrans_t wctype_t wint_t signed';
 
-    var special = 'boost:: std:: ::';
-
-    var datatypes_ext = 'string ifstream map vector list set value_type';
-
-    var keywords_base = 'break case catch const typedef while for unsigned static inline class if';
-
-		var keywords =	'__finally __exception __try ' +
+		var keywords =	'alignas alignof auto break case catch class const constexpr decltype __finally __exception __try ' +
 						'const_cast continue private public protected __declspec ' +
 						'default delete deprecated dllexport dllimport do dynamic_cast ' +
-						'else enum explicit extern friend goto ' +
-						'mutable naked namespace new noinline noreturn nothrow ' +
-						'register reinterpret_cast return selectany ' +
-						'sizeof static_cast struct switch template this ' +
-						'thread throw true false try typeid typename union ' +
-						'using uuid virtual void volatile whcar_t ' +
-						'BOOST_FOREACH';
-
+						'else enum explicit extern if for friend goto inline ' +
+						'mutable naked namespace new noinline noreturn nothrow noexcept nullptr ' +
+						'ref register reinterpret_cast return selectany ' +
+						'sizeof static static_cast static_assert struct switch template this ' +
+						'thread thread_local throw true false try typedef typeid typename union ' +
+						'using uuid virtual void volatile whcar_t while';
+					
 		var functions =	'assert isalnum isalpha iscntrl isdigit isgraph islower isprint' +
 						'ispunct isspace isupper isxdigit tolower toupper errno localeconv ' +
 						'setlocale acos asin atan atan2 ceil cos cosh exp fabs floor fmod ' +
@@ -82,25 +75,20 @@
 						'strncpy strpbrk strrchr strspn strstr strtok strxfrm asctime ' +
 						'clock ctime difftime gmtime localtime mktime strftime time';
 
-		var functions_ext =	'main transform getline eof fill';
 		this.regexList = [
-			{ regex: SyntaxHighlighter.regexLib.singleLineCComments,	css: 'comments' },
-			{ regex: SyntaxHighlighter.regexLib.multiLineCComments,		css: 'comments' },
-			{ regex: SyntaxHighlighter.regexLib.doubleQuotedString,		css: 'string' },
-			{ regex: SyntaxHighlighter.regexLib.singleQuotedString,		css: 'string' },
+			{ regex: SyntaxHighlighter.regexLib.singleLineCComments,	css: 'comments' },			// one line comments
+			{ regex: SyntaxHighlighter.regexLib.multiLineCComments,		css: 'comments' },			// multiline comments
+			{ regex: SyntaxHighlighter.regexLib.doubleQuotedString,		css: 'string' },			// strings
+			{ regex: SyntaxHighlighter.regexLib.singleQuotedString,		css: 'string' },			// strings
 			{ regex: /^ *#.*/gm,										css: 'preprocessor' },
-			{ regex: new RegExp(this.getKeywords(special), 'gm'),		css: 'color2' },
-			{ regex: new RegExp(this.getKeywords(datatypes), 'gm'),		css: 'color1' },
-			{ regex: new RegExp(this.getKeywords(datatypes_ext), 'gm'),		css: 'color3' },
-			{ regex: new RegExp(this.getKeywords(functions), 'gm'),		css: 'functions' },
-			{ regex: new RegExp(this.getKeywords(functions_ext), 'gm'),		css: 'functions' },
-			{ regex: new RegExp(this.getKeywords(keywords), 'gm'),		css: 'keyword bold' },
-			{ regex: new RegExp(this.getKeywords(keywords_base), 'gm'),		css: 'keyword' }
+			{ regex: new RegExp(this.getKeywords(datatypes), 'gm'),		css: 'color1 bold' },
+			{ regex: new RegExp(this.getKeywords(functions), 'gm'),		css: 'functions bold' },
+			{ regex: new RegExp(this.getKeywords(keywords), 'gm'),		css: 'keyword bold' }
 			];
 	};
 
 	Brush.prototype	= new SyntaxHighlighter.Highlighter();
-	Brush.aliases	= ['cpp', 'c'];
+	Brush.aliases	= ['cpp', 'cc', 'c++', 'c', 'h', 'hpp', 'h++'];
 
 	SyntaxHighlighter.brushes.Cpp = Brush;
 
