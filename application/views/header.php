@@ -19,6 +19,7 @@
 	<link rel="stylesheet" href="/css/skeleton.css">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/layout.css">
+	<link rel="stylesheet" href="/css/lightbox.css">
 
   <!-- EXTERNAL FONTS
   ================================================== -->

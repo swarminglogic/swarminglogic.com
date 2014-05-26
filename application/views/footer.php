@@ -6,7 +6,8 @@ if(isset($pageWrapperDiv)) {
 ?>
 	</div><!-- container -->
 </div> <!-- wrapper -->
-	<script src="/javascripts/jquery-1.10.1.min.js"></script>
+	<script src="/javascripts/jquery-1.11.0.min.js"></script>
+	<script src="/javascripts/lightbox.min.js"></script>
 	<script src="/javascripts/scrollspy.js"></script>
 	<script src="/javascripts/custom.js"></script>
 <?php
