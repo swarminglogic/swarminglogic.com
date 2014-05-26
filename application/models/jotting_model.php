@@ -8,6 +8,15 @@ class Jotting_model extends CI_Model {
 
   public function get_jottings()
   {
+    $jottings['2014_05_lcov'] =
+      array('Line coverage report using <ccode>gcov</ccode>/<wccode>lcov</wccode>',
+            array('May','24','2014'),
+            "<p>A bit specific to my SCons setup and unit-test system, but hopefully still
+ general enough to be useful for someone else. I'll walk through the whole
+ process of setting it up and cleaning it up.  </p>",
+            array('c++', 'bash', 'SCons', 'development', 'linux'));
+
+
     $jottings['2014_04_screenrecordalt'] =
       array('Picture-in-picture timelapse of dual monitors (single X display).',
             array('Apr','8','2014'),

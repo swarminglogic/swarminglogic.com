@@ -17,6 +17,8 @@ class Common_model extends CI_Model {
       "Uses unix tool 'curl' to retrieve web page sources";
     $keydesc['devlog'] =
       "Development log/diary. I.e. WIP on long term projects.";
+    $keydesc['development'] =
+      "Related to project management and development itself.";
     $keydesc['gamedev'] =
       "Game-development related.";
     $keydesc['GLSL'] =
