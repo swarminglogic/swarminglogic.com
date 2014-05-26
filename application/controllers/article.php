@@ -25,7 +25,7 @@ class Article extends CI_Controller {
     $data['showComments'] = false;
 
     if (array_key_exists($page, $data['articles'])) {
-      $data['title'] = $data['articles'][$page][0];
+      $data['title'] = strip_tags($data['articles'][$page][0]);
     }
 
     /* Show page */

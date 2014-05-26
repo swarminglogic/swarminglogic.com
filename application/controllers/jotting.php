@@ -25,7 +25,7 @@ class Jotting extends CI_Controller {
     $data['showComments'] = false;
 
     if (array_key_exists($page, $data['jottings'])) {
-      $data['title'] = $data['jottings'][$page][0];
+      $data['title'] = strip_tags($data['jottings'][$page][0]);
     }
 
     /* Show page */
