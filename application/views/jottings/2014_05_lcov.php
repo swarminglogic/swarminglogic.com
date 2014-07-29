@@ -318,7 +318,8 @@ cp .coverage.total ./coveragehistory/`date +'%Y.%m.%d-coverage'`
 rm .coverage.*
             </pre>
           </div>
-
+        </p>
+        <p><b>Note</b>: As of <ccode>lcov</ccode> version <wccode>1.10</wccode>, you can use <wccode>--no-external</wccode> in <wccode>step 5</wccode>and thus skip <wccode>step 7</wccode>.
         </p>
 
 
