@@ -9,9 +9,9 @@ class Article_model extends CI_Model {
 
   public function get_articles()
   {
-    $articles['2014_07_whylinux'] =
+    $articles['2014_08_whylinux'] =
       array('Why I Love Linux (Through Examples)',
-            array('July','29','2014'),
+            array('Aug','21','2014'),
             "<p>My personal relation to linux, and how it suits me as a power
 user, and makes workflow optimizations possible. Done so purely through examples of scripts
 and everyday one-liners.</p>",
