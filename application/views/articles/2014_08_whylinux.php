@@ -127,7 +127,7 @@ curl -s | grep -oP "https://www.youtube.com/embed/.{11}" | xargs youtube-dl
       </p>
       <p><ccode><b>Script: userpass</b></ccode></p>
       <p class="pushup">
-        <a href="https://gist.github.com/swarminglogic/8963507">Github gist.</a><br/>
+        <a href="https://gist.github.com/swarminglogic/40922ce92e49aae3b2ca">Github gist.</a><br/>
       </p>
 
       <p><ccode><b>Demo:</b></ccode><br/>
@@ -255,7 +255,7 @@ userbar
 $ ttic && sleep 0.4 && ttoc
 0.404
 
-# Using ID to avoid avoid conflict w/existing tic/toc
+# Using ID to avoid conflict w/existing tic/toc
 $ ttic foo && sleep 0.5 && ttoc foo
 0.504
 
