@@ -10,7 +10,7 @@ $data['cclicense'] = 'by';
     <?php heading(2, 'Why I Love Linux (Through Examples)','Top',true); ?>
     <img style="float: left; position: relative; top: -0.5em;"
          src="<?=imgsrc('nonflammable-shadow.png')?>" class="" alt="" />
-    <blockquote>This article is not meant to incite a comparitive discussion of
+    <blockquote>This article is not meant to incite a comparative discussion of
     various operative systems. These are solely my thoughts and
     experiences.<br/><br/>I feel Linux helps my productivity, and that I'm
     not equally productive on other operating systems.
@@ -20,11 +20,11 @@ $data['cclicense'] = 'by';
     I started using <ccode>Linux</ccode> three years ago. As newbie as they get,
     and totally clueless. Now, that hasn't changed much, but since then,
     I have written some scripts and use trivial
-    every-day oneliners that ease a lot of tedious manual labor.</p>
+    everyday one-liners that ease a lot of tedious manual labor.</p>
 
     <p>This article
-    lists some of these scripts and oneliners, which in themselves, hopefully
-    illustrate why I have become dependant on<ccode>Linux</ccode>.
+    lists some of these scripts and one-liners, which in themselves, hopefully
+    illustrate why I have become dependent on <ccode>Linux</ccode>.
 
     No attempt is made to explain the examples. For that, I refer you to a
     book by William Shotts:</p>
@@ -96,8 +96,8 @@ curl -s | grep -oP "https://www.youtube.com/embed/.{11}" | xargs youtube-dl
       <p>There are several utilities that cover similar functionality. In particular
         <a href="http://manpages.ubuntu.com/manpages/hardy/man1/iwatch.1.html">
           <ccode>iwatch</ccode></a> and
-        <a href="http://manpages.ubuntu.com/manpages/hardy/man1/inotifywatch.1.html">
-          <ccode>inotifywatch</ccode></a>.
+          <a href="http://manpages.ubuntu.com/manpages/hardy/man1/inotifywatch.1.html">
+            <ccode>inotifywatch</ccode></a>.
         I might have suffered from a small case of <?=wiki('Not_invented_here', 'NIH')?>,
         though I still prefer straight forwardness of <ccode>watchfile</ccode>.
       </p>
@@ -246,7 +246,7 @@ curl -s | grep -oP "https://www.youtube.com/embed/.{11}" | xargs youtube-dl
     writing <ccode>C++</ccode> code. <ccode>SCons</ccode> for compiling
       <ccode>C/C++</ccode> projects.
 
-    I found the <ccode>bash</ccode> scripting languge repulsive, ugly and unintuitive,
+    I found the <ccode>bash</ccode> scripting language repulsive, ugly and unintuitive,
     but still used it occasionally for small scripts to simplify command
     line tasks. As time passed, slowly learning new <ccode>Unix/Linux</ccode> tools here
     and there, and gained a better understanding of how <ccode>Linux</ccode> works.
@@ -260,7 +260,7 @@ curl -s | grep -oP "https://www.youtube.com/embed/.{11}" | xargs youtube-dl
 
     <p>
     In not doing so, every small thing I learned became a piece of an incredibly powerful and versatile
-    toolbox, as most of the unix tools follow the <ccode>unix</ccode> philosophy.
+    toolbox, as most of the <ccode>Unix</ccode> tools follow the unix philosophy.
       <a href="http://en.wikipedia.org/wiki/Unix_philosophy#Doug_McIlroy_on_Unix_programming">
       As the quote goes:
       </a>
@@ -275,13 +275,14 @@ curl -s | grep -oP "https://www.youtube.com/embed/.{11}" | xargs youtube-dl
     almost any task I wanted to solve had to be accomplished by finding a
     finished software. Monolithic, and specific for solving the task at
     hand. For example, I recall needing a program for batch renaming files. I
-    searched for such a utility, and found one (<a href="http://www.finebytes.com/mfr/"><ccode>magic file renamer</ccode></a>).
+    searched for such a utility, and found one (<a href="http://www.finebytes.com/mfr/">
+    <ccode>magic file renamer</ccode></a>).
     Some other time, I needed to batch edit images. I searched again, and found a
     another tool (<a href="http://www.xnview.com/en/"><ccode>XnView</ccode></a>).
     </p>
 
     <p>
-      To some extent, <ccode>Windows</ccode> might have cought up to this with
+      To some extent, <ccode>Windows</ccode> might have caught up to this with
       <?=wiki('Powershell', 'PowerShell')?>. If you are an experienced <ccode>PowerShell</ccode> user,
       and find obvious solutions to all my examples, I'd be happy to hear from
       you. In fairness, I'd be happy to hear from you anyways.

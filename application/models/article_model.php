@@ -13,7 +13,7 @@ class Article_model extends CI_Model {
       array('Why I Love Linux (Through Examples)',
             array('Aug','21','2014'),
             "<p>My personal relation to linux, and how it suits me as a power
-user, and makes workflow optimizations possible. Done so purely through examples of scripts
+user, and makes workflow optimizations possible. Illustrated purely through examples of scripts
 and everyday one-liners.</p>",
             array('linux', 'unix', 'bash', 'automization', 'development'));
 
