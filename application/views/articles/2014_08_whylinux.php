@@ -125,7 +125,6 @@ curl -s | grep -oP "https://www.youtube.com/embed/.{11}" | xargs youtube-dl
       <p><ccode><b>What it does:</b></ccode><br/>
         Manages passwords in a file owned by root. Allows partial match queries.
       </p>
-
       <p><ccode><b>Script: userpass</b></ccode></p>
       <p class="pushup">
         <a href="https://gist.github.com/swarminglogic/8963507">Github gist.</a><br/>
@@ -135,9 +134,41 @@ curl -s | grep -oP "https://www.youtube.com/embed/.{11}" | xargs youtube-dl
         <div class="pushup">
           <?php gifimage("userpass.ff.png", "userpass.opt.gif") ?>
         </div>
+        <hr class="soft"/>
+        <div class="pushup">
+          <pre class="brush: bash; gutter:false;">
+ # Add an entry to the password database
+$ sudo userpass -a foosite -u userbar -p hunter2 -m Foo
+
+# Query the newly made entry
+$ sudo userpass foosite
+key:      foosite
+username: userbar
+password: hunter2
+meta:     Foo
+
+# Query by partially matching keyword
+$ sudo userpass oos
+key:      foosite
+username: userbar
+password: hunter2
+meta:     Foo
+
+# Find entry by text containing meta data:
+$ sudo userpass --script-mode -m "We Got Foo! Login"
+foosite
+
+# Use script-mode to get password matching entry
+$ sudo userpass --script-mode foosite -p
+hunter2
+
+# Use script-mode to get username matching entry
+$ sudo userpass --script-mode foosite -u
+userbar
+          </pre>
+        </div>
       </p>
     </div>
-
 
     <div style="height:30px;" class="clear"></div>
     <?php heading(4, 'Example 4b: Automatic User/Pass Entry', 'Example 4b: enterpass'); ?>
@@ -189,18 +220,52 @@ curl -s | grep -oP "https://www.youtube.com/embed/.{11}" | xargs youtube-dl
         the inactive monitor into a picture-in-picture thumbnail.
       </p>
 
+      <p><ccode><b>Script: enterpass</b></ccode></p>
+      <p class="pushup">
+        <a href="/jotting/2014_04_screenrecordalt">Write-up.</a><br/>
+        <a href="https://gist.github.com/swarminglogic/8692569#file-recordscreenalt-sh">Github gist.</a><br/>
+      </p>
+
       <p><ccode><b>Demo:</b></ccode><br/>
         <div class="youtubevid pushup">
           <iframe src="//www.youtube.com/embed/BWmjgwkdgkc"
                   frameborder="0" allowfullscreen></iframe>
         </div>
       </p>
+    </div>
 
-      <p><ccode><b>Script: enterpass</b></ccode></p>
+
+    <div style="height:30px;" class="clear"></div>
+    <?php heading(4, 'Example 7: Tic/Toc Timer Pair', 'Example 7: ttic/ttoc'); ?>
+    <div class="prettyprint">
+      <p><ccode><b>What it does:</b></ccode><br/>
+        I missed the <ccode>Matlab</ccode>/<ccode>Octave</ccode> way of timing
+      things with a tic/toc pair... so, I made them.</p>
+
+      <p><ccode><b>Script: ttic & ttoc</b></ccode></p>
       <p class="pushup">
-        <a href="/jotting/2014_04_screenrecordalt">Write-up.</a><br/>
-        <a href="https://gist.github.com/swarminglogic/8692569#file-recordscreenalt-sh">Github gist.</a><br/>
+        <a href="https://gist.github.com/swarminglogic/87adb0bd0850d76ba09f">Github gist.</a><br/>
       </p>
+
+
+      <p><ccode><b>Demo:</b></ccode><br/>
+        <div class="pushup">
+          <pre class="brush: bash; gutter:false;">
+ # Simple use
+$ ttic && sleep 0.4 && ttoc
+0.404
+
+# Using ID to avoid avoid conflict w/existing tic/toc
+$ ttic foo && sleep 0.5 && ttoc foo
+0.504
+
+# Using randomly assigned ID
+$ id=$(ttic --unique) && sleep 0.6 && ttoc $id
+0.604
+          </pre>
+        </div>
+      </p>
+
     </div>
 
 
@@ -276,7 +341,7 @@ curl -s | grep -oP "https://www.youtube.com/embed/.{11}" | xargs youtube-dl
     finished software. Monolithic, and specific for solving the task at
     hand. For example, I recall needing a program for batch renaming files. I
     searched for such a utility, and found one (<a href="http://www.finebytes.com/mfr/">
-    <ccode>magic file renamer</ccode></a>).
+      <ccode>magic file renamer</ccode></a>).
     Some other time, I needed to batch edit images. I searched again, and found a
     another tool (<a href="http://www.xnview.com/en/"><ccode>XnView</ccode></a>).
     </p>
