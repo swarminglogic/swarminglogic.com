@@ -22,6 +22,13 @@ $data['cclicense'] = 'by';
       </ul>
     </p>
 
+    <p>
+      <div>
+        <b><ccode>Demo:</ccode></b><br/>
+        <?php gifimage("watchfile.ff.png", "watchfile.opt.gif") ?>
+      </div>
+    </p>
+
     <p>The script is provided in its entirety <a href="#script">below</a>, which
 I'll leave to the especially interested to go through (70% of it is just parsing
 parameters).</p>
