@@ -399,6 +399,7 @@ a.nav-utton.algae:active {
     width: 200px;
     font-family: "Monaco", "Menlo", "Consolas", "Courier New", monospace;
     font-size: 10px;
+    white-space: normal;
 }
 
 .tooltip:hover:before {
@@ -410,6 +411,17 @@ a.nav-utton.algae:active {
     left: 50%;
     position: absolute;
     z-index: 99;
+}
+
+.tooltip.top:hover:after {
+    top: auto;
+    bottom: 22px !important;
+}
+
+.tooltip.top:hover:before {
+    border-bottom: none;
+    border-top: 5px solid #465;
+    top: 0px;
 }
 
 ul.articles{
@@ -521,6 +533,11 @@ li.articles .keywords .keyword {
     left: -18px;
 }
 
+
+#article_page .nudgemargin {
+    padding-left: 15px;
+}
+
 #article_page table.lines td {
     padding-left: 3px;
     padding-right: 3px;
@@ -530,8 +547,34 @@ li.articles .keywords .keyword {
     font-family : "courier new", courier, monospace;
 }
 
+#article_page table.twos td.left {
+    padding-right: 10px;
+}
+
+#article_page table.twos td.right {
+    padding-left: 10px;
+    /* position: absolute; */
+    /* left: 20px; */
+    /* position: relative; */
+    /* left: 20px; */
+}
+
+#article_page table.twos td.middle {
+    vertical-align: middle;
+}
+
+#article_page table.twos td.right.border
+{
+    border-left: 1px solid #444;
+}
+
+
 #article_page .pushup {
     margin-top: -15px;
+}
+
+#article_page .nudgeup {
+    margin-top: -10px;
 }
 
 #article_page .pushup li {
@@ -541,6 +584,11 @@ li.articles .keywords .keyword {
 #article_page .pushdown {
     margin-top: 15px;
     margin-bottom: -15px;
+}
+
+#article_page .nudgedown {
+    margin-top: 10px;
+    margin-bottom: -10px;
 }
 
 
@@ -743,6 +791,12 @@ h2 { font-size: 1.9em; }
     visibility:hidden;
 }
 
+hr.soft {
+    width: 90%;
+    height: 1px;
+    border: 0;
+    background-color: #333;
+}
 
 hr.comments {
     width: 100%;

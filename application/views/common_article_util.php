@@ -68,15 +68,15 @@ function heading($wght, $text, $alttoc='', $intoc=true, $altid='') {
     $tocCount = $tocCount + 1;
     $id= empty($altid) ? "toc$tocCount" : $altid;
     $toc[] = array($id, $wght, $alttoc);
-    echo '<a id="'.$id.'"><h'.$wght.'>'.$text.'</h'.$wght.'></a>
+    echo '<span id="'.$id.'"><h'.$wght.'>'.$text.'</h'.$wght.'></span>
 ';
   }
   else if ($altid !== '') {
-    echo '<a id="'.$altid.'"><h'.$wght.'>'.$text.'</h'.$wght.'></a>
+    echo '<span id="'.$altid.'"><h'.$wght.'>'.$text.'</h'.$wght.'></span>
 ';
   }
   else {
-    echo '<a><h'.$wght.'>'.$text.'</h'.$wght.'></a>
+    echo '<span><h'.$wght.'>'.$text.'</h'.$wght.'></span>
 ';
   }
 }

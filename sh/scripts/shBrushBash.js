@@ -52,7 +52,7 @@
 						'times touch top traceroute trap tr true tsort tty type ulimit umask umount unalias ' +
 						'uname unexpand uniq units unset unshar useradd usermod users uuencode uudecode v vdir ' +
 						'vi watch wc whereis which who whoami wget xargs xxd yes chsh stat md5sum ffmpeg convert ' +
-            'lcov genhtml scons'
+            'lcov genhtml scons curl youtube-dl'
 						;
 
 		this.regexList = [

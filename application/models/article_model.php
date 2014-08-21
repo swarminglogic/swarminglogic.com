@@ -9,6 +9,14 @@ class Article_model extends CI_Model {
 
   public function get_articles()
   {
+    $articles['2014_07_whylinux'] =
+      array('Why I Love Linux (Through Examples)',
+            array('July','29','2014'),
+            "<p>My personal relation to linux, and how it suits me as a power
+user, and makes workflow optimizations possible. Done so purely through examples of scripts
+and everyday one-liners.</p>",
+            array('linux', 'unix', 'bash', 'automization', 'development'));
+
     $articles['2013_11_skittles'] =
        array('Image Processing - Detecting Skittles in Images',
              array('Dec','&nbsp;&nbsp;1','2013'),
