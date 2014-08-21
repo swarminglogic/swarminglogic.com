@@ -20,6 +20,8 @@
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/layout.css">
 	<link rel="stylesheet" href="/css/lightbox.css">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
 
   <!-- EXTERNAL FONTS
   ================================================== -->
