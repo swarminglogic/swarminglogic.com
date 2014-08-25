@@ -1,6 +1,6 @@
 <?php
 $GLOBALS['page'] = $page;
-$GLOBALS['pagestyle'] = $pagestyle;
+$GLOBALS['pagestyle'] = $type;
 /*
  * Use to get image source from folder structure images/articles/$page/$filename
  *

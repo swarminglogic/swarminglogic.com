@@ -86,5 +86,5 @@ ffmpeg -r 15 -i frames/%05d.png -c:v \
   <?php
   global $toc;
   $data['toc'] = $toc;
-  $this->load->view('sidebars/sb_jotting', $data); ?>
+  $this->load->view('sidebar', $data); ?>
 </div>

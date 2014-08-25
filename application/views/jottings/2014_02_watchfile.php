@@ -195,5 +195,5 @@ watchfile -s \
   <?php
   global $toc;
   $data['toc'] = $toc;
-  $this->load->view('sidebars/sb_jotting', $data); ?>
+  $this->load->view('sidebar', $data); ?>
 </div>

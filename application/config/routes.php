@@ -51,8 +51,8 @@ $route['contact/(:any)'] = 'pages/contact/$1';
 $route['jottings']        = 'pages/jottings';
 $route['jottings/(:any)'] = 'pages/jottings/$1';
 
-$route['article/(:any)'] = 'article/view/$1';
-$route['jotting/(:any)'] = 'jotting/view/$1';
+$route['article/(:any)'] = 'pages/article/$1';
+$route['jotting/(:any)'] = 'pages/jotting/$1';
 
 $route['rss.xml'] = 'feed/view/feed';
 

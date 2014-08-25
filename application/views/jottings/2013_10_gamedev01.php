@@ -578,5 +578,5 @@ std::vector&lt;tinyobj::shape_t&gt; read(std::istream& stream)
   <?php
   global $toc;
   $data['toc'] = $toc;
-  $this->load->view('sidebars/sb_article', $data); ?>
+  $this->load->view('sidebar', $data); ?>
 </div>

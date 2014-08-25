@@ -1,24 +1,19 @@
 <div id="sidebar_id" class="four columns">
-  <?php
-   $sidebar_showSummary = false;
-   if(in_array($page, $jottings)) {
-     $article_summary = $jottings[$page][2];
-     $sidebar_showSummary  = $jottings[$page][3];
-   }
-?>
-  <p>
+  <p></p>
   <h5>Table of Contents</h5>
   <ul id="toc">
     <?php foreach($toc as $key => $value) {
+     /* $size = ' style = "font-size: '.(($value[1] == 5)?14:17).'px;" '; */
+     $subTxt = ($value[1] == 5) ? " sub" : "";
       if ($key=='0') {
-        echo "<li class=\"active\"><a href=\"#$value[0]\">$value[2]</a></li>
+        echo "<li class=\"active$subTxt\"><a href=\"#$value[0]\"><nowrap>$value[2]</nowrap></a></li>
 ";
       }
       else {
         /* $value[0]: toc1,   toc2  :: anchor name
         $value[1]: 1,2,3, weight :: (h1, h2, etc.)
         $value[2]: Title, title  :: Header title content */
-        echo "<li><a href=\"#$value[0]\">$value[2]</a></li>
+        echo "<li class=\"$subTxt\"><a href=\"#$value[0]\"><nowrap>$value[2]</nowrap></a></li>
 ";
       }
     }
@@ -30,19 +25,19 @@
   </ul>
 
 <?php
-  if (sizeof($jottings[$page][3]) > 0) {
+  if (sizeof($entry[3]) > 0) {
     echo '<br/><h5>Tags</h5>';
     echo '<p>';
     $c = 0;
-    foreach($jottings[$page][3] as $v) {
+    foreach($entry[3] as $v) {
       ++$c;
-      echo '<a style="font-size: 12px;display: inline-block; padding-bottom: 10px; padding-right: 3px"
-          href="/articles/'.$v.'" pp="'.$keydesc[$v].'" class="tooltip">
+      echo '<a style="font-size: 12px;display: inline-block;
+                      padding-bottom: 10px; padding-right: 3px"
+        href="/'.$types.'/'.$v.'" pp="'.$keydesc[$v].'" class="tooltip">
         <span style="color:#9AA;" class="keyword">'.
         $v.
         '</span></a>';
     }
-    echo '</p>';
   }
 ?>
 
@@ -74,7 +69,7 @@ and receive e-mails when new posts are published. (powered by mailchimp)">
 
   <?php echo $sidebar_text;
 
-  // TODO swarminglogic, 2013-08-18: Refactor license. DRY:'sb_article.php'
+  // TODO swarminglogic, 2013-08-18: Refactor license. DRY:'sb_jottings.php'
   if (isset($cclicense)) {
     $cclicense=strtolower($cclicense);
     $licenseUrl='';

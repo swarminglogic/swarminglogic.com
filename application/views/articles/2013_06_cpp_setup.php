@@ -263,5 +263,5 @@ tabs:
   <?php
   global $toc;
   $data['toc'] = $toc;
-  $this->load->view('sidebars/sb_article', $data); ?>
+  $this->load->view('sidebar', $data); ?>
 </div>
