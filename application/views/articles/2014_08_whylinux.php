@@ -66,29 +66,8 @@ curl -s | grep -oP "https://www.youtube.com/embed/.{11}" | xargs youtube-dl
 
     </div>
 
-
     <div style="height:30px;" class="clear"></div>
-    <?php heading(4, 'Example 2: Creating animated gif screencapture', 'Example 2: gifcapture'); ?>
-    <div class="prettyprint">
-      <p><ccode><b>What it does:</b></ccode><br/>
-    Accepts screen coordinates and generates an optimized <ccode>gif</ccode>.
-      </p>
-
-      <p><ccode><b>Script: gifcapture</b></ccode></p>
-      <p class="pushup">Too long (and ugly) to be included.
-        <a href="https://gist.github.com/swarminglogic/5829070">Github gist of it here</a>.
-      </p>
-
-      <p><ccode><b>Demo:</b></ccode><br/>
-        <div class="pushup">All the animated gifs you'll find in this article.
-        </div>
-      </p>
-
-    </div>
-
-
-    <div style="height:30px;" class="clear"></div>
-    <?php heading(4, 'Example 3: Monitor files & scripts', 'Example 3: watchfile'); ?>
+    <?php heading(4, 'Example 2: Monitor files & scripts', 'Example 2: watchfile'); ?>
     <div class="prettyprint">
       <p><ccode><b>What it does:</b></ccode><br/>
         Monitor a list of files (or command output), and execute a command on change.
@@ -118,7 +97,7 @@ curl -s | grep -oP "https://www.youtube.com/embed/.{11}" | xargs youtube-dl
 
 
     <div style="height:30px;" class="clear"></div>
-    <?php heading(4, 'Example 4a: User/Pass Management', 'Example 4a: userpass'); ?>
+    <?php heading(4, 'Example 3a: User/Pass Management', 'Example 3a: userpass'); ?>
     <div class="prettyprint">
 
 
@@ -171,7 +150,7 @@ userbar
     </div>
 
     <div style="height:30px;" class="clear"></div>
-    <?php heading(4, 'Example 4b: Automatic User/Pass Entry', 'Example 4b: enterpass'); ?>
+    <?php heading(4, 'Example 3b: Automatic User/Pass Entry', 'Example 3b: enterpass'); ?>
     <div class="prettyprint">
 
       <p><ccode><b>What it does:</b></ccode><br/>
@@ -193,7 +172,7 @@ userbar
     </div>
 
     <div style="height:30px;" class="clear"></div>
-    <?php heading(4, 'Example 5: Development Setup', 'Example 5: terminalsetup'); ?>
+    <?php heading(4, 'Example 4: Development Setup', 'Example 4: terminalsetup'); ?>
     <div class="prettyprint">
 
       <p><ccode><b>What it does:</b></ccode><br/>
@@ -213,7 +192,7 @@ userbar
 
 
     <div style="height:30px;" class="clear"></div>
-    <?php heading(4, 'Example 6: Dual Monitor Timelapse Recording', 'Example 6: recordscreen'); ?>
+    <?php heading(4, 'Example 5: Dual Monitor Timelapse Recording', 'Example 5: recordscreen'); ?>
     <div class="prettyprint">
       <p><ccode><b>What it does:</b></ccode><br/>
         Takes a screen capture every <ccode>N</ccode> seconds of a dual monitor setup. Converts
@@ -236,7 +215,7 @@ userbar
 
 
     <div style="height:30px;" class="clear"></div>
-    <?php heading(4, 'Example 7: Tic/Toc Timer Pair', 'Example 7: ttic/ttoc'); ?>
+    <?php heading(4, 'Example 6: Tic/Toc Timer Pair', 'Example 6: ttic/ttoc'); ?>
     <div class="prettyprint">
       <p><ccode><b>What it does:</b></ccode><br/>
         I missed the <ccode>Matlab</ccode>/<ccode>Octave</ccode> way of timing
@@ -268,6 +247,25 @@ $ id=$(ttic --unique) && sleep 0.6 && ttoc $id
 
     </div>
 
+
+    <div style="height:30px;" class="clear"></div>
+    <?php heading(4, 'Example 7: Creating animated gif screencapture', 'Example 7: gifcapture'); ?>
+    <div class="prettyprint">
+      <p><ccode><b>What it does:</b></ccode><br/>
+    Accepts screen coordinates and generates an optimized <ccode>gif</ccode>.
+      </p>
+
+      <p><ccode><b>Script: gifcapture</b></ccode></p>
+      <p class="pushup">Too long (and ugly) to be included.
+        <a href="https://gist.github.com/swarminglogic/5829070">Github gist of it here</a>.
+      </p>
+
+      <p><ccode><b>Demo:</b></ccode><br/>
+        <div class="pushup">All the animated gifs you'll find in this article.
+        </div>
+      </p>
+
+    </div>
 
     <div style="height:30px;" class="clear"></div>
     <?php heading(4,
