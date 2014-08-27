@@ -17,14 +17,16 @@ $data['cclicense'] = 'by';
 
     <div class="six columns alpha">
       <p><small>Example input image</small>
-        <a href="<?=imgsrc('input3_full.png')?>">
+        <a href="<?=imgsrc('input3_full.png')?>" data-lightbox="overview"
+          data-title="Example input image">
           <img src="<?=imgsrc('input3_300px.png')?>" alt="" />
         </a>
       </p>
     </div>
     <div class="six columns omega">
-      <p><small>Final visualization</small>
-        <a href="<?=imgsrc('finalviz_full.png')?>">
+      <p><small>Final detection + visualization</small>
+        <a href="<?=imgsrc('finalviz_full.png')?>" data-lightbox="overview"
+           data-title="Final detection + visualization">
           <img src="<?=imgsrc('finalviz_300px.png')?>" alt="" />
         </a>
       </p>
@@ -60,7 +62,8 @@ $data['cclicense'] = 'by';
 
     <div class="six columns alpha">
       <p><small>Source</small><br/>
-        <a href="<?=imgsrc('01-input1.png')?>">
+        <a href="<?=imgsrc('01-input1.png')?>" data-lightbox="objsegment"
+           data-title="Source Image">
           <img src="<?=imgsrc('01-input1_300px.png')?>" alt="" />
         </a>
       </p>
@@ -69,14 +72,16 @@ $data['cclicense'] = 'by';
 
     <div class="six columns alpha">
       <p><small>HSV hue channel</small><br/>
-        <a href="<?=imgsrc('01-hue-channel.png')?>">
+        <a href="<?=imgsrc('01-hue-channel.png')?>" data-lightbox="objsegment"
+           data-title="HSV hue channel">
           <img src="<?=imgsrc('01-hue-channel_300px.png')?>" alt="" />
         </a>
       </p>
     </div>
     <div class="six columns omega">
       <p><small>+ blur and threshold</small><br/>
-        <a href="<?=imgsrc('01-hue-threshold.png')?>">
+        <a href="<?=imgsrc('01-hue-threshold.png')?>" data-lightbox="objsegment"
+           data-title="HSV hue + blur + threshold">
           <img src="<?=imgsrc('01-hue-threshold_300px.png')?>" alt="" />
         </a>
       </p>
@@ -96,14 +101,16 @@ $data['cclicense'] = 'by';
 
     <div class="six columns alpha">
       <p><small>Distance Transform</small><br/>
-        <a href="<?=imgsrc('02-distance-transform.png')?>">
+        <a href="<?=imgsrc('02-distance-transform.png')?>" data-lightbox="objsegment"
+           data-title="HSV hue + blur + threshold + distance transform">
           <img src="<?=imgsrc('02-distance-transform_300px.png')?>" alt="" />
         </a>
       </p>
     </div>
     <div class="six columns omega">
       <p><small>Threshold pass</small><br/>
-        <a href="<?=imgsrc('02-distance-transform-threshold.png')?>">
+        <a href="<?=imgsrc('02-distance-transform-threshold.png')?>" data-lightbox="objsegment"
+           data-title="HSV hue + blur + threshold + distance transform + threshold pass">
           <img src="<?=imgsrc('02-distance-transform-threshold_300px.png')?>" alt="" />
         </a>
       </p>
@@ -127,29 +134,29 @@ $data['cclicense'] = 'by';
     <p>Below, the series of operations performed to isolate the local
     maxima is shown:<br/>
     </p>
-    <div class="offset-by-one">
+    <div class="">
       <div class="two columns alpha">
         <p><small><b>A:</b> Dist.trans.</small><br/>
           <img src="<?=imgsrc('03-disttrans.png')?>" alt="" />
         </p>
       </div>
       <div class="two columns">
-        <p><small><ccode>1.</ccode> <b>B:</b> Dilation</small><br/>
+        <p><small><ccode>1.</ccode><b>B:</b> Dilation</small><br/>
           <img src="<?=imgsrc('03-dilated.png')?>" alt="" />
         </p>
       </div>
       <div class="two columns">
-        <p><small><ccode>2.</ccode> <b>B</b> - <b>A</b></small><br/>
+        <p><small><ccode>2.</ccode><b>B</b> - <b>A</b></small><br/>
           <img src="<?=imgsrc('03-dilated-sub.png')?>" alt="" />
         </p>
       </div>
       <div class="two columns">
-        <p><small><ccode>3.</ccode> Thresholded</small><br/>
+        <p><small><ccode>3.</ccode>Thresholded</small><br/>
           <img src="<?=imgsrc('03-dilated-sub-thresh.png')?>" alt="" />
         </p>
       </div>
       <div class="two columns omega">
-        <p><small><ccode>4.</ccode> Isolated peaks</small><br/>
+        <p><small><ccode>4.</ccode>Isolated peaks</small><br/>
           <img src="<?=imgsrc('03-peaks.png')?>" alt="" />
         </a>
         </p>
