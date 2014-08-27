@@ -1,6 +1,5 @@
 <?php
 $GLOBALS['page'] = $page;
-$GLOBALS['pagestyle'] = $type;
 /*
  * Use to get image source from folder structure images/articles/$page/$filename
  *
@@ -11,8 +10,7 @@ $GLOBALS['pagestyle'] = $type;
  */
 function imgsrc($filename, $prefix='/') {
   global $page;
-  global $pagestyle;
-  return $prefix.'images/'.$pagestyle.'s/'.$page.'/'.$filename;
+  return $prefix.'images/entries/'.$page.'/'.$filename;
 }
 
 
@@ -27,8 +25,7 @@ function imgsrc($filename, $prefix='/') {
  */
 function gifimage($firstFrameFile, $gifFile) {
   global $page;
-  global $pagestyle;
-  $imgfolder='/images/'.$pagestyle.'s/'.$page.'/';
+  $imgfolder='/images/entries/'.$page.'/';
 
   $size=getimagesize(imgsrc($firstFrameFile, ''));
   $width=$size[0];
