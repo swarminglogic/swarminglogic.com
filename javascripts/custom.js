@@ -29,7 +29,7 @@ function getGist(divtag, gist, file, lang) {
         SyntaxHighlighter.highlight();
       }
       else {
-        alert("Error loading " + url + "\n" + xhr.status + "\n" + xhr);
+        // alert("Error loading " + url + "\n" + xhr.status + "\n" + xhr);
       }
     }
   };
