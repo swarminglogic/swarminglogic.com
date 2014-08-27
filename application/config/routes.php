@@ -56,5 +56,8 @@ $route['jotting/(:any)'] = 'pages/jotting/$1';
 
 $route['rss.xml'] = 'feed/view/feed';
 
+// Because of external links, redirect to updated location
+$route['jotting/2013_10_gamedev01'] = 'pages/article/2013_10_gamedev01';
+
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

@@ -25,7 +25,6 @@ examples of scripts and everyday one-liners.</p>",
  rendering objects in a virtual scene.</p>',
                 array('image processing', 'OpenCV')),
 
-
           '2013_08_oeis' =>
           array('Mapping the OEIS Database',
                 array('Aug','15','2013'),
@@ -34,6 +33,15 @@ Integer Sequences (OEIS), and visualizing the results. In particular, the
 relative frequency that each integer occurs in the database.</p>',
                 array('linux','bash','curl','math', 'visualization', 'OEIS')),
 
+          '2013_10_gamedev01' =>
+          array('DevLog 1: Game Engine Progress, One Month In.',
+                array('&nbsp;Oct','23','2013'),
+                "
+<p>Firsty monthly development log. A write-up of the experiences and progress
+made with learning <ccode>OpenGL</ccode> and <ccode>SDL</ccode>, and putting
+together the first pieces of a game engine.
+</p>",
+                array('OpenGL', 'GLSL', 'SDL2', 'devlog', 'gamedev')),
 
           '2013_06_cpp_setup' =>
           array('C++ Development Setup - No Time for Sword Fights',
@@ -92,18 +100,7 @@ used to monitor websites, or what have you.</p>",
 <p>How to ask nicely for a program to terminate.<br/>
 If you usually do <ccode>pkill -9 foo</ccode>,
 then this is for you.</p>",
-                array('bash', 'unix', 'linux')),
-
-
-          '2013_10_gamedev01' =>
-          array('DevLog 1: Game Engine Progress, One Month In.',
-                array('&nbsp;Oct','23','2013'),
-                "
-<p>Firsty monthly development log. A write-up of the experiences and progress
-made with learning <ccode>OpenGL</ccode> and <ccode>SDL</ccode>, and putting
-together the first pieces of a game engine.
-</p>",
-                array('OpenGL', 'GLSL', 'SDL2', 'devlog', 'gamedev'))
+                array('bash', 'unix', 'linux'))
           );
 
 }
