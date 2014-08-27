@@ -43,6 +43,10 @@
 
 </head>
 <body<?php if(isset($useSpyScroll) && $useSpyScroll) { echo ' data-spy="scroll"'; } ?>>
+<a id="githubfork" href="https://github.com/swarminglogic">
+   <!-- MIT licensed ribbons by mojombo (https://github.com/blog/273-github-ribbons) -->
+   <img style="" src="/images/github-ribbon.png" alt="Fork me on GitHub"/>
+</a>
 <div id="wrapper">
 	<div class="container">
     <!-- <div class="row"> -->
