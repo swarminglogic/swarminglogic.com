@@ -113,7 +113,7 @@ sup { position: relative; top: -0.5em; font-size: 80%; }
     box-sizing: border-box;
 }
 
-.wrapper {
+#wrapper {
     height:100%;
     background-image:url('/images/background.png');
     background-repeat: no-repeat;

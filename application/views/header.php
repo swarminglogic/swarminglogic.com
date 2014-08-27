@@ -43,7 +43,7 @@
 
 </head>
 <body<?php if(isset($useSpyScroll) && $useSpyScroll) { echo ' data-spy="scroll"'; } ?>>
-<div class="wrapper">
+<div id="wrapper">
 	<div class="container">
     <!-- <div class="row"> -->
       <div class="six columns"> <!-- style="background-color: blue;" -->

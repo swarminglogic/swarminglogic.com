@@ -7,7 +7,7 @@ $data['cclicense'] = 'by';
 
 <div>
   <div id="article_page" class="twelve columns" data-target="#toc">
-    <?php heading(2, 'Timelapse screen recording of separate X displays','Top',true); ?>
+    <?php heading(2, 'Timelapse screen recording of separate X displays', false); ?>
     <p><b>Update 2014-04-8:</b> See <a href="2014_04_screenrecordalt">this post</a> on how to deal with
     two monitors on a single X screen.</p>
 
@@ -137,7 +137,7 @@ done
     several seconds to complete.</p>
 
 
-    <?php heading(4, '7. Final script', '', true, 'script'); ?>
+    <?php heading(4, '7. Final script', true, 'script'); ?>
     <p>Putting together the various pieces mentioned so far, this is the final
     script.
     </p>
@@ -146,7 +146,7 @@ done
     </p>
 
 
-    <?php heading(4, '8. Bonus - rendering video', '', true, 'video'); ?>
+    <?php heading(4, '8. Bonus - rendering video', true, 'video'); ?>
     <p>A <ccode>30 fps</ccode> video, consuming <ccode>15 frames</ccode> for each second
     in the output, can be made using <ccode>ffmpeg</ccode> with the following:
     </p>

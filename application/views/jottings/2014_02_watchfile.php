@@ -7,7 +7,7 @@ $data['cclicense'] = 'by';
 
 <div>
   <div id="article_page" class="twelve columns" data-target="#toc">
-    <?php heading(2, 'watchfile: Execute a command when something changes.','Top',true); ?>
+    <?php heading(2, 'watchfile: Execute a command when something changes.', false); ?>
     <p>
       This jotting covers a utility I've been gradually extending, which is handy for solving
       a common automization problem of <wccode>"as soon as something happens, do something else"</wccode>.
@@ -39,7 +39,7 @@ github gist here.</a></p>
     <div class="pushdown">
       <?php heading(4, '1. Examples'); ?>
     </div>
-    <?php heading(5, 'Example 1: With python, perl, bash, octave', '', false); ?>
+    <?php heading(5, 'Example 1: With python, perl, bash, octave'); ?>
     <p>
       Whenever I write scripts in an of these languages, I don't have the syntax
       at my fingertips, so I stumble a bit.
@@ -70,7 +70,7 @@ github gist here.</a></p>
     </p>
 
 
-    <?php heading(5, 'Example 2: Preparing assets', '', false); ?>
+    <?php heading(5, 'Example 2: Preparing assets'); ?>
     <p>Say you are monitoring a Wavefront OBJ file, and want to convert it to
     some binary representation using a utility called <ccode>obj2cobj</ccode>, you could do:
       <ccode class="fullwidth prettyprint">
@@ -80,7 +80,7 @@ github gist here.</a></p>
 
 
     <?php heading(5, 'Example 3: Compiling and executing code (e.g <ccode>c++</ccode>)',
-                  '', false, 'ex3'); ?>
+                  true, 'ex3'); ?>
     <p>
       Monitoring a file and executing a different command allows for automatic recompiling.
       <ccode class="fullwidth prettyprint">
@@ -120,7 +120,7 @@ watchfile -i main.cpp widget.h widget.cpp \
       </ccode>
     </p>
 
-    <?php heading(5, 'Example 4: Monitoring a website', '', false); ?>
+    <?php heading(5, 'Example 4: Monitoring a website'); ?>
     <p>The <ccode>watchfile</ccode> utility also supports monitoring arbitrary
       commands, and monitors change in the output as if it were a file. This is
       done using the <ccode>-s</ccode> flag, followed by a single
@@ -160,7 +160,7 @@ watchfile -d 900 \
        "Northern lights intensity changed to: "</pre>
     </p>
 
-    <?php heading(5, 'Example 5: Monitor dynamic list of files', '', false, 'ex5'); ?>
+    <?php heading(5, 'Example 5: Monitor dynamic list of files', true, 'ex5'); ?>
     <p>In <a href="#ex3">example 3</a>, I mentioned that if you list files to
     monitor using the <ccode>-i</ccode> flag, this list is static cannot change
     dynamically while the <ccode>watchfile</ccode> script is running.</p>
@@ -185,7 +185,7 @@ watchfile -s \
     </p>
     <!--  .and the same would apply to perl, python, bash, etc -->
 
-    <?php heading(4, '2. The watchfile script', '', true, 'script'); ?>
+    <?php heading(4, '2. The watchfile script', true, 'script'); ?>
     <div class="externgist" lang="bash" gist="8963507" file="watchfile.sh"></div>
 
     <div style="height:200px;" class="clear"></div>

@@ -7,7 +7,7 @@ $data['cclicense'] = 'by';
 
 <div>
   <div id="article_page" class="twelve columns" data-target="#toc">
-    <?php heading(2, 'Mapping the OEIS Database','Top',true); ?>
+    <?php heading(2, 'Mapping the OEIS Database', false); ?>
     <p>
       <img style="width: 100%; max-width:600px;"
            src="<?=imgsrc('oeis_frequencymap2_600crop_wm.png')?>" alt="" />
@@ -142,7 +142,7 @@ function getnresults() {
         <tr><td><b>Line 8:</b></td><td>Returns the value, or <code>0</code> if no results were found.</td></tr>
       </table>
 
-      <?php heading(5, 'Parallelizing Queries', '', false, ''); ?>
+      <?php heading(5, 'Parallelizing Queries', false); ?>
       <div class="six columns alpha">
         <p class="">
         The goal was to get to a <code class="clean">1000 x 1000</code> image.
@@ -175,11 +175,13 @@ function getnresults() {
 
       <p>
         I would definitely not recommend my choice: C++ and SDL. But hey, that's what I'm
-        trying to learn these days, so why not? Here is the final image (click for full resolution),
+        trying to learn these days, so why not? Here is the final image
+        (<a href="<?=imgsrc('oeis_frequencymap2_wm.png')?>">click for full resolution</a>),
         with over 1.4 million values from the OEIS database.
       </p>
       <p class="pushup">
-        <a href="<?=imgsrc('oeis_frequencymap2_wm.png')?>">
+        <a href="<?=imgsrc('oeis_frequencymap2_wm.png')?>"  data-lightbox="oeis"
+           data-title="Visualization of extracted OEIS Data" >
           <img style="border: 1px solid #444; width: 100%; max-width:600px;"
                src="<?=imgsrc('oeis_frequencymap2_600.png')?>" />
         </a>
@@ -189,10 +191,12 @@ function getnresults() {
          I'm also learning <a href="http://www.blender.org/">Blender</a>, so
          here you have a 3D plot using the values as a displacement map.</p>
       <p>
-        <a href="<?=imgsrc('oeis_blender_far2_wm.png')?>">
+        <a href="<?=imgsrc('oeis_blender_far2_wm.png')?>" data-lightbox="oeis"
+           data-title="Blender visualization of OEIS Data" >
           <img style="width: 100%; max-width:600px;" src="<?=imgsrc('oeis_blender_far2_600.png')?>" />
         </a>
-        <a href="<?=imgsrc('oeis_blender_closeup_wm.png')?>">
+        <a href="<?=imgsrc('oeis_blender_closeup_wm.png')?>" data-lightbox="oeis"
+           data-title="Blender visualization of OEIS Data (closeup)" >
           <img style="width: 100%; max-width:600px;" src="<?=imgsrc('oeis_blender_closeup_600.png')?>" />
         </a>
       </p>
@@ -254,13 +258,14 @@ function getnresults() {
           </li>
         </ol>
       </p>
-      <hr/>
+      <hr class="soft"/>
       <p>
         Lastly, I should point out that I didn't do this because I considered it important or valuable.
         It just seemed like a fun thing to do. I hope you enjoyed.
       </p>
       <p><b>PS:</b> If there is any interest, I'll upload the raw data.</p>
 
+      <div style="height:200px;" class="clear"></div>
   </div>
   <?php
   global $toc;

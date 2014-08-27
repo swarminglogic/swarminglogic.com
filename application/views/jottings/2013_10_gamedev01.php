@@ -7,9 +7,9 @@ $data['cclicense'] = 'by';
 
 <div>
   <div id="article_page" class="twelve columns" data-target="#toc">
-    <?php heading(2, 'DevLog 1: Game Engine Progress, One Month In.','Top',true); ?>
+    <?php heading(2, 'DevLog 1: Game Engine Progress, One Month In.', false); ?>
     <p>
-      <a href="<?=imgsrc('deferred-all_wm.png')?>">
+      <a href="<?=imgsrc('deferred-all_wm.png')?>" data-lightbox="devlog">
         <img style="width: 100%; max-width:600px;"
              src="<?=imgsrc('deferred-all-600px_wm.png')?>" alt="" />
       </a>
@@ -47,7 +47,7 @@ $data['cclicense'] = 'by';
       learning the technology, and the more fundamental building blocks.
       </p>
     </div>
-    <?php heading(5, '1.1. Why C++', '', false); ?>
+    <?php heading(5, '1.1. Why C++', false); ?>
     <p>The first step is to decide which programming language to use for the
     base code. This decision is heavily affected by the platform one would like
     to target. For web games, you would nowadays go with <ccode>HTML5/Javascript</ccode>. For
@@ -64,7 +64,7 @@ $data['cclicense'] = 'by';
       <a href="https://github.com/kripken/emscripten/wiki">emscripten</a>
     for that.</small></p>
 
-      <?php heading(5, '1.2. Why OpenGL', '', false); ?>
+      <?php heading(5, '1.2. Why OpenGL', false); ?>
       <p>Games need to interact with the graphics processing unit. Short of using a
     game engine framework (Unity, UDK, etc), you have to deal with the graphics
     card yourself. For this, there is <ccode>OpenGL</ccode> or <ccode>Direct3D</ccode>.
@@ -78,7 +78,7 @@ $data['cclicense'] = 'by';
     very promising for <ccode>OpenGL</ccode>.
       </p>
 
-      <?php heading(5, '1.3. Why SDL', '', false); ?>
+      <?php heading(5, '1.3. Why SDL', false); ?>
       <p>Writing games requires window management, <ccode>OpenGL</ccode>
     interaction, handling user input (touch, keyboard, mouse, joysticks,
     gamepads), playing back sounds, loading images, thread management,
@@ -103,7 +103,7 @@ $data['cclicense'] = 'by';
       for a more C++ style alternative to SDL (which very <ccode>C</ccode>-like).
       </p>
 
-      <?php heading(5, '1.4. More decisions.', '', false); ?>
+      <?php heading(5, '1.4. More decisions.', false); ?>
       <ul>
         <li><b>Which OpenGL Version to Target?</b>
           <p>The choice is to balance how old hardware to support, and what functionality
@@ -183,7 +183,9 @@ about it. <ccode>SDL_ttf</ccode> makes
     that. It's also a good idea to stay clear of <ccode>MAX_VERTEX_UNIFORM_COMPONENTS</ccode>.
       </p>
 
-      <p><a href="<?=imgsrc('text-bench_wm.png')?>">
+      <p><a href="<?=imgsrc('text-bench_wm.png')?>" data-lightbox="bitmap"
+            data-title="Rendering dynamic 2D text, benchmark image"
+            >
         <img style="width: 100%; max-width:600px;"
              src="<?=imgsrc('text-bench-600.png')?>" alt="" />
       </a><br/><small>Btw, I'm using <a href="http://opengameart.org/content/bitmap-font-0">this bitmap font</a>, which I didn't make.</small>
@@ -212,7 +214,7 @@ about it. <ccode>SDL_ttf</ccode> makes
     famous 3D models</a> often seen in Siggraph videos, and research papers.
       </p>
 
-      <?php heading(5, '4.1. Speeding it up 50-100x', '', false); ?>
+      <?php heading(5, '4.1. Speeding it up 50-100x', false); ?>
       <p>The main draw-back with the OBJ format is that it is a clear-text format.
     The data is written in ASCII characters, and needs to be parsed. This
     actually takes a significant amount of time. E.g. the Rungholt scene takes
@@ -326,14 +328,16 @@ std::vector&lt;tinyobj::shape_t&gt; read(std::istream& stream)
       </p>
       <div class="six columns alpha">
         <p><small>Position</small>
-          <a href="<?=imgsrc('rungholt_position.png')?>">
+          <a href="<?=imgsrc('rungholt_position.png')?>" data-lightbox="deferred"
+           data-title="Deferred Shader - Position" >
             <img src="<?=imgsrc('rungholt_position_300px.png')?>" alt="" />
           </a>
         </p>
       </div>
       <div class="six columns omega">
         <p><small>Normals</small>
-          <a href="<?=imgsrc('rungholt_normals.png')?>">
+          <a href="<?=imgsrc('rungholt_normals.png')?>" data-lightbox="deferred"
+           data-title="Deferred Shader - Normal" >
             <img src="<?=imgsrc('rungholt_normals_300px.png')?>" alt="" />
           </a>
         </p>
@@ -341,14 +345,16 @@ std::vector&lt;tinyobj::shape_t&gt; read(std::istream& stream)
       <div class="clear"></div>
       <div class="six columns alpha">
         <p><small>Albedo texture</small>
-          <a href="<?=imgsrc('rungholt_albedo.png')?>">
+          <a href="<?=imgsrc('rungholt_albedo.png')?>" data-lightbox="deferred"
+           data-title="Deferred Shader - Albedo" >
             <img src="<?=imgsrc('rungholt_albedo_300px.png')?>" alt="" />
           </a>
         </p>
       </div>
       <div class="six columns omega">
         <p><small>Z-component of position (adjusted)</small>
-          <a href="<?=imgsrc('rungholt_depth.png')?>">
+          <a href="<?=imgsrc('rungholt_depth.png')?>" data-lightbox="deferred"
+           data-title="Z-component / Depth" >
             <img src="<?=imgsrc('rungholt_depth_300px.png')?>" alt="" />
           </a>
         </p>
@@ -367,7 +373,7 @@ std::vector&lt;tinyobj::shape_t&gt; read(std::istream& stream)
           </pre>
         </div>
       </p>
-      <?php heading(5, '5.1. Diffuse Shading', '', false); ?>
+      <?php heading(5, '5.1. Diffuse Shading', false); ?>
       <p>For a diffuse shader, all that is required is normals normals and positions data.
         <div class="prettyprint pushup">
           <pre class="brush: cpp;">
@@ -378,25 +384,27 @@ std::vector&lt;tinyobj::shape_t&gt; read(std::istream& stream)
       </p>
       <div class="six columns alpha">
         <p>
-          <a href="<?=imgsrc('rungholt_diffuse.png')?>">
+          <a href="<?=imgsrc('rungholt_diffuse.png')?>" data-lightbox="shading"
+           data-title="Diffuse shader" >
             <img src="<?=imgsrc('rungholt_diffuse_300px.png')?>" alt="" />
           </a><br/><small>Diffuse shader</small>
         </p>
       </div>
       <div class="clear"></div>
 
-      <?php heading(5, '5.2. Edge Detection', '', false); ?>
+      <?php heading(5, '5.2. Edge Detection', false); ?>
       <p>Using a <a href="http://en.wikipedia.org/wiki/Sobel_operator">Sobel operator</a> on
     the depth data, a visualization of sudden depth changes can be achieved.</p>
       <div class="six columns alpha">
         <p>
-          <a href="<?=imgsrc('rungholt_depth-edgdedetection.png')?>">
+          <a href="<?=imgsrc('rungholt_depth-edgdedetection.png')?>"  data-lightbox="shading"
+           data-title="Depth-based Sobel edge detection" >
             <img src="<?=imgsrc('rungholt_depth-edgdedetection_300px.png')?>" alt="" />
           </a><br/><small>Depth-based Sobel edge detection.</small>
         </p>
       </div>
       <div class="clear"></div>
-      <?php heading(5, '5.3. Screen Space Ambient Occlusion', '', false); ?>
+      <?php heading(5, '5.3. Screen Space Ambient Occlusion', false); ?>
       <p><a href="http://en.wikipedia.org/wiki/Screen_space_ambient_occlusion">Screen space
      ambient occlusion (SSAO)</a> is a clever technique to approximate the
      shadows that would result from geometry occluding global illumination. The
@@ -404,15 +412,15 @@ std::vector&lt;tinyobj::shape_t&gt; read(std::istream& stream)
       </p>
       <div class="six columns alpha">
         <p>
-          <a href="<?=imgsrc('rungholt_ssao.png')?>">
+          <a href="<?=imgsrc('rungholt_ssao.png')?>" data-lightbox="shading"
+           data-title="Screen space ambient occlusion + Sobel edgdes" >
             <img src="<?=imgsrc('rungholt_ssao_300px.png')?>" alt="" />
-          </a><br/><small>Screen space ambient occlusion.</small>
+          </a><br/><small>Screen space ambient occlusion (SSAO) + Sobel edges</small>
         </p>
       </div>
       <div class="clear"></div>
 
-      <?php heading(5, '5.4. Putting it together + gamma correction',
-                    '', false); ?>
+      <?php heading(5, '5.4. Putting it together + gamma correction', false); ?>
       <p>Combining the above effects:
         <ul class="pushup">
           <li>Texture color</li>
@@ -423,7 +431,8 @@ std::vector&lt;tinyobj::shape_t&gt; read(std::istream& stream)
         </ul>
       </p>
       <p>
-        <a href="<?=imgsrc('rungholt_diffuse-albedo-edgedetect-ssao.png')?>">
+        <a href="<?=imgsrc('rungholt_diffuse-albedo-edgedetect-ssao.png')?>"" data-lightbox="shading"
+           data-title="Texture color + diffuse + Sobel edges + SSAO + gamma correction " >
           <img src="<?=imgsrc('rungholt_diffuse-albedo-edgedetect-ssao_300px.png')?>" alt="" />
         </a><br/>
         <small></small>
@@ -455,7 +464,7 @@ std::vector&lt;tinyobj::shape_t&gt; read(std::istream& stream)
         </div>
       </p>
 
-      <?php heading(5, '6.1. Finding Redundant State Changes', '', false); ?>
+      <?php heading(5, '6.1. Finding Redundant State Changes', false); ?>
       <p><ccode><a href="http://www.gremedy.com">gDEbugger</a></ccode> is an
         excellent tool for detecting redundant state changes.</p>
       <p> Below is a
@@ -463,13 +472,13 @@ std::vector&lt;tinyobj::shape_t&gt; read(std::istream& stream)
         shadowing: <ccode>glBindBGufferBase</ccode> and <ccode>glDepthMask</ccode>.
       </p>
       <p>
-        <a href="<?=imgsrc('gldebugger-redundant.png')?>">
+        <a href="<?=imgsrc('gldebugger-redundant.png')?>" data-lightbox="gldebug">
           <img style="width: 100%; max-width:600px;"
                src="<?=imgsrc('gldebugger-redundant.png')?>" alt="" />
         </a>
       </p>
 
-      <?php heading(5, '6.2. Is it worth it?', '', false); ?>
+      <?php heading(5, '6.2. Is it worth it?', false); ?>
       <p>For learning OpenGL, definitely. It helps to understand the OpenGL
         state machine. However, as for performance concerns, there was no gain
         in avoiding redundant state changes, if anything a slight penalty due to
@@ -504,7 +513,7 @@ std::vector&lt;tinyobj::shape_t&gt; read(std::istream& stream)
           <li>Various colored terminal output styles (currently only <ccode>bash</ccode>).</li>
         </ul>
 
-        <a href="<?=imgsrc('loggingsystem.png')?>">
+        <a href="<?=imgsrc('loggingsystem.png')?>"  data-lightbox="logging">
           <img style="width: 100%; max-width:600px;"
                src="<?=imgsrc('loggingsystem.png')?>" alt="" />
         </a>
@@ -574,6 +583,8 @@ std::vector&lt;tinyobj::shape_t&gt; read(std::istream& stream)
       <p>I spent too much time writing this. <ccode>¯\_(ツ)_/¯</ccode></p>
       <p>If you want the source code, let me know, and I'll consider putting it
       on github. Currently, it's hosted on bitbucket.</p>
+
+      <div style="height:400px;" class="clear"></div>
   </div>
   <?php
   global $toc;

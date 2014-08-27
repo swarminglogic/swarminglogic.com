@@ -8,7 +8,7 @@ $data['cclicense'] = 'by';
 <div>
   <div id="article_page" class="twelve columns" data-target="#toc">
 
-    <?php heading(2, 'C++ Development Setup - No Time for Sword Fights','',false); ?>
+    <?php heading(2, 'C++ Development Setup - No Time for Sword Fights', false); ?>
     <?php heading(4, '1. Overview'); ?>
     <p>I don't like waiting for compilations to finish, or for unit tests to
 run. In the ideal case, output from compiling and running tests should be
@@ -91,7 +91,7 @@ find ./src ./SConstruct \
  -name "SConstruct"</pre>
     </p>
 
-    <?php heading(5, '2.2 Determine \'last modified\'-timestamp', '', false, 'timestamp'); ?>
+    <?php heading(5, '2.2 Determine \'last modified\'-timestamp', false, 'timestamp'); ?>
 
     <p>Unix command <code>stat</code> shows detailed timestamp information of a file.
       <pre>$ stat SConstruct
@@ -121,7 +121,7 @@ Change: 2013-06-21 09:08:13.030346998 +0200
  -name "SConstruct" | xargs stat -c %y</pre>
     </p>
 
-    <?php heading(5, '2.3 Use md5sum to simplify timestamp information', '', false, 'md5sum'); ?>
+    <?php heading(5, '2.3 Use md5sum to simplify timestamp information', false, 'md5sum'); ?>
     <p><a href="http://en.wikipedia.org/wiki/Md5">md5</a> is a hashing algorithm
     that reduces any chunk of information to a 128-bit value. To compute the md5
     hash, use <code>md5sum</code>.
@@ -148,7 +148,7 @@ Change: 2013-06-21 09:08:13.030346998 +0200
  -name "SConstruct" | xargs stat -c %y | md5sum</pre>
     </p>
 
-    <?php heading(5, '2.4 Automatic Rebuild Script', '', false, 'recompile'); ?>
+    <?php heading(5, '2.4 Automatic Rebuild Script', false, 'recompile'); ?>
     <p>
       <div class="externgist" lang="bash" gist="5623057" file="autobuild.sh">
       </div>
@@ -189,7 +189,7 @@ about it, but from a practical point of view, this is all you need to know:</p>
       <?php gifimage("tty.ff.png", "tty.opt.nl.gif") ?>
     </p>
 
-    <?php heading(5, 'Global Hotkeys', '', false, 'redir'); ?>
+    <?php heading(5, 'Global Hotkeys', false); ?>
     <p>Setting up global hotkeys is a distro-specific issue, so it won't be
     covered. The global hotkey should trigger a script that determines the
     correct project path and redirects output to a particular tty.</p>
@@ -258,6 +258,8 @@ tabs:
     <p>Using this setup has been very useful to me, and hopefully this might
     give some inspiration to set up something similar, or devise something
     better. Maybe you already have, and would like to share.</p>
+
+    <div style="height:200px;" class="clear"></div>
 
   </div>
   <?php

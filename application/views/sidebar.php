@@ -2,6 +2,7 @@
   <p></p>
   <h5>Table of Contents</h5>
   <ul id="toc">
+   <li class=""><a href="#wrapper"><nowrap>Top</nowrap></a>
     <?php foreach($toc as $key => $value) {
      /* $size = ' style = "font-size: '.(($value[1] == 5)?14:17).'px;" '; */
      $subTxt = ($value[1] == 5) ? " sub" : "";

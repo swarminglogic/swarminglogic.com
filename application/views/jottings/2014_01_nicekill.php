@@ -7,7 +7,7 @@ $data['cclicense'] = 'by';
 
 <div>
   <div id="article_page" class="twelve columns" data-target="#toc">
-    <?php heading(2, 'nicekill: Killing unix processes nicely','Top',true); ?>
+    <?php heading(2, 'nicekill: Killing unix processes nicely', false); ?>
     <p>
     Terminating processes on unix is done through termination signals.  The
     signal tells the process that it has been asked to terminate, and allows it

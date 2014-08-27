@@ -7,7 +7,7 @@ $data['cclicense'] = 'by';
 
 <div>
   <div id="article_page" class="twelve columns" data-target="#toc">
-    <?php heading(2, 'Image Processing - Detecting Skittles in Images', 'Top',true); ?>
+    <?php heading(2, 'Image Processing - Detecting Skittles in Images', false); ?>
     <p>
     The goal of this short project (one week) was to automatically extract
     information from images of skittles on desaturated backgrounds. In
@@ -286,7 +286,7 @@ care must be taken when averaging them. Think of the hue as just an angle. Both
       <?=wiki('Jenks_natural_breaks_optimization', 'Jenks Natural Breaks Optimization')?>.
     </p>
 
-    <?php heading(4, '6. Visualization', '', true, 'visualization'); ?>
+    <?php heading(4, '6. Visualization', true, 'visualization'); ?>
     <p>Visualization is done by rendering skittle-shaped ellipsoid meshes in a
 virtual scene. The skittles are rendered in the relative positions and sizes as
 found by the image processing part.</p>
@@ -299,7 +299,7 @@ found by the image processing part.</p>
       </div>
     </p>
 
-    <div style="height:200px;" class="clear"></div>
+    <div style="height:300px;" class="clear"></div>
   </div>
   <?php
   global $toc;

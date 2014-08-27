@@ -47,20 +47,35 @@ function gifimage($firstFrameFile, $gifFile) {
  * It registers headings with ids, so that they can added to the
  * table of contents in the sidebar, automatically.
  *
+ * Example use -> ToC result
+ * heading (5. "1.BLABLA")           -> 1.BLABLA
+ * heading (5. "1.BLABLA", true)     -> 1.BLABLA
+ * heading (5. "1.BLABLA", false)    ->
+ * heading (5. "1.BLABLA", "2.fooo") -> 1.fooo
+ *
  * Optionals:
  *  # Alternate title can be set for the ToC.
  *  # ToC registering is optional
  *  # An alternate id is also possible for animated scrolling.
  *
- * @param  int    $wght   The header weight, 1,2,..,5 corresponding to h1,h2,..,h5
- * @param  string $text   Header title.
- * @param  string $alttoc Alternative content (uses $text if empty)
- * @param  bool   $intoc  If false, it's omitted from ToC.
- * @param  string $altid  Alternative id, use for linking within article.
+ * @param  int         $wght   The header weight, 1,2,..,5 corresponding to h1,h2,..,h5
+ * @param  string      $text   Header title.
+ * @param  bool/string $tocEntry False:    Entry is omitted from toc
+                                 True:     ToC entry is same as $text
+                                 [string]: ToC entry is set to [string]
+ * @param  string      $altid  Alternative id, use for linking within article.
  */
-function heading($wght, $text, $alttoc='', $intoc=true, $altid='') {
-  if ($alttoc == '')
-  $alttoc = $text;
+function heading($wght, $text, $tocEntry=true, $altid='') {
+  $intoc = true;
+  if (is_bool($tocEntry)) {
+    if ($tocEntry) {
+      $alttoc = $text;
+    } else {
+      $intoc = false;
+    }
+  } else {
+    $alttoc = $tocEntry;
+  }
 
   if ($intoc) {
     global $toc;
@@ -80,6 +95,7 @@ function heading($wght, $text, $alttoc='', $intoc=true, $altid='') {
 ';
   }
 }
+
 
 
 function wiki($blob, $text) {

@@ -8,7 +8,7 @@ $data['cclicense'] = 'by';
 <div>
   <div id="article_page" class="twelve columns" data-target="#toc">
     <?php heading(2, 'Line coverage report using
- <ccode>gcov</ccode>/<wccode>lcov</wccode>','Top',true); ?>
+ <ccode>gcov</ccode>/<wccode>lcov</wccode>', false); ?>
     <p>When using unit-tests to add robustness to development projects, it is
     nice (even important) to be able to see which parts of your code is actually
     being tested.</p>
@@ -87,7 +87,7 @@ nice scons -j6 --tests  # --tests is a custom option that builds tests
         </pre>
       </div>
 
-      <?php heading(5, '2.1 First attempt', '', false); ?>
+      <?php heading(5, '2.1 First attempt', false); ?>
       <p>Let's skip <wccode>step 3</wccode> for now, and run the tests (<wccode>step 4</wccode>),
 process the coverage output (<wccode>step 5</wccode>), and generate the <ccode>html</ccode>
  report (<wccode>step 9</wccode>):</p>
@@ -116,7 +116,7 @@ genhtml -o ./html/ coverage.run
       <div class="clear"></div>
 
 
-      <?php heading(5, '2.2 Second attempt - Excluding external files', '', false); ?>
+      <?php heading(5, '2.2 Second attempt - Excluding external files', false); ?>
  Let's clean this up with some filtering that only includes files in the project (<wccode>step 7</wccode>).
       <div class="prettyprint">
         <pre class="brush: bash; gutter:false;">
@@ -140,7 +140,7 @@ genhtml -o ./html/ coverage.run.filtered
       </div>
       <div class="clear"></div>
 
-      <?php heading(5, '2.3 Third attempt - Specifying source directory', '', false); ?>
+      <?php heading(5, '2.3 Third attempt - Specifying source directory', false); ?>
       <p>Turns out that <ccode>lcov</ccode> needs to be told what the base directory is,
       using the <ccode>-b</ccode> flag.
       </p>
@@ -170,7 +170,7 @@ genhtml -o ./html/ coverage.run.filtered
       <div class="clear"></div>
 
 
-      <?php heading(5, '2.4 Fourth attempt - Excluding unit test files', '', false); ?>
+      <?php heading(5, '2.4 Fourth attempt - Excluding unit test files', false); ?>
       <p>Above we <em>extracted</em> our project files, now let's further
         <em>remove</em> all <ccode>Test*.*</ccode> files,
      which belong to the unit tests (<wccode>step 8</wccode> ).
@@ -197,7 +197,7 @@ genhtml -o ./html/ coverage.run.filtered
       </div>
       <div class="clear"></div>
 
-      <?php heading(5, '2.5 Fifth attempt - Including static <ccode>.gcno</ccode> files', '', false); ?>
+      <?php heading(5, '2.5 Fifth attempt - Including static <ccode>.gcno</ccode> files', false); ?>
       <p>This is where <wccode>step 3</wccode> and <wccode>step 6</wccode> save
     the day. By using the<ccode>-i</ccode> flag it looks for the initial static
         <ccode>.gcno</ccode> files. If you remember, these were created when
@@ -239,7 +239,7 @@ genhtml -o ./html/ coverage.total.filtered
         </div>
         <div class="clear"></div>
 
-        <?php heading(5, '2.6 Sixth (final) attempt - Merging folders', '', false); ?>
+        <?php heading(5, '2.6 Sixth (final) attempt - Merging folders', false); ?>
         <p>The <ccode>/build/</ccode> folder is just a by-product of compilation, a
     temporary mirror of files in the <ccode>/src/</ccode> directory. It would be nice to
     pretend that the coverage output for the files in<ccode>/build/</ccode> were

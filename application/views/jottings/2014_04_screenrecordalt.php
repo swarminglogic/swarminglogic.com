@@ -7,7 +7,7 @@ $data['cclicense'] = 'by';
 
 <div>
   <div id="article_page" class="twelve columns" data-target="#toc">
-    <?php heading(2, 'Picture-in-picture timelapse of dual monitors','Top',true); ?>
+    <?php heading(2, 'Picture-in-picture timelapse of dual monitors', false); ?>
 
     <p>A few months ago, <a href="2014_01_screenrecord">I wrote a post </a> on
     how to do a picture-in-picture timelapse recording when dealing with a dual
@@ -29,7 +29,7 @@ $data['cclicense'] = 'by';
     </p>
     </p>
 
-    <?php heading(4, '1. Script', '', true, 'script'); ?>
+    <?php heading(4, '1. Script', true, 'script'); ?>
     <p>Putting together the various pieces mentioned so far, this is the final
     script.
     </p>
@@ -37,7 +37,7 @@ $data['cclicense'] = 'by';
       <div class="externgist" lang="bash" gist="8692569" file="recordscreenalt.sh"></div>
     </p>
 
-    <?php heading(4, '2. Demo', '', true, 'video'); ?>
+    <?php heading(4, '2. Demo', true, 'video'); ?>
     <p>
       If the above script for some reason skips a frame, this will cause
       problems when creating a video from them. A quick fix is to create a

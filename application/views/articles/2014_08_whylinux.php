@@ -7,7 +7,7 @@ $data['cclicense'] = 'by';
 
 <div>
   <div id="article_page" class="twelve columns" data-target="#toc">
-    <?php heading(2, 'Why I Love Linux (Through Examples)','Top',true); ?>
+    <?php heading(2, 'Why I Love Linux (Through Examples)', false); ?>
     <img style="float: left; position: relative; top: -0.5em;"
          src="<?=imgsrc('nonflammable-shadow.png')?>" class="" alt="" />
     <blockquote>This article is not meant to incite a comparative discussion of
@@ -268,8 +268,7 @@ $ id=$(ttic --unique) && sleep 0.6 && ttoc $id
     </div>
 
     <div style="height:30px;" class="clear"></div>
-    <?php heading(4,
-                  'My Background (Before Linux)'); ?>
+    <?php heading(4, 'My Background (Before Linux)'); ?>
     <p>
     I grew up playing computer games in the mid-90s and on. The operating system
     of choice at that time for games was <ccode>Windows</ccode>, hands down. Naturally, it also
