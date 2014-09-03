@@ -23,11 +23,10 @@
       echo '<li><a href="#toc-comments">Comments</a></li>';
     }
  ?>
-  </ul>
-
+  </ul><br/>
 <?php
-  if (sizeof($entry[3]) > 0) {
-    echo '<br/><h5>Tags</h5>';
+  if (isset($entry) && sizeof($entry[3]) > 0) {
+    echo '<h5>Tags</h5>';
     echo '<p>';
     $c = 0;
     foreach($entry[3] as $v) {
