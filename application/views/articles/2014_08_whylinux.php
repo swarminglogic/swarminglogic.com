@@ -31,7 +31,7 @@ $data['cclicense'] = 'by';
     <p>
       <table class="twos"><tr>
         <td class="left middle"><a href="http://linuxcommand.org/tlcl.php">
-          <button type="button" class="btn btn-info ">Get the Book</button></a>
+          <button type="button" class="btn btn-success ">Get the Book</button></a>
         </td>
         <td class="border right middle">This free and awesome book is
       what I wish I had read early on, instead of going by my cursory hack-it-together
@@ -97,7 +97,31 @@ curl -s | grep -oP "https://www.youtube.com/embed/.{11}" | xargs youtube-dl
 
 
     <div style="height:30px;" class="clear"></div>
-    <?php heading(4, 'Example 3a: User/Pass Management', 'Example 3a: userpass'); ?>
+    <?php heading(4, 'Example 3: Watermaking Images', 'Example 3: subtlemark'); ?>
+    <div class="prettyprint">
+      <p><ccode><b>What it does:</b></ccode><br/>
+        Adds a subtle watermark to an image.</p><p> Let's you easily customize
+      label position, font (typeface, size, color), background color, and
+      whether or not the label should extend the image.</p>
+
+      <p><ccode><b>Script: subtlemark</b></ccode></p>
+      <p class="pushup">
+        <a href="/jotting/2014_09_watermark">Write-up.</a><br/>
+        <a href="https://gist.github.com/swarminglogic/e563571ec4d11ec0901b">Github gist.</a><br/>
+      </p>
+
+      <p><ccode><b>Demo:</b></ccode><br/>
+        <div class="pushup">
+          <img src="<?=imgsrc('subtlemark-wm.png') ?>" class="" alt="" />
+        </div>
+      </p>
+    </div>
+
+
+
+
+    <div style="height:30px;" class="clear"></div>
+    <?php heading(4, 'Example 4a: User/Pass Management', 'Example 4a: userpass'); ?>
     <div class="prettyprint">
 
 
@@ -150,7 +174,7 @@ userbar
     </div>
 
     <div style="height:30px;" class="clear"></div>
-    <?php heading(4, 'Example 3b: Automatic User/Pass Entry', 'Example 3b: enterpass'); ?>
+    <?php heading(4, 'Example 4b: Automatic User/Pass Entry', 'Example 4b: enterpass'); ?>
     <div class="prettyprint">
 
       <p><ccode><b>What it does:</b></ccode><br/>
@@ -172,7 +196,7 @@ userbar
     </div>
 
     <div style="height:30px;" class="clear"></div>
-    <?php heading(4, 'Example 4: Development Setup', 'Example 4: terminalsetup'); ?>
+    <?php heading(4, 'Example 5: Development Setup', 'Example 5: terminalsetup'); ?>
     <div class="prettyprint">
 
       <p><ccode><b>What it does:</b></ccode><br/>
@@ -192,7 +216,7 @@ userbar
 
 
     <div style="height:30px;" class="clear"></div>
-    <?php heading(4, 'Example 5: Dual Monitor Timelapse Recording', 'Example 5: recordscreen'); ?>
+    <?php heading(4, 'Example 6: Dual Monitor Timelapse Recording', 'Example 6: recordscreen'); ?>
     <div class="prettyprint">
       <p><ccode><b>What it does:</b></ccode><br/>
         Takes a screen capture every <ccode>N</ccode> seconds of a dual monitor setup. Converts
@@ -215,7 +239,7 @@ userbar
 
 
     <div style="height:30px;" class="clear"></div>
-    <?php heading(4, 'Example 6: Tic/Toc Timer Pair', 'Example 6: ttic/ttoc'); ?>
+    <?php heading(4, 'Example 7: Tic/Toc Timer Pair', 'Example 7: ttic/ttoc'); ?>
     <div class="prettyprint">
       <p><ccode><b>What it does:</b></ccode><br/>
         I missed the <ccode>Matlab</ccode>/<ccode>Octave</ccode> way of timing
@@ -249,7 +273,7 @@ $ id=$(ttic --unique) && sleep 0.6 && ttoc $id
 
 
     <div style="height:30px;" class="clear"></div>
-    <?php heading(4, 'Example 7: Creating animated gif screencapture', 'Example 7: gifcapture'); ?>
+    <?php heading(4, 'Example 8: Creating animated gif screencapture', 'Example 8: gifcapture'); ?>
     <div class="prettyprint">
       <p><ccode><b>What it does:</b></ccode><br/>
     Accepts screen coordinates and generates an optimized <ccode>gif</ccode>.
