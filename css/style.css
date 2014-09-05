@@ -261,17 +261,16 @@ sup { position: relative; top: -0.5em; font-size: 80%; }
 
 #mc_embed_signup #mc-embedded-subscribe {
     border-radius: 4px;
-    background-color: #DEE;
     padding-top: 3px;
     padding-bottom: 4px;
     display: inline-block;
     font-size: 11px;
     width: 46px;
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 #mc_embed_signup #mc-embedded-subscribe:hover {
-    opacity: 0.6;
+    opacity: 1.0;
 }
 
 

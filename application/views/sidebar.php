@@ -62,7 +62,7 @@ and receive e-mails when new posts are published. (powered by mailchimp)">
       id="mce-EMAIL"
       placeholder="email address" required>
   <input type="submit" value="ok"
-      name="subscribe" id="mc-embedded-subscribe" class="button">
+      name="subscribe" id="mc-embedded-subscribe" class="btn btn-info">
   </div>
 </form>
 </div>
