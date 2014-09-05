@@ -78,10 +78,10 @@ $ find ~/.fonts/ -name "*.ttf" | ./imagick_type_gen -f - > ~/.magick/type.xml
 
       <div class="prettyprint pushup">
         <pre class="brush: bash; gutter:false;">
-    convert input.png  -background "#FFF" \
+    convert input.png  -background "#888" \
         -font "Silkscreen" \
         -pointsize 8 \
-        -fill "#6668" \
+        -fill "#0007" \
         label:"Roald Fernandez  swarminglogic.com  $(date +'%Y-%m-%d')  CC-BY" \
         -gravity SouthEast -append output.png
         </pre>
@@ -89,13 +89,21 @@ $ find ~/.fonts/ -name "*.ttf" | ./imagick_type_gen -f - > ~/.magick/type.xml
 
       <ccode><b>Input / output:</b></ccode><br/>
       <div class="clear"></div>
-      <a href="<?=imgsrc('keyfunc-input.png')?>" data-title="Input" data-lightbox="extended">
-        <img src="<?=imgsrc('thumb-keyfunc-input.png')?>" class="" alt="" />
-      </a>
-      <a href="<?=imgsrc('keyfunc-output-extended.png')?>" style="position:relative; top:2px;"
-         data-title="Output (w/watermark extending image)" data-lightbox="extended">
-        <img src="<?=imgsrc('thumb-keyfunc-output-extended.png')?>" class="" alt="" />
-      </a>
+      <table class="lines">
+        <tr>
+          <td style="vertical-align:top;">
+            <a href="<?=imgsrc('keyfunc-input.png')?>" data-title="Input" data-lightbox="extended">
+              <img src="<?=imgsrc('thumb-keyfunc-input.png')?>" style="float:top;" alt="" />
+            </a><br/><small>(Click to enlarge)</small>
+          </td>
+          <td>
+            <a href="<?=imgsrc('keyfunc-output-extended.png')?>"
+               data-title="Output (w/watermark extending image)" data-lightbox="extended">
+              <img src="<?=imgsrc('keyfunc-output-extended.png')?>" class="" alt="" />
+            </a>
+          </td>
+        </tr>
+      </table>
     </p>
     <?php heading(5, 'Overlaying watermark on top of image'); ?>
     <p>
@@ -108,10 +116,10 @@ $ find ~/.fonts/ -name "*.ttf" | ./imagick_type_gen -f - > ~/.magick/type.xml
     height=$(identify -format %h input.png)
     rect="0,$((height-10)),${width},${height}"
     convert input.png \
-        -fill "none" -draw "rectangle ${rect}" \
+        -fill "888A" -draw "rectangle ${rect}" \
         -font "Silkscreen" \
         -pointsize 8 \
-        -fill "#8887" \
+        -fill "#0007" \
         -gravity SouthEast \
         -draw "text 0,0 'Roald Fernandez  swarminglogic.com  $(date +'%Y-%m-%d')  CC-BY  '" \
         output.png
@@ -119,13 +127,22 @@ $ find ~/.fonts/ -name "*.ttf" | ./imagick_type_gen -f - > ~/.magick/type.xml
       </div>
 
       <ccode><b>Input / output:</b></ccode><br/>
-      <div class="clear"></div>
-      <a href="<?=imgsrc('keyfunc-input.png')?>" data-title="Input" data-lightbox="overlay">
-        <img src="<?=imgsrc('thumb-keyfunc-input.png')?>" class="" alt="" />
-      </a>
-      <a href="<?=imgsrc('keyfunc-output-overlay.png')?>" data-title="Output (w/overlay watermark)" data-lightbox="overlay">
-        <img src="<?=imgsrc('thumb-keyfunc-output-overlay.png')?>" class="" alt="" />
-      </a>
+      <table class="lines">
+        <tr>
+          <td style="vertical-align:top;">
+            <a href="<?=imgsrc('keyfunc-input.png')?>" data-title="Input" data-lightbox="overlay">
+              <img src="<?=imgsrc('thumb-keyfunc-input.png')?>" style="float:top;" alt="" />
+            </a><br/><small>(Click to enlarge)</small>
+          </td>
+          <td>
+            <a href="<?=imgsrc('keyfunc-output-overlay.png')?>"
+               data-title="Output (w/overlay watermark)" data-lightbox="overlay">
+              <img src="<?=imgsrc('keyfunc-output-overlay.png')?>" class="" alt="" />
+            </a>
+          </td>
+        </tr>
+      </table>
+
 
     </p>
 
@@ -134,16 +151,16 @@ $ find ~/.fonts/ -name "*.ttf" | ./imagick_type_gen -f - > ~/.magick/type.xml
     <div class="prettyprint">
       <p><ccode><b>Example use:</b></ccode><br/>
 Add a watermark overlay to an image. The caption should say "SwarmingLogic",
-    be on the top left, with text color <ccode>#ABC6</ccode>, transparent background, and
+    be on the top left, with text color <ccode>#243A</ccode>, transparent background, and
     use the font <ccode>Silkscreen</ccode> with point size <ccode>8</ccode>.
         <pre class="brush: bash; gutter:false;">
-subtlemark -c '#ABC' -b none -f Silkscreen -F 8 \
+subtlemark -c '#243A' -b none -f Silkscreen -F 8 \
   -p NorthWest -t "SwarmingLogic" input.png output.png
         </pre>
       </p>
-      <a href="<?=imgsrc('subtlemark-example.png')?>" data-lightbox="example">
-        <img src="<?=imgsrc('thumb-subtlemark-example.png')?>" class="" alt="" />
-      </a>
+      <p class="offset-by-one">
+      <img src="<?=imgsrc('subtlemark-example.png')?>" class="" alt="" />
+      </p>
     </div>
 
     <br/>
