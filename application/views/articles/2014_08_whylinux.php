@@ -111,9 +111,23 @@ curl -s | grep -oP "https://www.youtube.com/embed/.{11}" | xargs youtube-dl
       </p>
 
       <p><ccode><b>Demo:</b></ccode><br/>
-        <div class="pushup">
-          <img src="<?=imgsrc('subtlemark-wm.png') ?>" class="" alt="" />
-        </div>
+        <table class="lines pushup">
+          <tr>
+            <td style="vertical-align:top;">
+              <ccode>Input</ccode><br/>
+              <a href="<?=imgsrc('subtlemark.png')?>" data-title="Subtlemark input image" data-lightbox="overlay">
+                <img src="<?=imgsrc('thumb-subtlemark.png')?>" style="float:top;" alt="" />
+              </a><br/><small>(Click to enlarge)</small>
+            </td>
+            <td>
+              <ccode>Output</ccode><br/>
+              <a href="<?=imgsrc('subtlemark-wm.png')?>"
+                 data-title="Sublemark output image" data-lightbox="overlay">
+                <img src="<?=imgsrc('subtlemark-wm.png')?>" class="" alt="" />
+              </a>
+            </td>
+          </tr>
+        </table>
       </p>
     </div>
 

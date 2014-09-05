@@ -87,16 +87,17 @@ $ find ~/.fonts/ -name "*.ttf" | ./imagick_type_gen -f - > ~/.magick/type.xml
         </pre>
       </div>
 
-      <ccode><b>Input / output:</b></ccode><br/>
       <div class="clear"></div>
       <table class="lines">
         <tr>
           <td style="vertical-align:top;">
+            <ccode><b>Input</b></ccode><br/>
             <a href="<?=imgsrc('keyfunc-input.png')?>" data-title="Input" data-lightbox="extended">
               <img src="<?=imgsrc('thumb-keyfunc-input.png')?>" style="float:top;" alt="" />
             </a><br/><small>(Click to enlarge)</small>
           </td>
           <td>
+            <ccode><b>Output</b></ccode><br/>
             <a href="<?=imgsrc('keyfunc-output-extended.png')?>"
                data-title="Output (w/watermark extending image)" data-lightbox="extended">
               <img src="<?=imgsrc('keyfunc-output-extended.png')?>" class="" alt="" />
@@ -126,15 +127,16 @@ $ find ~/.fonts/ -name "*.ttf" | ./imagick_type_gen -f - > ~/.magick/type.xml
         </pre>
       </div>
 
-      <ccode><b>Input / output:</b></ccode><br/>
       <table class="lines">
         <tr>
           <td style="vertical-align:top;">
+            <ccode><b>Input</b></ccode><br/>
             <a href="<?=imgsrc('keyfunc-input.png')?>" data-title="Input" data-lightbox="overlay">
               <img src="<?=imgsrc('thumb-keyfunc-input.png')?>" style="float:top;" alt="" />
             </a><br/><small>(Click to enlarge)</small>
           </td>
           <td>
+            <ccode><b>Output</b></ccode><br/>
             <a href="<?=imgsrc('keyfunc-output-overlay.png')?>"
                data-title="Output (w/overlay watermark)" data-lightbox="overlay">
               <img src="<?=imgsrc('keyfunc-output-overlay.png')?>" class="" alt="" />
