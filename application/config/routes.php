@@ -54,7 +54,9 @@ $route['jottings/(:any)'] = 'pages/jottings/$1';
 $route['article/(:any)'] = 'pages/article/$1';
 $route['jotting/(:any)'] = 'pages/jotting/$1';
 
-$route['rss.xml'] = 'feed/view/feed';
+$route['rss/rss.xml'] = 'feed/all/';
+$route['rss/rss-articles.xml'] = 'feed/articles/';
+$route['rss/rss-jottings.xml'] = 'feed/jottings/';
 
 // Because of external links, redirect to updated location
 $route['jotting/2013_10_gamedev01'] = 'pages/article/2013_10_gamedev01';

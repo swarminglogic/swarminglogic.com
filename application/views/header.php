@@ -39,7 +39,7 @@
 
   <!--
   ================================================== -->
-  <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/rss.xml"/>
+  <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/rss/rss.xml"/>
 
 </head>
 <body<?php if(isset($useSpyScroll) && $useSpyScroll) { echo ' data-spy="scroll"'; } ?>>
