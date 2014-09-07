@@ -41,7 +41,8 @@ relative frequency that each integer occurs in the database.</p>',
 made with learning <ccode>OpenGL</ccode> and <ccode>SDL</ccode>, and putting
 together the first pieces of a game engine.
 </p>",
-              array('OpenGL', 'GLSL', 'SDL2', 'devlog', 'gamedev')),
+              array('OpenGL', 'GLSL', 'SDL2', 'devlog', 'gamedev'),
+              array('deferred-all-600px_wm.png')),
 
         '2013_06_cpp_setup' =>
         array('C++ Development Setup - No Time for Sword Fights',

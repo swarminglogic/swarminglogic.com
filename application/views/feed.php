@@ -35,6 +35,13 @@ if (isset($articles)) {
     $dateD  = str_replace(array(' ','&nbsp;'),'',$value[1][1]);
     $dateY  = $value[1][2];
     $summary = $value[2];
+    if (array_key_exists(4, $value)) {
+      $summary .= '<hr/>';
+      foreach ($value[4] as $imgsrc) {
+        $summary .= '<img src="http://swarminglogic.com/images/entries/'.$key.'/'.$imgsrc.'"/></p>';
+      }
+      $summary .= '<hr/>';
+    }
     echo rssItem($title, $url, $summary, "$dateD $dateM $dateY 00:00:00 -0000");
   }
 }
