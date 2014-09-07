@@ -287,15 +287,40 @@ $ id=$(ttic --unique) && sleep 0.6 && ttoc $id
 
 
     <div style="height:30px;" class="clear"></div>
-    <?php heading(4, 'Example 8: Creating animated gif screencapture', 'Example 8: gifcapture'); ?>
+    <?php heading(4, 'Example 8: Open video link in <ccode>VLC</ccode>', 'Example 8: vlcopen'); ?>
+    <div class="prettyprint">
+      <p><ccode><b>What it does:</b></ccode><br/>
+    Automatically downloads a video url (youtube, vimeo, etc), at highest resolution, and opens the video file with <ccode>VLC</ccode>, as quickly as it can.
+    By assigning the script to a global hotkey, it lets you copy a youtube link, hit the global hotkey, wait 3-5 seconds and have the video start in <ccode>VLC</ccode>.</p>
+      <p>
+    Full resolution, no ads, low cpu usage, no buffering issues (it just downloads the whole video as fast as possible), easy scrubbing.
+    <ccode>VLC</ccode> is better in every regard, and I no longer use the web-browser.
+      </p>
+
+      <p><ccode><b>Script: vlcopen</b></ccode></p>
+      <p class="pushup">
+        <a href="https://gist.github.com/swarminglogic/0cd2f6d55390243e693b">Github gist</a>.
+      </p>
+      <p><ccode><b>Demo:</b></ccode><br/>
+        <div class="youtubevid pushup">
+          <iframe src="//www.youtube.com/embed/_SG0jKFFXfQ"
+                  frameborder="0" allowfullscreen></iframe>
+        </div>
+      </p>
+
+    </div>
+
+
+    <div style="height:30px;" class="clear"></div>
+    <?php heading(4, 'Example 9: Creating animated gif screencapture', 'Example 9: gifcapture'); ?>
     <div class="prettyprint">
       <p><ccode><b>What it does:</b></ccode><br/>
     Accepts screen coordinates and generates an optimized <ccode>gif</ccode>.
       </p>
 
       <p><ccode><b>Script: gifcapture</b></ccode></p>
-      <p class="pushup">Too long (and ugly) to be included.
-        <a href="https://gist.github.com/swarminglogic/5829070">Github gist of it here</a>.
+      <p class="pushup">
+        <a href="https://gist.github.com/swarminglogic/5829070">Github gist.</a>
       </p>
 
       <p><ccode><b>Demo:</b></ccode><br/>
