@@ -18,7 +18,7 @@ examples of scripts and everyday one-liners.</p>",
 
         '2013_11_skittles' =>
         array('Image Processing - Detecting Skittles in Images',
-              array('Dec','&nbsp;&nbsp;1','2013'),
+              array('Dec','1','2013'),
               '<p>A quick project on detecting colored skittles on dissaturated
  backgrounds. Skittle positions, radii and hues are estimated.
  Skittles are then clustered by hue. The extracted data is then visualized by
@@ -35,7 +35,7 @@ relative frequency that each integer occurs in the database.</p>',
 
         '2013_10_gamedev01' =>
         array('DevLog 1: Game Engine Progress, One Month In.',
-              array('&nbsp;Oct','23','2013'),
+              array('Oct','23','2013'),
               "
 <p>Firsty monthly development log. A write-up of the experiences and progress
 made with learning <ccode>OpenGL</ccode> and <ccode>SDL</ccode>, and putting
@@ -83,7 +83,7 @@ X display, and overlay one screen as a picture-in-picture thumbnail.
 
         '2014_02_watchfile' =>
         array('<ccode>watchfile</ccode>: Execute a command whenever something changes.',
-              array('&nbsp;Feb','13','2014'),
+              array('Feb','13','2014'),
               "<p>I'd like to share a script I've made, which I keep finding uses
 for all the time. In essense, it performs the task of <wccode>\"whenever
  this changes, do this\"</wccode>. It was initially created for monitoring
@@ -93,21 +93,21 @@ used to monitor websites, or what have you.</p>",
 
         '2014_01_screenrecord' =>
         array('Picture-in-picture timelapse of two separate X displays.',
-              array('&nbsp;Jan','29','2014'),
+              array('Jan','29','2014'),
               "<p>How do a screen capture of two separate X displays, and overlay
  one screen as a picture-in-picture thumbnail.
  This is all nicely automated in a script.</p>",
-              array('bash', 'unix', 'linux')),
-
-
-        '2014_01_nicekill' =>
-        array('<ccode>nicekill</ccode>: Killing unix processes nicely.',
-              array('&nbsp;Jan','28','2014'),
-              "
-<p>How to ask nicely for a program to terminate.<br/>
-If you usually do <ccode>pkill -9 foo</ccode>,
-then this is for you.</p>",
               array('bash', 'unix', 'linux'))
+
+
+//         ,'2014_01_nicekill' =>
+//         array('<ccode>nicekill</ccode>: Killing unix processes nicely.',
+//               array('Jan','28','2014'),
+//               "
+// <p>How to ask nicely for a program to terminate.<br/>
+// If you usually do <ccode>pkill -9 foo</ccode>,
+// then this is for you.</p>",
+//               array('bash', 'unix', 'linux'))
         );
 
 }

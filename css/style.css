@@ -442,6 +442,7 @@ ul.articles{
 }
 
 li.articles{
+    position: relative;
     list-style: none;
 }
 
@@ -483,12 +484,21 @@ a.articlelist:hover {
                                    rgba(200,200,200,0.03) 90%) transparent;
 }
 
+.articles .thumbnail {
+    display:inline-block;
+    position: relative;
+    top: 30px;
+    left: 10px;
+    float: left;
+}
 
 .articlelist .title{
+    /* background-color: #08f; */
+    text-align: left;
     color:#7a965c;
     font-size: 23px;
     position: relative;
-    left: 110px;
+    left: 35px;
     padding-top: 17px;
     margin: 0;
     line-height: normal;
@@ -607,9 +617,9 @@ li.articles .keywords .keyword {
 
 
 .date{
+    float: right;
     position: relative;
-    left: 20px;
-    top: -5px;
+    right: 0px;
     font-family: 'Bree Serif', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
@@ -624,6 +634,8 @@ li.articles .keywords .keyword {
     }
 
     .articlelist {
+        position: relative;
+        left: 20px;
         padding-left: 15px;
         padding-right: 15px;
     }
@@ -634,7 +646,7 @@ li.articles .keywords .keyword {
     }
 
     li.articles .keywords {
-        padding-left: 15px;
+        padding-left: 35px;
     }
     .articles .commentCount{
         float: none;
@@ -652,7 +664,13 @@ li.articles .keywords .keyword {
 
     .articlelist .title{
         left: 0px;
+        padding: 0px;
         font-size: 16px;
+    }
+
+    .articles .thumbnail {
+        position: absolute;
+        left: -60px;
     }
 
     .date {
@@ -677,13 +695,10 @@ li.articles .keywords .keyword {
     }
 
     .date .dateD{
+        position: relative;
     }
 
     .date .dateY{
-        -webkit-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
     }
 }
 
@@ -739,37 +754,29 @@ h2 { font-size: 1.9em; }
     .articledate .dateY{font-size: 16px;}
 }
 
-.dateM{
-    color: #366;
-    direction: rtl;
-    position: absolute;
-    left: 10px;
-    top: -10px;
-    width: 34px;
-    text-align: right;
-    font-size: 16px;
-}
 
 .dateD{
+    color: #356060;
+}
+
+.dateM{
     color: #464;
-    font-size: 27px;
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    width:35px;
-    text-align: center;
 }
 
 .dateY{
-    color: #566;
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    position: absolute;
-    left: 30px;
-    top: 4px;
-    font-size: 20px;
+    color: #456666;
+}
+
+.dateD,
+.dateM,
+.dateY
+{
+    display: inline;
+    position: relative;
+    top: 5px;
+    right: 5px;
+    text-align: center;
+    font-size: 16px;
 }
 
 .gifimage {
