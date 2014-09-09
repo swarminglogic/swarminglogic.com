@@ -16,7 +16,7 @@ $data['cclicense'] = 'by';
     <p>
       <ccode>ImageMagick</ccode> uses
       <ccode><a href="http://linux.die.net/man/5/fonts-conf">fonts-conf</a></ccode>
-      to detect and use fonts. As such, the default configuration gives meny fonts
+      to detect and use fonts. As such, the default configuration gives many fonts
       to chose from. To list available fonts, use <wccode>identify -list font | grep "Font:"</wccode>
     </p>
     <p>

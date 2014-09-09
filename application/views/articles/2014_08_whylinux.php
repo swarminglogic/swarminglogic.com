@@ -11,7 +11,7 @@ $data['cclicense'] = 'by';
     <img style="float: left; position: relative; top: -0.5em;"
          src="<?=imgsrc('nonflammable-shadow.png')?>" class="" alt="" />
     <blockquote>This article is not meant to incite a comparative discussion of
-    various operative systems. These are solely my thoughts and
+    various operating systems. These are solely my thoughts and
     experiences.<br/><br/>I feel Linux helps my productivity, and that I'm
     not equally productive on other operating systems.
     If you feel otherwise is true for you, then that's great.</blockquote>
