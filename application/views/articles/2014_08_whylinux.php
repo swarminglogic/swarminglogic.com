@@ -237,7 +237,7 @@ userbar
         the inactive monitor into a picture-in-picture thumbnail.
       </p>
 
-      <p><ccode><b>Script: enterpass</b></ccode></p>
+      <p><ccode><b>Script: recordscreen</b></ccode></p>
       <p class="pushup">
         <a href="/jotting/2014_04_screenrecordalt">Write-up.</a><br/>
         <a href="https://gist.github.com/swarminglogic/8692569#file-recordscreenalt-sh">Github gist.</a><br/>
