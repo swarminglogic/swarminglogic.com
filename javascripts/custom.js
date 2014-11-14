@@ -22,7 +22,7 @@ function getGist(divtag, gist, file, lang) {
         divtag.appendChild(pre);
 
         var gitLink = document.createElement("a");
-        gitLink.innerHTML = "Gist on GitHub";
+        gitLink.innerHTML = "<small>Gist on GitHub</small>";
         gitLink.style.cssText = "float: right; margin-top:-20px; margin-right:5px;"
         gitLink.href=giturl;
         divtag.appendChild(gitLink);
@@ -37,7 +37,38 @@ function getGist(divtag, gist, file, lang) {
   xhr.send(null);
 }
 
+function getGithubFile(divtag, repo, branch, file, lang) {
+  var url = '/githubfile.php?repo='+repo+"&branch="+branch+"&file="+file;
+  var giturl = 'https://github.com/swarminglogic/'+repo+'/blob/'+branch+'/'+file
+  divtag.innerHTML = '';
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function (aEvt) {
+    if (xhr.readyState == 4) {
+      if(xhr.status == 200) {
+        var pre = document.createElement("pre");
+        pre.className = "brush: " + lang + ";";
+        pre.innerHTML = xhr.responseText;
+        divtag.className = "prettyprint";
+        divtag.appendChild(pre);
+
+        var gitLink = document.createElement("a");
+        gitLink.innerHTML = "<small>File on GitHub</small>";
+        gitLink.style.cssText = "float: right; margin-top:-20px; margin-right:5px;"
+        gitLink.href=giturl;
+        divtag.appendChild(gitLink);
+        SyntaxHighlighter.highlight();
+      }
+      else {
+          alert("Error loading " + url + "\n" + xhr.status + "\n" + xhr);
+      }
+    }
+  };
+  xhr.open("GET", url, true);
+  xhr.send(null);
+}
+
 var gistDivs= $(".externgist");
+var githubFileDivs= $(".githubfile");
 $( document ).ready( function () {
   // Gisthub gist async load
   gistDivs.each(function() {
@@ -45,6 +76,14 @@ $( document ).ready( function () {
     var file = $(this).attr("file");
     var lang = $(this).attr("lang");
     getGist($(this).get(0), gist, file, lang);
+  });
+
+  githubFileDivs.each(function() {
+    var repo = $(this).attr("repo");
+    var branch = $(this).attr("branch");
+    var file = $(this).attr("file");
+    var lang = $(this).attr("lang");
+    getGithubFile($(this).get(0), repo, branch, file, lang);
   });
 
   // Sidebar scroller
