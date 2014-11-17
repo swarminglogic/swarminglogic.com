@@ -1,5 +1,4 @@
 <div id="sidebar_id" class="four columns">
-  <p></p>
   <h5>Table of Contents</h5>
   <ul id="toc">
    <li class=""><a href="#wrapper"><nowrap>Top</nowrap></a>
@@ -24,6 +23,7 @@
     }
  ?>
   </ul><br/>
+
 <?php
   if (isset($entry) && sizeof($entry[3]) > 0) {
     echo '<h5>Tags</h5>';
@@ -40,6 +40,36 @@
     }
   }
 ?>
+
+<?php
+  if (isset($cclicense)) {
+    $cclicense=strtolower($cclicense);
+    $licenseUrl='';
+    $isLicenseOk=true;
+    if ($cclicense == 'by'       ||
+        $cclicense == 'by-nd'    ||
+        $cclicense == 'by-sa'    ||
+        $cclicense == 'by-nc'    ||
+        $cclicense == 'by-nc-sa' ||
+        $cclicense == 'by-nc-nd') {
+      $licenseUrl='http://creativecommons.org/licenses/'.$cclicense.'/3.0';
+    } else if ($cclicense == 'zero') {
+      $licenseUrl='http://creativecommons.org/publicdomain/mark/1.0/';
+    } else {
+      $isLicenseOk = false;
+      trigger_error('Invalid license type: '.$cclicense);
+    }
+
+    if ($isLicenseOk) {
+      echo '<h5 class="license">License</h5>';
+      echo '<a href="'.$licenseUrl.'">';
+      echo '<img src="/images/licenses/'.$cclicense.'-flat.png"/></a>';
+      echo '<br/><br/>';
+    }
+  }
+ ?>
+
+  <?php echo $sidebar_text; ?>
 
 <h5>Newsletter</h5>
 <div id="mc_embed_signup">
@@ -67,32 +97,5 @@ and receive e-mails when new posts are published. (powered by mailchimp)">
 </form>
 </div>
 
-  <?php echo $sidebar_text;
 
-  // TODO swarminglogic, 2013-08-18: Refactor license. DRY:'sb_jottings.php'
-  if (isset($cclicense)) {
-    $cclicense=strtolower($cclicense);
-    $licenseUrl='';
-    $isLicenseOk=true;
-    if ($cclicense == 'by'       ||
-        $cclicense == 'by-nd'    ||
-        $cclicense == 'by-sa'    ||
-        $cclicense == 'by-nc'    ||
-        $cclicense == 'by-nc-sa' ||
-        $cclicense == 'by-nc-nd') {
-      $licenseUrl='http://creativecommons.org/licenses/'.$cclicense.'/3.0';
-    } else if ($cclicense == 'zero') {
-      $licenseUrl='http://creativecommons.org/publicdomain/mark/1.0/';
-    } else {
-      $isLicenseOk = false;
-      trigger_error('Invalid license type: '.$cclicense);
-    }
-
-    if ($isLicenseOk) {
-      echo '<h5 class="license">License</h5>';
-      echo '<a href="'.$licenseUrl.'">';
-      echo '<img src="/images/licenses/'.$cclicense.'-flat.png"/></a>';
-    }
-  }
-?>
 </div>

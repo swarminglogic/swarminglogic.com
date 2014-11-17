@@ -7,7 +7,28 @@ class Entry_model extends CI_Model {
   }
 
   public $articles =
-  array('2014_08_whylinux' =>
+  array('2014_11_crosscompile2' =>
+        array('Cross-compiling for windows (from linux) - Part 2',
+              array('Nov','12','2014'),
+              '<p>This article covers cross-compiling (from scracth) all the
+ necessary libraries for an SDL2 based OpenGL application. In particular:
+ <ccode>SDL2</ccode>, <wccode>SDL2_image (w/png, jpeg)</wccode>,
+<wccode>SDL_mixer (w/ogg)</wccode>, <ccode>SDL_ttf</ccode>,
+<ccode>GLEW</ccode></p>',
+              array('c++', 'development', 'gamedev', 'OpenGL',
+                    'SCons', 'linux', 'SDL2')),
+
+        '2014_11_crosscompile' =>
+        array('Cross-compiling for windows (from linux) - Part 1',
+              array('Nov','11','2014'),
+              '<p>This article talks about how to cross-compile a 64bit windows
+ application from linux, using <ccode>mingw</ccode>. This first part covers the
+ necessary tools, and shows a minimal <ccode>SCons</ccode> based build system
+for cross-compiling <ccode>Hello_World.exe</ccode>.</p>',
+              array('c++', 'development', 'gamedev', 'OpenGL', 'SCons',
+                    'linux')),
+
+        '2014_08_whylinux' =>
         array('Why I Love Linux (Through Examples)',
               array('Aug','21','2014'), "
 <p>My personal relation to linux, and how it suits me as a power
@@ -100,14 +121,14 @@ used to monitor websites, or what have you.</p>",
               array('bash', 'unix', 'linux'))
 
 
-//         ,'2014_01_nicekill' =>
-//         array('<ccode>nicekill</ccode>: Killing unix processes nicely.',
-//               array('Jan','28','2014'),
-//               "
-// <p>How to ask nicely for a program to terminate.<br/>
-// If you usually do <ccode>pkill -9 foo</ccode>,
-// then this is for you.</p>",
-//               array('bash', 'unix', 'linux'))
+        //         ,'2014_01_nicekill' =>
+        //         array('<ccode>nicekill</ccode>: Killing unix processes nicely.',
+        //               array('Jan','28','2014'),
+        //               "
+        // <p>How to ask nicely for a program to terminate.<br/>
+        // If you usually do <ccode>pkill -9 foo</ccode>,
+        // then this is for you.</p>",
+        //               array('bash', 'unix', 'linux'))
         );
 
 }
