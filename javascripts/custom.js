@@ -15,11 +15,12 @@ function getGist(divtag, gist, file, lang) {
   xhr.onreadystatechange = function (aEvt) {
     if (xhr.readyState == 4) {
       if(xhr.status == 200) {
-        var pre = document.createElement("pre");
-        pre.className = "brush: " + lang + ";";
-        pre.innerHTML = xhr.responseText;
+        var script = document.createElement("script");
+        script.className = "brush: " + lang + ";";
+        script.setAttribute("type", "syntaxhighlighter");
+        script.innerHTML = '<![CDATA[' + xhr.responseText + ']]>';
         divtag.className = "prettyprint";
-        divtag.appendChild(pre);
+        divtag.appendChild(script);
 
         var gitLink = document.createElement("a");
         gitLink.innerHTML = "<small>Gist on GitHub</small>";
@@ -45,11 +46,12 @@ function getGithubFile(divtag, repo, branch, file, lang) {
   xhr.onreadystatechange = function (aEvt) {
     if (xhr.readyState == 4) {
       if(xhr.status == 200) {
-        var pre = document.createElement("pre");
-        pre.className = "brush: " + lang + ";";
-        pre.innerHTML = xhr.responseText;
+        var script = document.createElement("script");
+        script.className = "brush: " + lang + ";";
+        script.setAttribute("type", "syntaxhighlighter");
+        script.innerHTML = '<![CDATA[' + xhr.responseText + ']]>';
         divtag.className = "prettyprint";
-        divtag.appendChild(pre);
+        divtag.appendChild(script);
 
         var gitLink = document.createElement("a");
         gitLink.innerHTML = "<small>File on GitHub</small>";
