@@ -52,10 +52,10 @@ $data['cclicense'] = 'by';
 
       <ccode><b>Script: getyt</b></ccode></p>
       <p>
-        <pre class="brush: bash;">
+        <?=shBegin('bash')?>
 #!/bin/bash
 curl -s | grep -oP "https://www.youtube.com/embed/.{11}" | xargs youtube-dl
-        </pre>
+        <?=shEnd()?>
       </p>
 
       <p><ccode><b>Demo:</b></ccode><br/>
@@ -153,7 +153,7 @@ curl -s | grep -oP "https://www.youtube.com/embed/.{11}" | xargs youtube-dl
         </div>
         <hr class="soft"/>
         <div class="pushup">
-          <pre class="brush: bash; gutter:false;">
+          <?=shBegin(' bash', 'gutter:false;')?>
  # Add an entry to the password database
 $ sudo userpass -a foosite -u userbar -p hunter2 -m Foo
 
@@ -182,7 +182,7 @@ hunter2
 # Use script-mode to get username matching entry
 $ sudo userpass --script-mode foosite -u
 userbar
-          </pre>
+          <?=shEnd()?>
         </div>
       </p>
     </div>
@@ -267,7 +267,7 @@ userbar
 
       <p><ccode><b>Demo:</b></ccode><br/>
         <div class="pushup">
-          <pre class="brush: bash; gutter:false;">
+          <?=shBegin('bash', 'gutter:false;')?>
  # Simple use
 $ ttic && sleep 0.4 && ttoc
 0.404
@@ -279,7 +279,7 @@ $ ttic foo && sleep 0.5 && ttoc foo
 # Using randomly assigned ID
 $ id=$(ttic --unique) && sleep 0.6 && ttoc $id
 0.604
-          </pre>
+          <?=shEnd()?>
         </div>
       </p>
 

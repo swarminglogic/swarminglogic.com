@@ -104,7 +104,7 @@ DISPLAY=:0.1 xwd -root -out screenshot-right.xwd </ccode>
     </p>
 
 
-    <?php heading(4, '5. Overlaying images.'); ?>
+    <?php heading(4, '4. Overlaying images.'); ?>
     <p>Again, <ccode>ImageMagick</ccode> comes to the rescue. <br/>Here is how
     to place <ccode>thumnail.png</ccode> on top of <ccode>image-large.png</ccode>
     at position <ccode>(100,20)</ccode>.
@@ -117,7 +117,7 @@ convert -composite image-large.png thumbnail.png \
     </p>
 
 
-    <?php heading(4, '6. Executing a command every X seconds', '6. Executing every X seconds'); ?>
+    <?php heading(4, '5. Executing a command every X seconds', '5. Executing every X seconds'); ?>
     <p>To execute a command every <ccode>X</ccode> seconds, you might think that <ccode>watch -n X ./foo</ccode> or perhaps
       <ccode>while sleep X; do ./foo ; done</ccode> would do a good job. And you would be
     right, assuming that<ccode>./foo</ccode> executes immediately.  When it's a
@@ -126,18 +126,18 @@ convert -composite image-large.png thumbnail.png \
     </p>
 
     <div class="prettyprint">
-      <pre class="brush: bash;">
+      <?=shBegin('bash')?>
 while sleep 1
 do
     (./foo.sh &)
 done
-      </pre>
+      <?=shEnd()?>
     </div>
     <p>This will exceute the script <ccode>./foo.sh</ccode> once every second, even if <ccode>foo.sh</ccode> takes
     several seconds to complete.</p>
 
 
-    <?php heading(4, '7. Final script', true, 'script'); ?>
+    <?php heading(4, '6. Final script', true, 'script'); ?>
     <p>Putting together the various pieces mentioned so far, this is the final
     script.
     </p>
@@ -146,15 +146,15 @@ done
     </p>
 
 
-    <?php heading(4, '8. Bonus - rendering video', true, 'video'); ?>
+    <?php heading(4, '7. Bonus - rendering video', true, 'video'); ?>
     <p>A <ccode>30 fps</ccode> video, consuming <ccode>15 frames</ccode> for each second
     in the output, can be made using <ccode>ffmpeg</ccode> with the following:
     </p>
     <div class="prettyprint">
-      <pre class="brush: bash;">
+      <?=shBegin('bash')?>
 ffmpeg -r 15 -i frames/%05d.png -c:v \
    libx264 -r 30 -pix_fmt yuv420p timlapsevideo.mp4
-      </pre>
+      <?=shEnd()?>
     </div>
 
     <p>While I wrote this post, I had the above script running, and this is the produced video:</p>

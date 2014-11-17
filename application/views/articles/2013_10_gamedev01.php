@@ -32,8 +32,8 @@ $data['cclicense'] = 'by';
 
     <p>
       The past month was devoted to
-      learning <ccode><a href="http://en.wikipedia.org/wiki/Opengl">OpenGL</a></ccode> and
-      <ccode><a href="http://en.wikipedia.org/wiki/Opengl">SDL2</a></ccode>, and
+      learning <ccode><?=wiki('Opengl','OpenGL')?></ccode> and
+      <ccode><?=wiki('Simple_DirectMedia_Layer','SDL2')?></ccode>, and
       putting together the first pieces of a game engine (so far, just a
       rudimentary graphics engine).
     </p>
@@ -89,7 +89,7 @@ $data['cclicense'] = 'by';
     Linux, Windows, Mac, there aren't that many contenders (even if you just limit yourself to desktops).
         <ccode><a href="http://www.libsdl.org/">Simple Directmedia Library (SDL)</a></ccode>
     is to my knowledge the best library for this. It is mainly developed by
-        <a href="http://en.wikipedia.org/wiki/Sam_Lantinga">Sam Latinga</a>,
+        <?=wiki('Sam_Lantinga','Sam Latinga')?>,
     who currently works for Valve. Most importantly, Valve is now using <ccode>SDL</ccode>
     in their linux commercial games, including the steam client.
         <a href="http://www.gdcvault.com/play/1017850/"><sup>[1, presentation]</sup></a>
@@ -205,7 +205,7 @@ about it. <ccode>SDL_ttf</ccode> makes
     complex, is also not worth it. It would be nice to be able to load 3D
     meshes, with texture coordinates, and normals. One of the simplest and most
     widely supported formats is
-        <a href="http://en.wikipedia.org/wiki/Wavefront_OBJ">Wavefront OBJ</a>.
+        <?=wiki('Wavefront_OBJ','Wavefront OBJ')?>.
       </p>
       <p>Writing a parser isn't very hard, but certainly tedious, so I used
         <ccode><a href="https://github.com/syoyo/tinyobjloader">tinyobjloader</a></ccode>,
@@ -228,19 +228,19 @@ about it. <ccode>SDL_ttf</ccode> makes
       the <ccode>COBJ</ccode> format (C for Compact).</p>
       <p>
         <div class="prettyprint">
-          <pre class="brush: cpp;">
+<?=shBegin('cpp')?>
 void write(std::ostream& stream,
-           const std::vector&lt;tinyobj::shape_t&gt;& shapes)
+           const std::vector<tinyobj::shape_t>& shapes)
 {
   assert(sizeof(float) == sizeof(uint32_t));
   const auto sz = sizeof(uint32_t);
-  const uint32_t nMeshes = static_cast&lt;uint32_t&gt;(shapes.size());
+  const uint32_t nMeshes = static_cast<uint32_t>(shapes.size());
   const uint32_t nMatProperties = 3;
 
   stream.write((const char*)&nMeshes, sz);        // nMeshes
   stream.write((const char*)&nMatProperties, sz); // nMatProperties
 
-  for (size_t i = 0 ; i &lt; nMeshes ; ++i) {
+  for (size_t i = 0 ; i < nMeshes ; ++i) {
     const uint32_t nVertices  = (uint32_t)shapes[i].mesh.positions.size();
     const uint32_t nNormals   = (uint32_t)shapes[i].mesh.normals.size();
     const uint32_t nTexcoords = (uint32_t)shapes[i].mesh.texcoords.size();
@@ -266,19 +266,19 @@ void write(std::ostream& stream,
 }
 
 
-std::vector&lt;tinyobj::shape_t&gt; read(std::istream& stream)
+std::vector<tinyobj::shape_t> read(std::istream& stream)
 {
   assert(sizeof(float) == sizeof(uint32_t));
   const auto sz = sizeof(uint32_t);
 
-  std::vector&lt;tinyobj::shape_t&gt; shapes;
+  std::vector<tinyobj::shape_t> shapes;
 
   uint32_t nMeshes = 0;
   uint32_t nMatProperties = 0;
   stream.read((char*)&nMeshes, sz);
   stream.read((char*)&nMatProperties, sz);
   shapes.resize(nMeshes);
-  for (size_t i = 0 ; i &lt; nMeshes ; ++i) {
+  for (size_t i = 0 ; i < nMeshes ; ++i) {
     uint32_t nVertices = 0, nNormals = 0, nTexcoords = 0, nIndices = 0;
     stream.read((char*)&nVertices,  sz);
     stream.read((char*)&nNormals,   sz);
@@ -297,14 +297,13 @@ std::vector&lt;tinyobj::shape_t&gt; read(std::istream& stream)
     stream.read((char*)&shapes[i].material.ambient[0], 3 * sz);
   }
   return shapes;
-}
-          </pre>
+}<?=shEnd()?>
         </div>
       </p>
 
 
       <?php heading(4, '5. Deferred Rendering'); ?>
-      <p><a href="http://en.wikipedia.org/wiki/Deferred_shading">Deferred Shading</a>
+      <p><?=wiki('Deferred_shading', 'Deferred Shading')?>
     is one of the methods I read about, and was awed by, thinking it would be
     hard to implement. Turns out yet again that it wasn't, at least the basic
     functionality. Then again, I haven't gotten to the hard parts yet (lighting,
@@ -329,7 +328,7 @@ std::vector&lt;tinyobj::shape_t&gt; read(std::istream& stream)
       <div class="six columns alpha">
         <p><small>Position</small>
           <a href="<?=imgsrc('rungholt_position.png')?>" data-lightbox="deferred"
-           data-title="Deferred Shader - Position" >
+             data-title="Deferred Shader - Position" >
             <img src="<?=imgsrc('rungholt_position_300px.png')?>" alt="" />
           </a>
         </p>
@@ -337,7 +336,7 @@ std::vector&lt;tinyobj::shape_t&gt; read(std::istream& stream)
       <div class="six columns omega">
         <p><small>Normals</small>
           <a href="<?=imgsrc('rungholt_normals.png')?>" data-lightbox="deferred"
-           data-title="Deferred Shader - Normal" >
+             data-title="Deferred Shader - Normal" >
             <img src="<?=imgsrc('rungholt_normals_300px.png')?>" alt="" />
           </a>
         </p>
@@ -346,7 +345,7 @@ std::vector&lt;tinyobj::shape_t&gt; read(std::istream& stream)
       <div class="six columns alpha">
         <p><small>Albedo texture</small>
           <a href="<?=imgsrc('rungholt_albedo.png')?>" data-lightbox="deferred"
-           data-title="Deferred Shader - Albedo" >
+             data-title="Deferred Shader - Albedo" >
             <img src="<?=imgsrc('rungholt_albedo_300px.png')?>" alt="" />
           </a>
         </p>
@@ -354,7 +353,7 @@ std::vector&lt;tinyobj::shape_t&gt; read(std::istream& stream)
       <div class="six columns omega">
         <p><small>Z-component of position (adjusted)</small>
           <a href="<?=imgsrc('rungholt_depth.png')?>" data-lightbox="deferred"
-           data-title="Z-component / Depth" >
+             data-title="Z-component / Depth" >
             <img src="<?=imgsrc('rungholt_depth_300px.png')?>" alt="" />
           </a>
         </p>
@@ -366,26 +365,26 @@ std::vector&lt;tinyobj::shape_t&gt; read(std::istream& stream)
     z-component (with adjusted ranges for better visualization)</p>
       <p>Retrieving the data is done through texture lookups.
         <div class="prettyprint pushup">
-          <pre class="brush: cpp;">
+          <?=shBegin('cpp')?>
   const vec3 pos  = vec3(texture(PositionData, vs_texpos));
   const vec3 norm = vec3(texture(NormalData, vs_texpos));
   const vec3 col  = vec3(texture(ColorData, vs_texpos));
-          </pre>
+          <?=shEnd()?>
         </div>
       </p>
       <?php heading(5, '5.1. Diffuse Shading', false); ?>
       <p>For a diffuse shader, all that is required is normals normals and positions data.
         <div class="prettyprint pushup">
-          <pre class="brush: cpp;">
+          <?=shBegin('cpp')?>
   const vec3 s = normalize(lightPos.xyz - pos);
   const vec3 diffuse = vec3(0.38, 0.36, 0.34) + max(dot(s, norm), 0.0);
-          </pre>
+          <?=shEnd()?>
         </div>
       </p>
       <div class="six columns alpha">
         <p>
           <a href="<?=imgsrc('rungholt_diffuse.png')?>" data-lightbox="shading"
-           data-title="Diffuse shader" >
+             data-title="Diffuse shader" >
             <img src="<?=imgsrc('rungholt_diffuse_300px.png')?>" alt="" />
           </a><br/><small>Diffuse shader</small>
         </p>
@@ -393,27 +392,28 @@ std::vector&lt;tinyobj::shape_t&gt; read(std::istream& stream)
       <div class="clear"></div>
 
       <?php heading(5, '5.2. Edge Detection', false); ?>
-      <p>Using a <a href="http://en.wikipedia.org/wiki/Sobel_operator">Sobel operator</a> on
+      <p>Using a <?=wiki('Sobel_operator', 'Sobel operator')?> on
     the depth data, a visualization of sudden depth changes can be achieved.</p>
       <div class="six columns alpha">
         <p>
           <a href="<?=imgsrc('rungholt_depth-edgdedetection.png')?>"  data-lightbox="shading"
-           data-title="Depth-based Sobel edge detection" >
+             data-title="Depth-based Sobel edge detection" >
             <img src="<?=imgsrc('rungholt_depth-edgdedetection_300px.png')?>" alt="" />
           </a><br/><small>Depth-based Sobel edge detection.</small>
         </p>
       </div>
       <div class="clear"></div>
       <?php heading(5, '5.3. Screen Space Ambient Occlusion', false); ?>
-      <p><a href="http://en.wikipedia.org/wiki/Screen_space_ambient_occlusion">Screen space
-     ambient occlusion (SSAO)</a> is a clever technique to approximate the
+      <p><?=wiki('Screen_space_ambient_occlusion',
+                 'Screen space ambient occlusion (SSAO)')?>
+     is a clever technique to approximate the
      shadows that would result from geometry occluding global illumination. The
      implemented method is quite basic, with random sampling, but no blurring.
       </p>
       <div class="six columns alpha">
         <p>
           <a href="<?=imgsrc('rungholt_ssao.png')?>" data-lightbox="shading"
-           data-title="Screen space ambient occlusion + Sobel edgdes" >
+             data-title="Screen space ambient occlusion + Sobel edgdes" >
             <img src="<?=imgsrc('rungholt_ssao_300px.png')?>" alt="" />
           </a><br/><small>Screen space ambient occlusion (SSAO) + Sobel edges</small>
         </p>
@@ -450,17 +450,18 @@ std::vector&lt;tinyobj::shape_t&gt; read(std::istream& stream)
       </p>
       <p>The easiest way to do so, is shadowing (aka mirroring) the <ccode>OpenGL</ccode>
         state, and checking if a gl-call will be redundant. I do this with a singleton class,
-        which static access functions mapped to private member functions. The point of this is to be able to say:
+        which static access functions mapped to private member functions.
+        The point of this is to be able to say:
         <div class="prettyprint pushup">
-          <pre class="brush: cpp; gutter: false;">
+          <?=shBegin('cpp', 'gutter:false;')?>
              &nbsp;GlState::enable(GlState::DEPTH_TEST);
-          </pre>
+          <?=shEnd()?>
         </div>
         Instead of the usual:
         <div class="prettyprint">
-          <pre class="brush: cpp; gutter:false;">
+          <?=shBegin('cpp', 'gutter:false;')?>
             &nbsp;GlState::instance().enable(GlState::DEPTH_TEST);
-          </pre>
+          <?=shEnd()?>
         </div>
       </p>
 
@@ -543,9 +544,9 @@ std::vector&lt;tinyobj::shape_t&gt; read(std::istream& stream)
       buffers. Use <ccode>watch</ccode> to get a live update of the memory consumption.
 
         <div class="prettyprint pushup">
-          <pre class="brush: bash; gutter:false;">
+          <?=shBegin('bash', 'gutter:false;')?>
             &nbsp;$ watch -n 0.2 nvidia-msi
-          </pre>
+          <?=shEnd()?>
         </div>
 
         <img style="max-width:600px;"
@@ -555,12 +556,13 @@ std::vector&lt;tinyobj::shape_t&gt; read(std::istream& stream)
 
       <?php heading(5, '7.4. Unit testing'); ?>
       <p>
-        If used right, <a href="http://en.wikipedia.org/wiki/Unit_testing">Unit testing</a> can be an
+        If used right, <?=wiki('Unit_testing', 'Unit testing')?> can be an
         invaluable tool. It can help the class design process, catch bugs early, document
         functionality, and later let you be confident that a change you introduced didn't
         mess up something else.
       </p>
-      <p>My favorite unit test system (by far) is <ccode><a href="http://cxxtest.com/">CxxTest</a></ccode>,
+      <p>My favorite unit test system (by far) is
+        <ccode><a href="http://cxxtest.com/">CxxTest</a></ccode>,
         mostly for the reasons that come to light in
         <a href="http://gamesfromwithin.com/exploring-the-c-unit-testing-framework-jungle">
         this overview</a>. I customized the output to make it prettier, and also show
@@ -570,7 +572,8 @@ std::vector&lt;tinyobj::shape_t&gt; read(std::istream& stream)
         <img style="max-width:600px;"
              src="<?=imgsrc('cxxtest.png')?>" alt="" />
       </p>
-      <p><a href="/images/articles/2013_06_cpp_setup/testexec2.opt.gif">Here is an animated gif</a>
+      <p><a href="/images/articles/2013_06_cpp_setup/testexec2.opt.gif">
+      Here is an animated gif</a>
        showing how simple it is to add a test suite, and individual test functions.
       </p>
       <?php heading(5, '7.5. Automatic Build System'); ?>

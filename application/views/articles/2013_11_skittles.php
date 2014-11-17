@@ -269,7 +269,7 @@ care must be taken when averaging them. Think of the hue as just an angle. Both
       </p>
       <p>The clear clustering allowed a very simple algorithm for clustering the hues:</p>
       <div  style="padding-left:1em;" class="prettyprint">
-        <pre class="brush: csharp; gutter:false;">
+        <?=shBegin('csharp', 'gutter:false;')?>
         # Pseudocode
         sort(hues)
         foreach hue:
@@ -278,7 +278,7 @@ care must be taken when averaging them. Think of the hue as just an angle. Both
         else
           createNewClusterGroup()
           addHueToCurrentClusterGroup()
-        </pre>
+        <?=shEnd()?>
       </div>
     </div>
     <div class="offset-by-one five columns omega">

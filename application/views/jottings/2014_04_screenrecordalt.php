@@ -44,7 +44,7 @@ $data['cclicense'] = 'by';
       symlink to the previous file, for any missing frame.
     </p>
     <div class="prettyprint">
-      <pre class="brush: bash;">
+      <?=shBegin('bash')?>
 #!/bin/bash
 lastFrame=`ls -1 frames/ | tail -n 1`
 nframes=`echo ${lastFrame%.*} | sed 's/^0*//'`
@@ -58,17 +58,17 @@ do
        ln -s $prev frames/$curr
     fi
 done
-      </pre>
+      <?=shEnd()?>
     </div>
 
     <p>A <ccode>30 fps</ccode> video, consuming <ccode>15 frames</ccode> for each second
     in the output, can be made using <ccode>ffmpeg</ccode> with the following:
     </p>
     <div class="prettyprint">
-      <pre class="brush: bash;">
+      <?=shBegin('bash')?>
 ffmpeg -r 15 -i frames/%05d.png -c:v \
    libx264 -r 30 -pix_fmt yuv420p timelapsevideo.mp4
-      </pre>
+      <?=shEnd()?>
     </div>
 
     <p>While I wrote this post, I had the screen recording script running, and

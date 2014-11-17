@@ -94,9 +94,16 @@ function heading($wght, $text, $tocEntry=true, $altid='') {
 }
 
 
-
 function wiki($blob, $text) {
   return '<a href="http://en.wikipedia.org/wiki/'.$blob.'">'.$text.'</a>';
+}
+
+function shBegin($lang, $other="") {
+  return '<script type="syntaxhighlighter" class="brush: '.$lang.'; '.$other.'"><![CDATA[';
+}
+
+function shEnd() {
+  return ']]></script>';
 }
 
 ?>

@@ -27,13 +27,13 @@ $data['cclicense'] = 'by';
     </p>
     <p><ccode>ImageMagick</ccode> should now be able to find the font.
       <div class="prettyprint pushup">
-        <pre class="brush: bash; gutter:false;">
+        <?=shBegin('bash', 'gutter:false;')?>
 $ identify -list font | grep -i "font: silkscreen"
   Font: Silkscreen
   Font: SilkscreenB
   Font: SilkscreenExpanded
   Font: SilkscreenExpandedB
-        </pre>
+        <?=shEnd()?>
       </div>
 
     </p>
@@ -46,13 +46,13 @@ $ identify -list font | grep -i "font: silkscreen"
       to generate an <wccode>ImageMagick</wccode> font configuration file. Here is how:
 
         <div class="prettyprint pushup">
-          <pre class="brush: bash; gutter:false;">
+          <?=shBegin('bash', 'gutter:false;')?>
 $ cd /tmp
 $ wget http://www.imagemagick.org/Usage/scripts/imagick_type_gen
 $ chmod +x imagick_type_gen
 $ mkdir ~/.magick
 $ find ~/.fonts/ -name "*.ttf" | ./imagick_type_gen -f - > ~/.magick/type.xml
-          </pre>
+          <?=shEnd()?>
         </div>
     </p>
     <p>The newly generatedfile <ccode>~/.magick/type.xml</ccode> should contain the entry:
@@ -65,7 +65,7 @@ $ find ~/.fonts/ -name "*.ttf" | ./imagick_type_gen -f - > ~/.magick/type.xml
      family="Silkscreen"
      glyphs="/home/okami/.fonts/slkscr.ttf"
      />
-        </pre>
+        <?=shEnd()?>
       </div>
     </p>
 
@@ -77,14 +77,14 @@ $ find ~/.fonts/ -name "*.ttf" | ./imagick_type_gen -f - > ~/.magick/type.xml
       used to extend an image with a text label:
 
       <div class="prettyprint pushup">
-        <pre class="brush: bash; gutter:false;">
+        <?=shBegin('bash', 'gutter:false;')?>
     convert input.png  -background "#888" \
         -font "Silkscreen" \
         -pointsize 8 \
         -fill "#0007" \
         label:"Roald Fernandez  swarminglogic.com  $(date +'%Y-%m-%d')  CC-BY" \
         -gravity SouthEast -append output.png
-        </pre>
+        <?=shEnd()?>
       </div>
 
       <div class="clear"></div>
@@ -112,7 +112,7 @@ $ find ~/.fonts/ -name "*.ttf" | ./imagick_type_gen -f - > ~/.magick/type.xml
       that draws a rectangle on top of the image, and the text on top of that again.
 
       <div class="prettyprint pushup">
-        <pre class="brush: bash; gutter:false;">
+        <?=shBegin('bash', 'gutter:false;')?>
     width=$(identify -format %w input.png)
     height=$(identify -format %h input.png)
     rect="0,$((height-10)),${width},${height}"
@@ -124,7 +124,7 @@ $ find ~/.fonts/ -name "*.ttf" | ./imagick_type_gen -f - > ~/.magick/type.xml
         -gravity SouthEast \
         -draw "text 0,0 'Roald Fernandez  swarminglogic.com  $(date +'%Y-%m-%d')  CC-BY  '" \
         output.png
-        </pre>
+        <?=shEnd()?>
       </div>
 
       <table class="lines">
@@ -155,10 +155,10 @@ $ find ~/.fonts/ -name "*.ttf" | ./imagick_type_gen -f - > ~/.magick/type.xml
 Add a watermark overlay to an image. The caption should say "SwarmingLogic",
     be on the top left, with text color <ccode>#243A</ccode>, transparent background, and
     use the font <ccode>Silkscreen</ccode> with point size <ccode>8</ccode>.
-        <pre class="brush: bash; gutter:false;">
+        <?=shBegin('bash', 'gutter:false;')?>
 subtlemark -c '#243A' -b none -f Silkscreen -F 8 \
   -p NorthWest -t "SwarmingLogic" input.png output.png
-        </pre>
+        <?=shEnd()?>
       </p>
       <p class="offset-by-one">
       <img src="<?=imgsrc('subtlemark-example.png')?>" class="" alt="" />

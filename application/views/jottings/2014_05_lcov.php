@@ -79,12 +79,12 @@ through. With the help of <ccode>lcov</ccode>, these files are processed
       </p>
 
       <div class="prettyprint pushup">
-        <pre class="brush: bash; gutter:false;">
+        <?=shBegin('bash', 'gutter:false;')?>
 rm -rf ./build
 export LDFLAGS="-lgcov -fprofile-arcs"
 export CPPFLAGS="-fprofile-arcs -ftest-coverage"
 nice scons -j6 --tests  # --tests is a custom option that builds tests
-        </pre>
+        <?=shEnd()?>
       </div>
 
       <?php heading(5, '2.1 First attempt', false); ?>
@@ -92,14 +92,14 @@ nice scons -j6 --tests  # --tests is a custom option that builds tests
 process the coverage output (<wccode>step 5</wccode>), and generate the <ccode>html</ccode>
  report (<wccode>step 9</wccode>):</p>
       <div class="prettyprint pushup">
-        <pre class="brush: bash; gutter:false;">
+        <?=shBegin('bash', 'gutter:false;')?>
  # Run tests
 for i in ./bin/tests/* ; do $i ; done
 # Process coverage files
 lcov -c -d ./build -o coverage.run
 # Generate html report (make sure ./html folder exists)
 genhtml -o ./html/ coverage.run
-        </pre>
+        <?=shEnd()?>
       </div>
 
       <div class="nine columns alpha">
@@ -119,11 +119,11 @@ genhtml -o ./html/ coverage.run
       <?php heading(5, '2.2 Second attempt - Excluding external files', false); ?>
  Let's clean this up with some filtering that only includes files in the project (<wccode>step 7</wccode>).
       <div class="prettyprint">
-        <pre class="brush: bash; gutter:false;">
+        <?=shBegin('bash', 'gutter:false;')?>
  # Extract (-e) from coverage.run data from files in cwd
 lcov -e coverage.run "`pwd`/*" -o coverage.run.filtered
 genhtml -o ./html/ coverage.run.filtered
-        </pre>
+        <?=shEnd()?>
       </div>
 
 
@@ -146,14 +146,14 @@ genhtml -o ./html/ coverage.run.filtered
       </p>
 
       <div class="prettyprint pushup">
-        <pre class="brush: bash; gutter:false;">
+        <?=shBegin('bash', 'gutter:false;')?>
  # Process coverage files
 lcov -b . -c -d ./build -o coverage.run
 # Extract (-e) from coverage.run data from files in cwd
 lcov -e coverage.run "`pwd`/*" -o coverage.run.filtered
 # Generate html report (make sure ./html folder exists)
 genhtml -o ./html/ coverage.run.filtered
-        </pre>
+        <?=shEnd()?>
       </div>
 
       <div class="nine columns alpha">
@@ -177,11 +177,11 @@ genhtml -o ./html/ coverage.run.filtered
       </p>
 
       <div class="prettyprint pushup">
-        <pre class="brush: bash; gutter:false;">
+        <?=shBegin('bash', 'gutter:false;')?>
  # Remove (-r) from coverage.run.filtered all Test*.* files
 lcov -r coverage.run.filtered "`pwd`/*/Test*.*" -o coverage.run.filtered
 genhtml -o ./html/ coverage.run.filtered
-        </pre>
+        <?=shEnd()?>
       </div>
 
       <div class="nine columns alpha">
@@ -205,7 +205,7 @@ compiling, and there is one for each compilation unit. We merge this output with
 the one from running the tests, and filter the result like before.</p>
 
         <div class="prettyprint pushup">
-          <pre class="brush: bash; gutter:false;">
+          <?=shBegin('bash', 'gutter:false;')?>
  # Process *.gcno files
 lcov -b . -c -i -d ./build -o coverage.init
 
@@ -223,7 +223,7 @@ lcov -e coverage.total "`pwd`/*" -o coverage.total.filtered
 lcov -r coverage.total.filtered "`pwd`/*/Test*.*" -o coverage.total.filtered
 lcov -r coverage.total.filtered "`pwd`/build/main.cpp" -o coverage.total.filtered
 genhtml -o ./html/ coverage.total.filtered
-          </pre>
+          <?=shEnd()?>
         </div>
 
 
@@ -247,10 +247,10 @@ genhtml -o ./html/ coverage.total.filtered
     How can that be done? I'm glad you asked!
         </p>
         <div class="prettyprint pushup">
-          <pre class="brush: bash; gutter:false;">
+          <?=shBegin('bash', 'gutter:false;')?>
 sed 's/\/build\//\/src\//g' coverage.total.filtered > coverage.total.final
 genhtml -o ./html/ coverage.total.final
-          </pre>
+          <?=shEnd()?>
         </div>
         <div class="nine columns alpha">
           <p>That's right, a simple search-and-replace does the trick!</p>
@@ -266,7 +266,7 @@ genhtml -o ./html/ coverage.total.final
         <?php heading(4, '3. Summary - final script'); ?>
         <p>
           <div class="prettyprint pushup">
-            <pre class="brush: bash;">
+            <?=shBegin('bash')?>
 #!/bin/bash
 
 # Step 1: Clean all build files
@@ -316,7 +316,7 @@ cp .coverage.total ./coveragehistory/`date +'%Y.%m.%d-coverage'`
 
 # Cleanup
 rm .coverage.*
-            </pre>
+            <?=shEnd()?>
           </div>
         </p>
         <p><b>Note</b>: As of <ccode>lcov</ccode> version <wccode>1.10</wccode>, you can use <wccode>--no-external</wccode> in <wccode>step 5</wccode>and thus skip <wccode>step 7</wccode>.

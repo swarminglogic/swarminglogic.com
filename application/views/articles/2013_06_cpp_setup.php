@@ -41,7 +41,7 @@ together along the way.
 
     <p>If you understand the following snippet
       <div class="prettyprint">
-        <pre class="brush: bash;">
+        <?=shBegin('bash', 'gutter:true;')?>
 find ./src ./SConstruct \
  -name "[!\.]*.cpp" -or \
  -name "[!\.]*.h"   -or \
@@ -50,7 +50,7 @@ find ./src ./SConstruct \
  -name "SConstruct" \
  | xargs stat -c %y \
  | md5sum
-        </pre>
+        <?=shEnd()?>
       </div>
       <table class="prettyprint lines">
         <tr><td><b>Line 1-6:</b></td><td>Finds all relevant projects files.</td></tr>
@@ -220,7 +220,7 @@ about it, but from a practical point of view, this is all you need to know:</p>
       One such is <a href="https://github.com/aziz/tmuxinator"><code>tmuxinator</code></a>. Here is the setup script I use.</p>
 
     <div class="prettyprint">
-      <pre class="brush: plain;">
+      <?=shBegin('bash', 'gutter:true;')?>
 project_name: CppCoding
 project_root: "`cdpval`"
 rvm: 2.0.0
@@ -230,7 +230,8 @@ tabs:
       layout: main-horizontal
       panes:
         - marktty && autobuild ./bin/main
-        - markttytest && autodirexec ./bin/tests</pre>
+        - markttytest && autodirexec ./bin/tests
+      <?=shEnd()?>
     </div>
 
     <p>

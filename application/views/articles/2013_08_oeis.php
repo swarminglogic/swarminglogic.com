@@ -124,7 +124,7 @@ $data['cclicense'] = 'by';
         The quickest way I know to do this, is writing a <code>bash</code>-script using <code>curl</code>
         to get the html page, and unix tools <code>sed</code> and <code>head</code> to extract the value.
       </p>
-      <pre class="brush: bash;">
+      <?=shBegin('bash', 'gutter:true;')?>
 function getnresults() {
     v=`curl --silent "http://oeis.org/search?q=$1" \
          | grep -P '\d result(s|\s)'               \
@@ -133,7 +133,7 @@ function getnresults() {
          | sed 's/.*of\s//g'                       \
          | sed 's/\s.*//g'`
     [[ $v ]] && echo $v || echo 0
-}</pre>
+}<?=shEnd()?>
       <table class="prettyprint lines">
         <tr><td><b>Line 2:</b></td><td>Gets the HTML source for the OEIS page.</td></tr>
         <tr><td><b>Line 3:</b></td><td>Extracts all lines containing <code>result</code> or <code>results</code></td></tr>
@@ -158,7 +158,7 @@ function getnresults() {
         </p>
         <p>
           <b>NB:</b> If you live in the US, think carefully before running such a script. Apparently, making HTTP requests with
-        modified URLs is <a href="http://opinionator.blogs.nytimes.com/2013/04/13/hacktivists-as-gadflies/">a criminal
+        modified URLs could be <a href="http://opinionator.blogs.nytimes.com/2013/04/13/hacktivists-as-gadflies/">a criminal
         offense</a>. <code>&lt;/tongueincheek&gt;</code>
         </p>
       </div>
