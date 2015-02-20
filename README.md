@@ -1,6 +1,9 @@
 SwarmingLogic - Website
 ========================
 
+__Update:__ *As of 01.2015, this repo has been moved to a private repo, and has been descontinued as a public repo on github.*
+
+
 This repository hosts the backend and frontend for the [SwarmingLogic site](http://swarminglogic.com).
 
 
